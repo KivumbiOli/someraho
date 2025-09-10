@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = "yoursecretkey"
+app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env secret key in production
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
 
@@ -41,7 +41,7 @@ init_db()
 
 # ----------------- EMAIL -----------------
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
-EMAIL_APP_PASSWORD =os.environ.get("EMAIL_APP_PASSWORD")
+EMAIL_APP_PASSWORD = os.environ.get("EMAIL_APP_PASSWORD")
 
 def send_otp_email(email, otp):
     msg = MIMEText(f"Kode yo kwemeza konti yawe ni: {otp}")
@@ -56,6 +56,11 @@ def send_otp_email(email, otp):
     except Exception as e:
         print("Email ntishoboye koherezwa:", e)
         return False
+
+# ----------------- CONTEXT PROCESSOR -----------------
+@app.context_processor
+def inject_user_name():
+    return dict(name=session.get("user"))
 
 # ----------------- LOGIN REQUIRED -----------------
 def login_required(f):
@@ -161,49 +166,49 @@ def logout():
 @app.route("/home")
 @login_required
 def home():
-    return render_template("home.html", name=session["user"])
+    return render_template("home.html")
 
 @app.route("/index")
 @login_required
 def index():
-    return render_template("index.html", name=session["user"])
+    return render_template("index.html")
 
 @app.route("/exam")
 @login_required
 def exam():
-    return render_template("exam.html", name=session["user"])
+    return render_template("exam.html")
 
 @app.route("/ibibazo")
 @login_required
 def ibibazo():
-    return render_template("ibibazo.html", name=session["user"])
+    return render_template("ibibazo.html")
 
 @app.route("/ibyigwa")
 @login_required
 def ibyigwa():
-    return render_template("ibyigwa.html", name=session["user"])
+    return render_template("ibyigwa.html")
 
 @app.route("/welcom2")
 @login_required
 def welcom2():
-    return render_template("welcom2.html", name=session["user"])
+    return render_template("welcom2.html")
 
 # ----------------- PUBLIC PAGES -----------------
 @app.route("/publicpage")
 def publicpage():
-    return render_template("publicpage.html", name=session.get("user_name"))
+    return render_template("publicpage.html")
 
 @app.route("/welcom")
 def welcom():
-    return render_template("welcom.html",name=session.get("user_name"))
+    return render_template("welcom.html")
 
 @app.route("/twandikire")
 def twandikire():
-    return render_template("twandikire.html",name=session.get("user_name"))
+    return render_template("twandikire.html")
 
 @app.route("/terms")
 def terms():
-    return render_template("terms.html",name=session.get("user_name"))
+    return render_template("terms.html")
 
 # ----------------- MARKS -----------------
 @app.route("/save_score", methods=["POST"])
