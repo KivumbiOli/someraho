@@ -8,6 +8,16 @@ endblock %} {% block content %}
   type="image/png"
 />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QEHLQH0H8R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QEHLQH0H8R');
+</script>
+
 <!-- Preloader -->
 <div id="preloader">
   <div class="preloader-frame">
@@ -246,3 +256,4 @@ endblock %} {% block content %}
   });
 </script>
 {% endblock %}
+
