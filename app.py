@@ -191,19 +191,19 @@ def welcom2():
 # ----------------- PUBLIC PAGES -----------------
 @app.route("/publicpage")
 def publicpage():
-    return render_template("publicpage.html")
+    return render_template("publicpage.html", name=session.get("user_name"))
 
 @app.route("/welcom")
 def welcom():
-    return render_template("welcom.html")
+    return render_template("welcom.html",name=session.get("user_name"))
 
 @app.route("/twandikire")
 def twandikire():
-    return render_template("twandikire.html")
+    return render_template("twandikire.html",name=session.get("user_name"))
 
 @app.route("/terms")
 def terms():
-    return render_template("terms.html")
+    return render_template("terms.html",name=session.get("user_name"))
 
 # ----------------- MARKS -----------------
 @app.route("/save_score", methods=["POST"])
