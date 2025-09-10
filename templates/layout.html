@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="rw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Someraho{% endblock %}</title>
+
+    <style>
+      /* === General Reset === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f5f8fa;
+        color: #222;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+      }
+
+      /* === Navbar === */
+      .site-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #004080;
+        color: #fff;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .site-navbar-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .site-navbar-logo {
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 6px;
+      }
+
+      .site-navbar-brand {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .site-navbar-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .site-navbar-links li {
+        display: inline-block;
+      }
+
+      .site-navbar-links a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s ease;
+      }
+
+      .site-navbar-links a:hover {
+        color: #ffcc00;
+      }
+
+      .site-navbar-icon {
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+      }
+
+      /* Mobile menu button */
+      .site-navbar-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      /* Responsive Navbar */
+      @media (max-width: 768px) {
+        .site-navbar-links {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          background: #004080;
+          padding: 15px;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          border-radius: 8px;
+        }
+
+        .site-navbar-links.active {
+          display: flex;
+        }
+
+        .site-navbar-menu-toggle {
+          display: block;
+        }
+      }
+
+      /* === Footer === */
+      .footer {
+        background: #222;
+        color: #eee;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .footer p {
+        margin: 5px 0;
+      }
+
+      .footer .btn {
+        margin-top: 10px;
+        padding: 8px 15px;
+        background: #004080;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .footer .btn:hover {
+        background: #ffcc00;
+        color: #000;
+      }
+
+      .social-icons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+      .social-icon:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="site-navbar">
+      <!-- Left side: Logo -->
+      <div class="site-navbar-left">
+        <img
+          src="../static/icons/icons/Favicon.jpeg"
+          alt="Logo"
+          class="site-navbar-logo"
+        />
+        <span class="site-navbar-brand">Someraho</span>
+      </div>
+
+      <!-- Mobile toggle button -->
+      <button
+        class="site-navbar-menu-toggle"
+        id="site-menu-toggle"
+        aria-expanded="false"
+      >
+        &#9776;
+      </button>
+
+      <!-- Right side: Links -->
+      <ul class="site-navbar-links" id="site-navbar-links">
+        <li>
+          <a href="{{ url_for('home')}}">
+            <img
+              src="../static/icons/icons/Favicon.jpeg"
+              alt="ibyigwa"
+              class="site-navbar-icon"
+            />
+            Ahabanza
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('ibyigwa')}}">
+            <img
+              src="../static/icons/icons/Favicon.jpeg"
+              alt="ibyigwa"
+              class="site-navbar-icon"
+            />
+            Amasomo
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('index')}}">
+            <img
+              src="../static/icons/icons/Favicon.jpeg"
+              alt="Ikizamini"
+              class="site-navbar-icon"
+            />
+            Ikizamini
+          </a>
+        </li>
+
+        <li>
+          <a href="{{ url_for('amanota') }}">
+            <img
+              src="../static/icons/icons/Favicon.jpeg"
+              alt="Amanota"
+              class="site-navbar-icon"
+            />
+            Amanota
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            <img
+              src="/static/icons/icons/Favicon.jpeg"
+              alt="Logout"
+              class="site-navbar-icon"
+            />
+            Sohoka
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Toggle Script -->
+    <script>
+      const menuToggle = document.getElementById("site-menu-toggle");
+      const navbarLinks = document.getElementById("site-navbar-links");
+
+      menuToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+        const expanded =
+          menuToggle.getAttribute("aria-expanded") === "true" || false;
+        menuToggle.setAttribute("aria-expanded", !expanded);
+      });
+
+      function enterSite() {
+        window.location.href = "{{ url_for('welcom2')}}";
+      }
+    </script>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 someraho.netlify.app/. All rights reserved.</p>
+        <button class="btn" onclick="enterSite()">Abo turi bo</button>
+      </div>
+
+      <p>Sobanuza byinshi unyuze ku mbuga zacu zinyuranye:</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/groups/2000949084066946/" target="_blank">
+          <img
+            src="/static/icons/icons/facebook w.jpg"
+            alt="Facebook"
+            class="social-icon"
+          />
+        </a>
+        <a
+          href="https://whatsapp.com/channel/0029Vb6lvp04inouE4Voll2a"
+          target="_blank"
+        >
+          <img
+            src="/static/icons/icons/whatsapp2.jpg"
+            alt="WhatsApp"
+            class="social-icon"
+          />
+        </a>
+        <a href="https://t.me/somerahoRwa" target="_blank">
+          <img
+            src="/static/icons/icons/telegrams .jpg"
+            alt="Telegram"
+            class="social-icon"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

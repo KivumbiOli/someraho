@@ -1,0 +1,94 @@
+{% extends "layout_public.html" %} {% block title %}amategeko n'amabwiriza{%
+endblock %} {% block content %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="../static/images/Favicon.jpeg" type="image/png" />
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+  }
+  h1 {
+    color: #333;
+  }
+  h2 {
+    margin-top: 20px;
+    color: #444;
+  }
+  p {
+    color: #555;
+  }
+  ul {
+    margin-left: 0px;
+  }
+</style>
+<h1>Amategeko n’Amabwiriza yo Gukoresha Urubuga</h1>
+
+<p>
+  Murakaza neza ku rubuga rwacu rwigisha amategeko y’umuhanda. Mugukoresha uru
+  rubuga, uba wemeye kubahiriza aya mategeko n’amabwiriza akurikira:
+</p>
+
+<h2>1. Intego y’Urubuga</h2>
+<p>
+  Urubuga rugamije gufasha abantu kwiga no gusobanukirwa amategeko y’umuhanda mu
+  Rwanda. Ibyo usanga hano bigenewe kwigisha, si igisimbura ibizamini bya police
+  cyangwa ibitabo byemewe n’amategeko.
+</p>
+
+<h2>2. Uburenganzira n’Uburyo bwo Gukoresha</h2>
+<ol>
+  <li>
+    Ntiwemerewe gukwirakwiza cyangwa gukoresha ibiri ku rubuga mu nyungu zawe
+    bwite utabiherewe uburenganzira.
+  </li>
+  <li>
+    Ntiwemerewe guhindura cyangwa gusibanganya ibisobanuro biri ku rubuga.
+  </li>
+  <li>
+    Uwemerewe gukoresha uru rubuga ni umuntu ushaka kwiga amategeko y’umuhanda
+    witegura ikizamini cy'uruhushya rwagatwganyo(provisoir)gusa.
+  </li>
+</ol>
+
+<h2>3. Umutekano w’Amakuru</h2>
+<p>
+  Uru rubuga rushobora gukusanya amakuru amwe ajyanye n’ukuntu wakoresheje
+  urubuga, ariko ntabwo dukusanya amakuru y’ibanga ku giti cyawe tudahawe
+  uburenganzira.
+</p>
+
+<h2>4. Kwirengera</h2>
+<p>
+  Ibiri ku rubuga bigenewe kwigisha gusa. Ntitwakwishingira amakosa cyangwa
+  ibisobanuro bishobora kuba bituzuye cyangwa byahindutse. Ni inshingano zawe
+  kugenzura amakuru yemewe mu gihe ugiye gukora ikizamini cya provisoir.
+</p>
+
+<h2>5. Impinduka</h2>
+<p>
+  Amategeko n’amabwiriza ashobora guhindurwa igihe icyo ari cyo cyose. Tuzajya
+  tubatangariza impinduka kuri uru rubuga.
+</p>
+
+<h2>6. Kuvugana Natwe</h2>
+<p>
+  Niba ufite ikibazo cyangwa igitekerezo kijyanye n’aya mategeko, watwandikira
+  ku rupapuro unyuze👉
+  <a href="{{url_for('twandikire')}}">hano twandikire</a>.
+</p>
+
+<p>
+  <strong
+    >Murakoze gukoresha urubuga rwacu! Tutumire n'abandi barwitabire!</strong
+  >
+</p>
+<br /><br />
+<div id="footer-container"></div>
+
+<link rel="stylesheet" href="static/footer.css" />
+<script src="static/footer.js" defer></script>
+{% endblock %}

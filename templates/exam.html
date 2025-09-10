@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="rw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images3/Favicon.jpeg" type="image/png" />
+
+    <title>ikizamini cy'amategeko y'umuhanda</title>
+    <style>
+      h1 {
+        background-color: white;
+        color: rgb(0, 119, 128);
+        text-align: center;
+      }
+      body {
+        text-align: center;
+        background-color: lightblue;
+      }
+      button,
+      a.button {
+        background-color: #175a63;
+        color: white;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      button:hover,
+      a.button:hover {
+        background-color: #23828e;
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      button:active,
+      a.button:active {
+        transform: scale(0.98);
+        background-color: #23828e;
+      }
+
+      #quiz-container,
+      #result {
+        display: none;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8PZ1B5D9DC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8PZ1B5D9DC");
+    </script>
+  </head>
+  <h1>IPAJI Y'IKIZAMINI</h1>
+  <body>
+    <button id="start-button" onclick="startTest()">Tangira Ikizamini</button>
+
+    <div id="quiz-container" style="display: none">
+      <div id="timer"></div>
+      <form id="quiz-form"></form>
+      <button type="button" onclick="submitTest()">Soza Ikizamini</button>
+    </div>
+
+    <div id="result" style="display: none"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

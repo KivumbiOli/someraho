@@ -1,0 +1,120 @@
+{% extends "layout.html" %} {% block title %}Ahabanza- Someraho{% endblock %} {%
+block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: lightblue;
+    display: flex;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .related-content {
+    background-color: #f9f9f9;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+
+  .related-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+  }
+
+  .related-content p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+  }
+
+  .related-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h3 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    color: #666;
+  }
+
+  .card .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: rgb(10, 76, 86);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .card .btn:hover {
+    background-color: lightblue;
+  }
+</style>
+
+<h2>Murakaza neza, {{ name }}!</h2>
+<p>Umaze kwinjira muri konti yawe.</p>
+<br /><br />
+
+<section class="related-content">
+  <h2>Ibindi wiga kuri Someraho</h2>
+  <p>
+    Hano ushobora kongera ubumenyi bwawe ku
+    <strong>Amategeko y’Umuhanda</strong> ndetse n’ibindi bikubiye mu masomo
+    nk':
+  </p>
+
+  <div class="related-cards">
+    <!-- Card 1: Ikizamini -->
+    <div class="card">
+      <h3>Ikizamini</h3>
+      <p>
+        Gera ku Kizamini cyagufasha gusuzuma ubumenyi bwawe, witegura gukora
+        icya Police cy'uruhushya rwagateganyo ku mategeko y’umuhanda. Ikizamini
+        ni ubuntu!
+      </p>
+      <a href="{{ url_for('exam') }}" class="btn">Fata Ikizamini</a>
+    </div>
+
+    <!-- Card 2: Amasomo -->
+    <div class="card">
+      <h3>Amasomo</h3>
+      <p>
+        Soma amasomo arimo amategeko yose y’umuhanda hamwe n’ibyapa bigufasha
+        kumva neza ugasobanukirwa.
+      </p>
+      <a href="{{ url_for('ibyigwa') }}" class="btn">Soma Amasomo</a>
+    </div>
+
+    <!-- Card 3: Ibibazo & Ibisubizo -->
+    <div class="card">
+      <h3>Ibibazo & Ibisubizo</h3>
+      <p>
+        Reba ibibazo byakunze kubazwa n’uko bisubizwa kugira ngo witegure neza
+        ikizamini cy'uruhushya rwagateganyo(provisoir).
+      </p>
+      <a href="{{ url_for('ibibazo') }}" class="btn">Reba Ibibazo</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,3971 @@
+<!DOCTYPE html>
+<html lang="rw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ibibazo n'Ibisubizo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f4f4f4c8;
+        padding: 20px;
+      }
+
+      .qa-block {
+        background: #fff;
+        border-left: 4px solid #2e8b57;
+        margin-bottom: 20px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .question {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .option {
+        margin-left: 20px;
+        color: #444;
+        padding-left: 5px;
+      }
+
+      .answer {
+        color: green;
+        font-weight: bold;
+      }
+
+      .btn {
+        margin: 30px auto 0;
+        padding: 10px 20px;
+        background: rgb(122, 12, 12);
+        color: white;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        background: red;
+      }
+    </style>
+     <script>
+      function enterSite() {
+        window.location.href ="{{ url_for('ibyigwa')}}";
+      }
+    </script>
+  </head>
+  <body>
+
+    <button class="btn" onclick="enterSite()">← Subira inyuma</button>
+    </div><br>
+
+   
+    <div class="qa-block">
+      <div class="question">
+        1. Ikinyabiziga cyose cyangwa ibinyabiziga bigenda bigomba kugira:
+      </div>
+      <div class="option answer">(a) Umuyobozi</div>
+      <div class="option">b) Umuherekeza</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        2. Ijambo “akayira” bivuga inzira nyabagendwa ifunganye yagenewe gusa:
+      </div>
+      <div class="option">a) Abanyamaguru</div>
+      <div class="option">b) Ibinyabiziga bigendera ku biziga bibiri</div>
+      <div class="option answer"> (c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        3. Umurongo uciyemo uduce umenyesha ahegereye umurongo ushobora kuzuzwa
+        n’uturanga gukata tw’ibara ryera utwo turanga cyerekezo tumenyesha:
+      </div>
+      <div class="option">
+        a) Igisate cy’umuhanda abayobozi bagomba gukurikira
+      </div>
+      <div class="option">b) Ahegereye umurongo ukomeje</div>
+      <div class="option answer">
+        (c) Igabanurwa ry’umubare w’ibisate by’umuhanda mu cyerekezo bajyamo
+      </div>
+      <div class="option">d) A na C nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        4. Ahantu ho kugendera mu muhanda herekanwa n’ibimenyetso bimurika
+        ibinyabiziga ntibishobora kuhagenda:
+      </div>
+      <div class="option">a) Biteganye</div>
+      <div class="option">b) Ku murongo umwe</div>
+      <div class="option">c) A na B nibyo</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        5. Ibinyabiziga bikurikira bigomba gukorerwa isuzumwa buri mwaka:
+      </div>
+      <div class="option">
+        a) Ibinyabiziga bigenewe gutwara abagenzi muri rusange
+      </div>
+      <div class="option">
+        b) Ibinyabiziga bigenewe gutwara ibintu birengeje toni 3.5
+      </div>
+      <div class="option">c) Ibinyabiziga bigenewe kwigisha gutwara</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        6. Ubugari bwa romoruki ikuruwe n’ikinyamitende itatu ntibugomba kurenza
+        ibipimo bikurikira:
+      </div>
+      <div class="option">a) cm75</div>
+      <div class="option">b) cm125</div>
+      <div class="option">c) cm265</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        7. Uburebure bw’ibinyabiziga bikurikira ntibugomba kurenga metero 11:
+      </div>
+      <div class="option">a) Ibifite umutambiko umwe uhuza imipira</div>
+      <div class="option">
+        b) Ibifite imitambiko ibiri ikurikiranye mu bugari bwayo
+      </div>
+      <div class="option">c) Makuzungu</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        8. Ikinyabiziga kibujijwe guhagarara akanya kanini aha hakurikira:
+      </div>
+      <div class="option">
+        a) Ahatarengeje metero 1 imbere cyangwa inyuma y’ikinyabiziga gihagaze
+        akanya gato cyangwa kanini
+      </div>
+      <div class="option">b) Ahantu hari ibimenyetso bibuza byabugenewe</div>
+      <div class="option">
+        c) Aho abanyamaguru banyura mu muhanda ngo bakikire inkomyi
+      </div>
+      <div class="option answer">(d) Ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">9. Kunyuranaho bikorerwa:</div>
+      <div class="option">a) Mu ruhande rw’iburyo gusa</div>
+      <div class="option">b) Igihe cyose ni ibumoso</div>
+      <div class="option">c) Iburyo iyo unyura ku nyamaswa</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        10. Icyapa cyerekana umuvuduko ntarengwa ikinyabiziga kitagomba kurenza
+        gishyirwa gusa ku binyabiziga bifite uburemere ntarengwa bukurikira:
+      </div>
+      <div class="option">a) Burenga toni 13</div>
+      <div class="option">b) Burenga toni 2</div>
+      <div class="option">c) Burenga toni 24</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <!-- Questions 11 to 30 -->
+    <!-- Questions 11 to 30 -->
+    <div class="qa-block">
+      <div class="question">
+        11. Ahatari mu nsisiro umuvuduko ntarengwa mu isaha wa velomoteri ni:
+      </div>
+      <div class="option answer">(a) Km50</div>
+      <div class="option">b) Km40</div>
+      <div class="option">c) Km30</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+       12. Umuyobozi ugenda mu muhanda igihe ubugari bwawo budatuma anyuranaho nta nkomyi ashobora kunyura mu kayira k’abanyamaguru 
+ariko amaze kureba ibi bikurikira:
+      </div>
+      <div class="option">a) Umuvuduko w’abanyamaguru</div>
+      <div class="option">b) Ubugari bw’umuhanda</div>
+      <div class="option">c) Umubare w’abanyamaguru</div>
+      <div class="option answer"> (d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+       13. Ku byerekeye kwerekana ibinyabiziga n’ukumurika kwabyo ndetse no kwerekana ihindura ry’ibyerekezo byabyo. Birabujijwe gukora 
+andi matara cyangwa utugarurarumuri uretse ibitegetswe ariko ntibireba amatara akurikira:
+      </div>
+      <div class="option">a) Amatara ndanga</div>
+      <div class="option answer">(b) Amatara ari imbere mu modoka</div>
+      <div class="option">c) Amatara ndangaburambarare</div>
+      <div class="option">d) Ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        14. Umuvuduko ntarengwa w’amapikipiki mu isaha ni:
+      </div>
+      <div class="option">a) Km25</div>
+      <div class="option">b) Km70</div>
+      <div class="option">c) Km40</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        15. Uburyo bukoreshwa kugirango ikinyabiziga kigende gahoro igihe feri
+        idakora neza babwita:
+      </div>
+      <div class="option">a) Feri y’urugendo</div>
+      <div class="option">b) Feri yo guhagarara umwanya munini</div>
+      <div class="option answer"> (c) Feri yo gutabara</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        16. Nibura ikinyabiziga gitegetswe kugira uduhanagurakirahure tungahe:
+      </div>
+      <div class="option">a) 2</div>
+      <div class="option">b) 3</div>
+      <div class="option answer">(c) 1</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        17. Amatara maremare y’ikinyabiziga agomba kuzimwa mu bihe bikurikira:
+      </div>
+      <div class="option">
+        a) Iyo umuhanda umurikiye umuyobozi abasha kureba muri metero 20
+      </div>
+      <div class="option answer">
+         (b) Iyo ikinyabiziga kigiye kubisikana n’ibindi
+      </div>
+      <div class="option">c) Iyo ari mu nsisiro</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        18. Ikinyabiziga ntigishobora kugira amatara arenga abiri y’ubwoko bumwe
+        keretse kubyerekeye amatara akurikira:
+      </div>
+      <div class="option">a) Itara ndangamubyimba</div>
+      <div class="option">b) Itara ryerekana icyerekezo</div>
+      <div class="option">c) Itara ndangaburumbarare</div>
+      <div class="option answer">(d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        19. Ubugari bwa romoruki ikuruwe n’igare cyangwa velomoteri ntiburenza
+        ibipimo bikurikira:
+      </div>
+      <div class="option">a) cm25</div>
+      <div class="option">b) cm125</div>
+      <div class="option">c) cm45</div>
+      <div class="option answer"> (d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+       20. Ibinyabiziga bikoreshwa nka tagisi, bitegerereza abantu mu nzira nyabagendwa, bishobora gushyirwaho itara ryerekana ko ikinyabiziga 
+kitakodeshejwe. Iryo tara rishyirwaho ku buryo bukurikira:
+      </div>
+      <div class="option answer">
+         (a) Ni itara ry’icyatsi rishyirwa imbere ku kinyabiziga
+      </div>
+      <div class="option">b) Ni itara ry’icyatsi rishyirwa ibumoso</div>
+      <div class="option">c) Ni itara ry’umuhondo rishyirwa inyuma</div>
+      <div class="option">d) A na C ni ibisubizo by’ukuri</div>
+    </div>
+
+    <!-- Questions 21 to 30 -->
+    <div class="qa-block">
+      <div class="question">
+        21. Za otobisi zagenewe gutwara abanyeshuri zishobora gushyirwaho
+        amatara abiri asa n’icunga rihishije amyasa:
+      </div>
+      <div class="option">a) Amatara abiri ashyirwa inyuma</div>
+      <div class="option">b) Amatara abiri ashyirwa imbere</div>
+      <div class="option answer">
+        (c) Rimwe rishyirwa imbere irindi inyuma
+      </div>
+      <div class="option">d) b na c ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        22. Itara ryo guhagarara ry’ibara ritukura rigomba kugaragara igihe
+        ijuru rikeye nibura mu ntera ikurikira:
+      </div>
+      <div class="option">a) Metero 100 ku manywa na metero 20 mu ijoro</div>
+      <div class="option">b) Metero 150 ku manywa na metero50 mu ijoro</div>
+      <div class="option">c) Metero 200 ku manywa na metero100 mu ijoro</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        23. Iyo umuvuduko w’ibinyabiziga bidapakiye ushobora kurenga km50 mu
+        isaha ahategamye, bigomba kuba bifite ibikoresho by’ihoni byumvikanira
+        mu ntera:
+      </div>
+      <div class="option">a) Metero 100</div>
+      <div class="option">b) Metero 200</div>
+      <div class="option answer">(c) Metero 50</div>
+      <div class="option">d) Metero 150</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        24. Birabujijwe kugenza ibinyabiziga bigendeshwa na moteri... ariko ibyo
+        ntibikurikizwa ku binyabiziga bikurikira:
+      </div>
+      <div class="option">
+        a) Ku binyabiziga by’ingabo bijya ahatarenga km25
+      </div>
+      <div class="option">b) Ibinyabiziga bihinga</div>
+      <div class="option">c) Ibinyabiziga bya police</div>
+      <div class="option answer"> (d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        25. Igice cy'inzira nyabagendwa kigarukira ku mirongo ibiri yera
+        icagaguye ibangikanye... kiba ari:
+      </div>
+      <div class="option">a) Ahanyurwa n’amagare na velomoteri</div>
+      <div class="option">b) Ahanyurwa n’ingorofani</div>
+      <div class="option answer"> (c) Ahanyurwa n’ibinyamitende</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        26. Ubugari bwa romoruki ntiburenza ubugari bw’ikinyabiziga kiyikurura
+        iyo ikuruwe n’ibinyabiziga bikurikira:
+      </div>
+      <div class="option">a) Igare</div>
+      <div class="option">b) Velomoteri</div>
+      <div class="option answer">
+        (c) Ipikipiki ifite akanyabiziga kometse ku ruhande rwayo
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        27. Iyo hatarimo indi myanya birabujijwe gutwara ku ntebe y’imbere
+        y’imodoka abana badafite imyaka:
+      </div>
+      <div class="option">a) Imyaka 10</div>
+      <div class="option answer"> (b) Imyaka 12</div>
+      <div class="option">c) Imyaka 7</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        28. Icyapa kivuga gutambuka mbere y’ibinyabiziga biturutse imbere gifite
+        amabara akurikira:
+      </div>
+      <div class="option">a) Ubuso ni umweru</div>
+      <div class="option">b) Ikirango ni umutuku n’umukara</div>
+      <div class="option">c) Ikirango ni umweru n’umukara</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        29. Ni ryari itegeko rigenga gutambuka mbere kw’iburyo rikurikizwa mu
+        masangano:
+      </div>
+      <div class="option">a) Iyo nta cyapa cyo gutambuka mbere gihari</div>
+      <div class="option">
+        b) Iyo ikimenyetso kimurika cyagenewe ibinyabiziga kidakora
+      </div>
+      <div class="option answer">(c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        30. Ibimenyetso bimurika byerekana uburyo bwo kugendera mu muhanda
+        kw'ibinyabiziga bishyirwa iburyo bw'umuhanda. Ariko bishobora no
+        gushyirwa ibumoso cyangwa hejuru y’umuhanda:
+      </div>
+      <div class="option">
+        a) Hakurikijwe icyerekezo abagenzi bireba baganamo
+      </div>
+      <div class="option">
+        b) Hakurikijwe icyo ibyo bimenyetso bigamije kwerekana
+      </div>
+      <div class="option answer">(c) Kugirango birusheho kugaragara neza</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        30. Ibimenyetso bimurika byerekana uburyo bwo kugendera mu muhanda
+        kw'ibinyabiziga bishyirwa iburyo bw'umuhanda. Ariko bishobora no
+        gushyirwa ibumoso cyangwa hejuru y’umuhanda:
+      </div>
+      <div class="option">
+        a) Hakurikijwe icyerekezo abagenzi bireba baganamo
+      </div>
+      <div class="option">
+        b) Hakurikijwe icyo ibyo bimenyetso bigamije kwerekana
+      </div>
+      <div class="option answer">c) Kugirango birusheho kugaragara neza</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        31. Iyo itara ry’umuhondo rimyatsa rikoreshejwe mu masangano y’amayira
+        ahwanyije agaciro rishyirwa ahagana he:
+      </div>
+      <div class="option">a) Kuri buri nzira</div>
+      <div class="option">b) Hagati y’amasangano</div>
+      <div class="option">c) Iburyo bw’amasangano</div>
+      <div class="option answer">d) a na b ni ibisubizo by’ ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        32. Inkombe z’inzira nyabagendwa cyangwa z’umuhanda zishobora
+        kugaragazwa n’ibikoresho ngarurarumuri. Ibyo bikoresho bigomba
+        gushyirwaho ku buryo abagenzi babibona :
+      </div>
+      <div class="option">a) Babona gusa ibumoso bwabo iby’ibara ritukura</div>
+      <div class="option">
+        b) Iburyo babona iby’ibara risa n’icunga rihishije gusa
+      </div>
+      <div class="option">c) Babona iby’ibara ry’umuhondo ibumoso</div>
+      <div class="option answer">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        33. Ibinyabiziga bikurikira bigomba gukorerwa isuzumwa rimwe mu mezi 6:
+      </div>
+      <div class="option">a) Ibinyabiziga bitwara abagenzi muri rusange</div>
+      <div class="option">
+        b) Ibinyabiziga bigenewe gutwara ibintu birengeje toni 3.5
+      </div>
+      <div class="option">c) Ibinyabiziga bigenewe kwigisha gutwara</div>
+      <div class="option answer">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        34. Iyo kuyobya umuhanda ari ngombwa bigaragazwa kuva aho uhera no
+        kuburebure bwawo n’icyapa gifite ubuso bw’amabara akurikira:
+      </div>
+      <div class="option answer">a) Ubururu</div>
+      <div class="option">b) Umweru</div>
+      <div class="option">c) Umutuku</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        35. Ku mihanda ibyapa bikurikira bigomba kugaragazwa ku buryo bumwe:
+      </div>
+      <div class="option">a) Ibyapa biyobora n’ibitegeka</div>
+      <div class="option">b) Ibyapa biburira n’ibitegeka</div>
+      <div class="option answer">c) Ibyapa bibuza n’ibitegeka</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        36. Ni iyihe feri ituma imodoka igenda buhoro kandi igahagarara ku buryo
+        bwizewe bubangutse kandi nyabwo, uko imodoka yaba yikoreye kose yaba
+        igeze ahacuramye cyangwa ahaterera:
+      </div>
+      <div class="option answer">a) Feri y’urugendo</div>
+      <div class="option">b) Feri yo gutabara</div>
+      <div class="option">c) Feri yo guhagarara umwanya munini</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        37. Ibizirikisho by’iminyururu cyangwa by’insinga kimwe n’ibindi
+        by’ingoboka bikoreshwa gusa igihe nta kundi umuntu yabigenza kandi nta
+        kindi bigiriwe uretse gusa kugirango ikinyabiziga kigere aho kigomba
+        gukorerwa kandi nturenze na rimwe km 20 mu isaha, ibyo bizirikisho
+        bigaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option">a) Agatambaro gatukura kuri cm 50 z’umuhanda</div>
+      <div class="option">b) Ikimenyetso cy’itara risa n’icunga rihishije</div>
+      <div class="option">
+        c) Icyapa cyera cya mpande enye zingana gifite cm 20 kuri buri ruhande
+      </div>
+      <div class="option answer">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        38. Uretse mu mujyi, ku yindi mihanda yajyenwe na minisitiri ushinzwe
+        gutwara abantu n’ibintu, uburemere ntarengwa ku binyabiziga bifite
+        imitambiko itatu cyangwa irenga hatarimo makuzungu ni :
+      </div>
+      <div class="option">a) Toni 10</div>
+      <div class="option">b) Toni 12</div>
+      <div class="option answer">c) Toni 16</div>
+      <div class="option">d) Toni 24</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        39. Ubugari bw’imizigo yikorewe n’ibinyamitende itatu n’ubwiyikorewe
+        n’ibinyamitende 4 bifite cyangwa bidafite moteri kimwe n’ubw’iyikorewe
+        na romuruki zikuruwe n’ibyo binyabiziga ntibushobora kurenga ibipimo
+        bikurikira:
+      </div>
+      <div class="option">
+        a) cm 30 ku bugari bw’icyo kinyabiziga kidapakiye
+      </div>
+      <div class="option">
+        b) Ubugari ntarengwa budakuka ni metero 2 na sentimetero 50
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        40. Kunyura ku binyabiziga bindi, uretse icy’ibiziga bibiri, bibujijwe
+        aha hakurikira:
+      </div>
+      <div class="option">a) Hafi y’iteme iyo hari umuhanda ufunganye</div>
+      <div class="option">b) Hafi y’aho abanyamaguru banyura</div>
+      <div class="option">c) Hafi y’ibice by’umuhanda bimeze nabi</div>
+      <div class="option answer">d) Ibi bisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        41. Iyo nta mategeko awugabanya by’umwihariko, umuvuduko ntarengwa ku
+        modoka zitwara abagenzi mu buryo bwa rusange ni:
+      </div>
+      <div class="option answer">a) Km 60 mu isaha</div>
+      <div class="option">b) Km 40 mu isaha</div>
+      <div class="option">c) Km 25 mu isaha</div>
+      <div class="option">d) Km20 mu isaha</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        42. Iyo nta mategeko awugabanya by’umwihariko, umuvuduko ntarengwa ku
+        modoka zikoreshwa nk’amavatiri y’ifasi cyangwa amatagisi zifite
+        uburemere bwemewe butarenga kilogarama 3500 ni:
+      </div>
+      <div class="option">a) Km 60 mu isaha</div>
+      <div class="option">b) Km 40 mu isaha</div>
+      <div class="option answer">c) Km 75 mu isaha</div>
+      <div class="option">d) Km20 mu isaha</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        43. Ikinyabiziga kibujijwe guhagarara akanya kanini aha hakurikira :
+      </div>
+      <div class="option">
+        a) Imbere y’ahantu hinjirwa hakasohokerwa n’abantu benshi
+      </div>
+      <div class="option">
+        b) Mu muhanda aho ugabanyijemo ibisate bigaragazwa n’imirongo
+        idacagaguye
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        44. Iyo bwije kugeza bukeye cyangwa bitewe n’uko ibihe bimeze nk’igihe
+        cy’ibihu cyangwa cy’imvura bitagishoboka kubona neza muri m 200,
+        udutsiko twose tw’abanyamaguru nk’imperekerane cyangwa udutsiko
+        tw’abanyeshuri bari ku murongo bayobowe n’umwarimu, iyo bagenda mu
+        muhanda ku isonga hakaba hari abantu barenze umwe bagomba kugaragazwa
+        kuburyo bukurikira :
+      </div>
+      <div class="option">a) Imbere ni itara ry’umuhondo ritwariwe ibumoso</div>
+      <div class="option">
+        b) Inyuma ni itara ryera ritwariwe ibumoso n’umuntu uri ku murongo
+        w’inyuma hafi y’umurongo ugabanya umuhanda mo kabiri
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        45. Utuyira turi ku mpande z’umuhanda n’ inkengero zigiye hejuru
+        biharirwa abanyamaguru mu bihe bikurikira:
+      </div>
+      <div class="option">
+        a) Iyo hari amategeko yihariye yerekanwa n’ibimenyetso
+      </div>
+      <div class="option">b) Iyo badatatanye kandi bayobowe n’umwarimu</div>
+      <div class="option answer">
+        c) Iyo hatari amategeko yihariye yerekanwa n’ibimenyetso
+      </div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        46. Imburira zimurika zemerewe gukoreshwa kugirango bamenyeshe umuyobozi
+        ko bagiye kumunyuraho aha hakurikira:
+      </div>
+      <div class="option">a) Mu nsisiro gusa</div>
+      <div class="option">b) Ahegereye inyamaswa zikurura</div>
+      <div class="option">c) Hafi y’amatungo</div>
+      <div class="option answer">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        47. Uburemere ntarengwa bwemewe ntibushobora kurenga ½ cy’uburemere
+        bw’ikinyabiziga gikurura nubw’umuyobozi kuri romoruki zikurikira :
+      </div>
+      <div class="option">a) Romoruki ifite feri y’urugendo</div>
+      <div class="option answer">b) Romoruki idafite feri y’urugendo</div>
+      <div class="option">c) Romoruki itarenza kg 750</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        48. Ibinyabiziga bifite ubugari bufite ibipimo bikurikira bigomba kugira
+        amatara ndangaburumbarare :
+      </div>
+      <div class="option answer">a) Metero 2 na cm 10</div>
+      <div class="option">b) Metero 2 na cm 50</div>
+      <div class="option">c) Metero 311</div>
+      <div class="option">d) Metero 2</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        49. Nta tara na rimwe cyangwa akagarurarumuri bishobora kuba bifunze ku
+        buryo igice cyabyo cyo hasi cyane kimurika kitaba kiri hasi y’ibipimo
+        bikurikira kuva ku butaka igihe ikinyabiziga kidapakiye :
+      </div>
+      <div class="option">a) Cm 30</div>
+      <div class="option answer">b) Cm 40</div>
+      <div class="option">c) Cm 50</div>
+      <div class="option">d) Metero 1 na cm 55</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        50. Iyo ikinyabiziga gifite amatara abiri cyangwa menshi y’ubwoko bumwe
+        ayo matara agomba kugira ibara rimwe n’ingufu zingana kandi akagomba
+        gushyirwaho ku buryo buteganye uhereye ku murongo ugabanya
+        ikinyabizigamo kabiri mu burebure bwacyo. Ariko ibi ntibikurikizwa ku
+        matara akurikira:
+      </div>
+      <div class="option">a) itara ndangamubyimba</div>
+      <div class="option">b) itara ndangaburumbarare</div>
+      <div class="option answer">
+        c) itara ribonesha icyapa kiranga numero y’ikinyabiziga inyuma
+      </div>
+      <div class="option">d) A na B byose nibyo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        51. Ahari hejuru cyane y’ubuso bumurika h’amatara ndangambere na
+        ndanganyuma ntihashobora kuba aharenze ibipimo bikurikira hejuru
+        y’ubutaka iyo ikinyabiziga kidapakiye:
+      </div>
+      <div class="option">a) m1 na cm 50</div>
+      <div class="option">b) m1 na cm 75</div>
+      <div class="option answer">c) m1 na cm 90</div>
+      <div class="option">d) m2 na cm 10</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        52. Ni ryari ikinyabiziga gishobora kugenda mu muhanda moteri itaka
+        cyangwa vitesi idakora:
+      </div>
+      <div class="option">a) igihe kigenda ahamanuka</div>
+      <div class="option answer">b) igihe gikuruwe n’ikindi kinyabiziga</div>
+      <div class="option">c) igihe gifite feri y’urugendo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        52. Umurongo mugari wera udacagaguye ushobora gucibwa ku muhanda
+        kugirango ugaragaze ibi bikurikira:
+      </div>
+      <div class="option answer">a) inkombe mpimbano z’umuhanda</div>
+      <div class="option">b) ahahagararwa umwanya muto n’umunini</div>
+      <div class="option">c) ahanyura abayobozi b’amagare</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        53. Buri modoka cyangwa buri romoruki ikuruwe n’iyo modoka bishobora
+        kugira itara risa n’icyatsi kibisi bituma umuyobozi yerekana ko yabonye
+        ikimenyetso cy’uwitegura kumunyuraho. Iryo tara rigomba gushyirwa aha
+        hakurikira:
+      </div>
+      <div class="option">a) hafi y’inguni y’ibumoso bw’ikinyabiziga</div>
+      <div class="option">b) inyuma hafi y’impera y’iburyo bw’ikinyabiziga</div>
+      <div class="option">c) inyuma ahegereye inguni y’iburyo</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        54. Ibinyabiziga bikurikira bigomba kugira icyerekana umuvuduko kiri aho
+        umuyobozi areba neza kandi kigahora kitabwaho kugirango kigume gukora
+        neza:
+      </div>
+      <div class="option">
+        a) ibinyabiziga bifite umuvuduko nibura wa km 60 mu isaha
+      </div>
+      <div class="option answer">
+        b) ibinyabiziga bishobora kurenza km 40 mu isaha
+      </div>
+      <div class="option">c) ibinyabiziga bishobora kurenza km 30 mu isaha</div>
+      <div class="option">d) ibinyabiziga bishobora kurenza km 25 mu isaha</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        55. Ubugari bw’imizigo yikorewe n’ipikipiki idafite akanyabiziga ko
+        kuruhande kimwe n’ubwa romoruki ikuruwe na bene icyo kinyabiziga
+        ntibushobora kurenza ibipimo bikurikira:
+      </div>
+      <div class="option answer">a) m 1.25</div>
+      <div class="option">b) cm 30</div>
+      <div class="option">c) cm 75</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        56. Ibinyabiziga bikurikira bigomba kugira itara ry’ubururu rimyatsa
+        riboneka mu mpande zose:
+      </div>
+      <div class="option">
+        a) ibinyabiziga bifite ubugari burenga m 2 na cm 10
+      </div>
+      <div class="option">b) ibinyabiziga bya police y’igihugu</div>
+      <div class="option answer">c) ibinyabiziga ndakumirwa</div>
+      <div class="option">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        57. Ibinyabiziga bihinga n’ibindi bikoresho byihariye bikoreshwa n’ibigo
+        bipatana imirimo, iyo bigenda mu nzira nyabagendwa igihe cya nijoro
+        cyangwa bitewe n’uko ibihe bimeze bitagishoboka kubona neza muri m 200
+        bishobora kugaragazwa inyuma n’amatara 2 atukura, bipfa kuba bitarenza
+        ibipimo bikurikira:
+      </div>
+      <div class="option">a) kutarenza umuvuduko wa km20 mu isaha</div>
+      <div class="option">
+        b) uburebure bwabyo habariwemo ibyo bitwaye bukaba butarengeje m6
+      </div>
+      <div class="option">c) uburebure ntarengwa ntiburenga m8</div>
+      <div class="option answer">d) A na B nibyo bisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        58. Iyo romoruki iziritse ku kinyamitende, velomoteri n’amapikipiki
+        bidafite akanyabiziga ko kuruhande uretse ikinyamitende na velomoteri
+        bidafite umuyobozi, iyo uburumbarare bwayo cyangwa bw’ibyo yikoreye
+        bituma itara ry’ikinyabiziga gikurura ritagaragara igihe bitagishoboka
+        kubona neza muri m 200 bigomba kugaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option answer">
+        a) itara ryera cyangwa ry’umuhondo cyangwa risa n’icunga rihishije riri
+        kuri rumoruki inyuma
+      </div>
+      <div class="option">
+        b) itara ry’icyatsi cyangwa ry’umuhondo cyangwa risa n’icunga rihishije
+        riri kuri rumoruki inyuma
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        59. Ku kinyabiziga cyangwa ibinyabiziga bikururana igice kirenga ku
+        biziga ntikigomba kurenga ibipimo bikurikira:
+      </div>
+      <div class="option answer">a) inyuma ni m 3 na cm 50</div>
+      <div class="option">b) imbere ni m 1 na cm 70</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        60. Iyo amatara y’ikinyabiziga agomba gucanwa kandi igihe imizigo isumba
+        impera y’ikinyabiziga ho metero irenga igice gihera cy’imizigo
+        kigaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option">
+        a) itara ritukura cyangwa akagarurarumuri ku mutuku ku manywa
+      </div>
+      <div class="option">
+        b) agatambaro gatukura gafite nibura cm 50 z’uruhande mu ijoro
+      </div>
+      <div class="option">
+        c) itara ry’umuhondo cyangwa akagarurarumuri k’umuhondo
+      </div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        61. Iyo imizigo igizwe n’ibinyampeke, ikawa, ipamba idatonoye, ibishara,
+        ibyatsi, ibishami cyangwa ubwatsi bw’amatungo bidahambiriye uretse
+        amapaki afunze, ubugari bwayo bushobora kugera ku bipimo bikurikira:
+      </div>
+      <div class="option">a) m 2.50</div>
+      <div class="option answer">b) m 2.75</div>
+      <div class="option">c) m 3</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        62. Uretse mu mijyi kuyindi mihanda yagenywe na minisiteri ushinzwe
+        gutwara ibintu n’abantu, uburemere ntarengwa bwemewe ku binyabiziga
+        bifatanye bifite imitambiko itatu ni:
+      </div>
+      <div class="option">a) toni 20</div>
+      <div class="option">b) toni 16</div>
+      <div class="option answer">c) toni 12</div>
+      <div class="option">d) toni 10</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        63. Buri modoka cyangwa buri romoruki ikuruwe n’iyo modoka bishobora
+        kugira itara rituma umuyobozi yerekana ko yabonye ikimenyetso
+        cy’uwitegura kumunyuraho. Iryo tara rifite amabara akurikira:
+      </div>
+      <div class="option">a) umuhondo</div>
+      <div class="option answer">b) icyatsi kibisi</div>
+      <div class="option">c) umweru</div>
+      <div class="option">d) umutuku</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        64. Ikinyabiziga cyangwa ibinyabiziga bikururana bifite imitambiko ibiri
+        ikurikiranye mu bugari bwayo ni ukuvuga imitambiko yihindukiza kucyo
+        ifungiyeho, uburebure bwabyo ntibugomba kurenza ibipimo bikurikira:
+      </div>
+      <div class="option">a) m11</div>
+      <div class="option">b) m10</div>
+      <div class="option answer">c) m7</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        65. Bumwe muri ubu bwoko bwa feri ituma imodoka iguma aho iri uko yaba
+        yikoreye kose ku muzamuko cyangwa ku gacuri bya 16%, imyanya ya feri
+        igomba gufata igakomeza kwegera kuburyo bw’ibyuma niyo umuyobozi yaba
+        atarimo:
+      </div>
+      <div class="option answer">a) feri yo guhagarara umwanya munini</div>
+      <div class="option">b) feri y’urugendo</div>
+      <div class="option">c) feri yo gutabara</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        66. Utugarurarumuri turi mu mbavu z’ikinyabiziga tugomba kugira ibara
+        rikurikira:
+      </div>
+      <div class="option">a) umweru</div>
+      <div class="option answer">b) umuhondo</div>
+      <div class="option">c) umutuku</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        67. Romoruki zifite ubugari ntarengwa bwa cm 80 zishobora gushyirwaho
+        akagarurarumuri kamwe gusa iyo zikuruwe n’ibinyabiziga bikurikira:
+      </div>
+      <div class="option">a) velomoteri</div>
+      <div class="option answer">
+        b) ipikipiki idafite akanyabiziga ku ruhande
+      </div>
+      <div class="option">c) amavatiri y’ifasi</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        68. Amatara maremare y’ibara ryera cyangwa ry’umuhondo agomba, nijoro
+        igihe ijuru rikeye, kumurika mu muhanda mu ntera ya m 100 nibura imbere
+        y’ikinyabiziga, ariko ku binyabiziga bifite moteri itarengeje za
+        sentimetero kibe 125 iyo ntera igira ibipimo bikurikira:
+      </div>
+      <div class="option">a) m200</div>
+      <div class="option">b) m100</div>
+      <div class="option">c) m85</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        69. Iyo banyuze iruhande rw’inkomyi abanyamaguru bagomba gukikira
+        banyuze mu muhanda, abayobozi bagomba gusiga umwanya ufite ubugari bwa m
+        1 nibura hagati yabo nayo. Iyo ibyo bidashobora kubahirizwa kandi
+        umunyamaguru akaba anyura hafi yiyo nkomyi, umuyobozi agomba kuyikikira
+        afite umuvuduko utarengeje ibipimo bikurikira:
+      </div>
+      <div class="option">a) km 10 mu isaha</div>
+      <div class="option">b) km 20 mu isaha</div>
+      <div class="option">c) km 30 mu isaha</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        70. Guhagarara akanya gato no guhagarara akanya kanini bibujijwe cyane
+        cyane aha hakurikira:
+      </div>
+      <div class="option">a) ku mihanda y’icyerekezo kimwe hose</div>
+      <div class="option answer">
+        b) mu ruhande ruteganye n’urwo ikindi kinyabiziga gihagazemo akanya gato
+        cyangwa kanini
+      </div>
+      <div class="option">
+        c) ku mihanda ibisikanirwamo, iyo ubugari bw’umwanya w’ibinyabiziga
+        ugomba gutuma bibisikana butagifite m12
+      </div>
+      <div class="option">d) ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        71. Amatara ndangambere n’aya ndanganyuma y’imodoka zitarengeje m 6
+        z’uburebure na m 2 z’ubugari habariwemo imitwaro kandi nta kinyabiziga
+        kindi kiziritseho ashobora gusimburwa n’amatara akurikira, iyo ibyo
+        binyabiziga bihagaze umwanya muto cyangwa munini mu nsisiro bibangikanye
+        ku ruhande rw’umuhanda:
+      </div>
+      <div class="option">a) amatara magufi</div>
+      <div class="option">b) amatara ndangaburumbarare</div>
+      <div class="option answer">c) amatara yo guhagarara umwanya munini</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        72. Iyo kuva bwije kugeza bukeye cyangwa bitewe nuko ibihe bimeze
+        nk’igihe cy’igihu cyangwa cy’imvura bitagishoboka kubona neza muri m
+        200, imirongo y’ingabo z’igihugu zigendera kuri gahunda n’utundi dutsiko
+        twose tw’abanyamaguru nk’imperekerane cyangwa udutsiko tw’abanyeshuri
+        bari ku murongo bayobowe na mwarimu, iyo bagenda mu muhanda ku isonga
+        hakaba hari abantu barenze umwe, bagaragzwa ku buryo bukurikira:
+      </div>
+      <div class="option answer">
+        a) imbere ni itara ryera ritwariwe ku ruhande rw’ibumoso n’umuntu uri ku
+        murongo w’imbere hafi y’umurongo ugabanya umuhanda mo kabiri
+      </div>
+      <div class="option">
+        b) inyuma ni itara umuhondo ritwariwe ku ruhande rw’ibumoso n’umuntu uri
+        ku murongo w’inyuma hafi y’umurongo ugabanya umuhanda mo kabiri
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        73. Imizigo yikorewe n’amagare, velomoteri, amapikipiki, ibinyamitende
+        by’ibiziga bitatu nibyo ibiziga bine bifite cyangwa bidafite moteri
+        inyuma ntishobora kurenza ibipimo bikurikira:
+      </div>
+      <div class="option">a) cm 20</div>
+      <div class="option">b) cm 30</div>
+      <div class="option answer">c) cm 50</div>
+      <div class="option">d) cm 60</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        74. Itara ndanganyuma rigomba gushyirwa aha hakurikira:
+      </div>
+      <div class="option answer">
+        a) ahagereye inguni y’ibumoso y’ikinyabiziga
+      </div>
+      <div class="option">b) ahagereye inguni y’iburyo bw’ikinyabiziga</div>
+      <div class="option">
+        c) inyuma kandi y’impera y’ibumoso bw’ikinyabiziga
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        75. Nta tara na rimwe cyangwa utugarurarumuri bishobora kuba bifunze
+        kuburyo igice cyabyo cyo hasi cyane kimurika kitaba kiri hasi ya cm 40
+        kuva ku butaka igihe ikinyabiziga kidapakiye ariko ibyo ntibikurikizwa
+        ku matara akurikira:
+      </div>
+      <div class="option">a) amatara kamenabihu</div>
+      <div class="option">b) amatara yo gusubira inyuma</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        76. Iyo tumuritswe n’amatara y’urugendo y’ikinyabiziga utugarurarumuri
+        tugomba n’ijoro, igihe ijuru rikeye kubonwa n’umuyobozi w’ikinyabiziga
+        kiri mu ntera ikurikira:
+      </div>
+      <div class="option">a) metero 100</div>
+      <div class="option answer">b) metero 150</div>
+      <div class="option">c) metero 200</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        77. Ibinyabiziga bigendeshwa na moteri, hatarimo velomoteri
+        n’ibinyabiziga bidapakiye umuvuduko wabyo udashobora kurenga km 50 mu
+        isaha ahateganye bigomba kuba bifite ibikoresho by’ihoni byumvikanira mu
+        ntera ikurikira:
+      </div>
+      <div class="option">a) metero 200</div>
+      <div class="option">b) metero 150</div>
+      <div class="option answer">c) metero 100</div>
+      <div class="option">d) metero 50</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        78. Ahatari mu nsisiro ibyapa biburira n’ibyapa byo gutambuka mbere
+        bigomba gushyirwa mu ntera ikurikira y’ahantu habyerekana:
+      </div>
+      <div class="option answer">a) metero 150 kugeza kuri 200</div>
+      <div class="option">b) metero 100 kugeza kuri 150</div>
+      <div class="option">c) metero 50 kugeza kuri 100</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        79. Inkombe z’inzira nyabagendwa cyangwa z’umuhanda zishobora
+        kugaragazwa n’ibikoresho ngarurarumuri. Ibyo bikoresho bigomba
+        gushyirwaho ku buryo abagenzi babibona ku buryo bukurikira:
+      </div>
+      <div class="option">
+        a) babona iburyo bwabo ibyibara ritukura cyangwa ibisa n’icunga
+        rihishije
+      </div>
+      <div class="option">b) ibumoso babona iby’ibara ryera</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        80. Ahatari mu nsisiro, umuyobozi wese ugenza ikinyabiziga kimwe cyangwa
+        ibinyabiziga bikomatanye bifite uburemere ntarengwa bwemewe burenga
+        ibiro 3500 cyangwa bifite uburebure bwite burenga metero 10 agomba,
+        keretse iyo anyuze cyangwa agiye kunyura ku bindi binyabiziga, gusiga
+        hagati y’ikinyabiziga cye n’iki muri imbere umwanya uhagije kugirango
+        ibinyabiziga bimuhiseho bishobore kuhigobeka bidateje impanuka igihe
+        bibaye ngombwa ariko ibyo ntibikurikizwa mu bihe bikurikira:
+      </div>
+      <div class="option answer">
+        a) mu gihe ibigendera mu muhanda ari byinshi kimwe no mu duce tw'inzira
+        nyabagendwa aho kunyuranaho bibujijwe
+      </div>
+      <div class="option">b) igihe ibigendera mu muhanda ari byinshi</div>
+      <div class="option">
+        c) mu duce tw’inzira nyabagendwa aho kunyuranaho bibujijwe
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        81. Amatara ndangacyerekezo agomba kuba agizwe n’ibintu bifashe ku
+        rumuri rumyasa, biringaniye ku buryo bigira umubare utari igiharwe ku
+        mpande z’imbere n’inyuma z’ikinyabiziga ayo matara aba afite amabara
+        akurikira:
+      </div>
+      <div class="option">
+        a) amatara y’imbere aba yera cyangwa ari umuhondo
+      </div>
+      <div class="option">
+        b) ayinyuma aba atukura cyangwa asa n’icunga rihishije
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) ayinyuma aba asa n’icunga rihishije</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        82. Amahoni y’ibinyabiziga bigendeshwa na moteri agomba kohereza ijwi
+        ry’injyana imwe rikomeza kandi ridacengera amatwi ariko ibinyabiziga
+        bikurikira bishobora kugira ihoni ridasanzwe ridahuye n’ibivuzwe
+        haruguru:
+      </div>
+      <div class="option">a) ibinyabiziga ndakumirwa</div>
+      <div class="option">b) ibinyabiziga bikora ku mihanda</div>
+      <div class="option">c) ibinyabiziga bifite ubugari burenze m 2.10</div>
+      <div class="option answer">d) A na B ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        83. Icyapa kibuza kunyura kubindi binyabiziga byose uretse ibinyamitende
+        ibiri n’amapikipiki adafite akanyabiziga ku ruhande gifite ibimenyetso
+        by’amabara akurikira:
+      </div>
+      <div class="option">a) umweru n’umukara</div>
+      <div class="option answer">b) umutuku n’umukara</div>
+      <div class="option">c) ubururu</div>
+      <div class="option">d) A na B ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        84. Icyapa kivuga ko hatanyurwa mu byerekezo byombi kirangwa n’ubuso
+        bw’ibara rikurikira:
+      </div>
+      <div class="option">a) umukara</div>
+      <div class="option answer">b) umweru</div>
+      <div class="option">c) ubururu</div>
+      <div class="option">d) umutuku</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        85. Ibinyabiziga bikurikira bigomba kugira ibikoresho by’ihoni
+        byumvikanira mu ntera ya m 20:
+      </div>
+      <div class="option">a) amapikipiki</div>
+      <div class="option answer">b) velomoteri</div>
+      <div class="option">c) ibinyabiziga bigendeshwa na moteri bidapakiye</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        86. Imirongo y’ingabo z’igihugu zigendera kuri gahunda n’utundi dutsiko
+        twose tw’abanyamaguru nk’imperekerane cyangwa udutsiko tw’abanyeshuri
+        iyo bitagishoboka kubona neza muri m200, bagaragazwa ni itara ryera
+        imbere naho inyuma ni itara ry’umutuku ariko iyo uburebure bwiyo mirongo
+        cyangwa bw’utwo dutsiko burenga m6 impande zatwo cyangwa zayo
+        zigaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option">a) itara rimwe cyangwa menshi yera</div>
+      <div class="option">b) amatara menshi y’umuhondo</div>
+      <div class="option">c) amatara menshi asa n’icunga rihishije</div>
+      <div class="option answer">d) ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        87. Amatara ndangambere na ndanganyuma y’imodoka zitarengeje m 6
+        z’uburebure na m 2 z’ubugari habariwemo imitwaro kandi nta kindi
+        kinyabiziga kiziritseho ashobora gusimburwa n’amatara yo guhagarara
+        umwanya munini iyo ibyo binyabiziga bihagaze umwanya muto cyangwa munini
+        mu nsisiro bibangikanye ku ruhande rw’umuhanda. Ayo matara arangwa
+        n’amabara akurikira:
+      </div>
+      <div class="option">a) umweru cyangwa umuhondo imbere</div>
+      <div class="option">b) umutuku cyangwa umuhondo inyuma</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        88. Amatara ndangaburumbarare agomba kubonwa nijoro igihe ijuru rikeye
+        n’umuyobozi w’ikinyabiziga kiri mu ntera ya :
+      </div>
+      <div class="option">a) m 50 nibura</div>
+      <div class="option">b) m 100 20</div>
+      <div class="option">c) m 150</div>
+      <div class="option answer">d) m 200 nibura</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        89. Uretse ku byerekeye imihanda iromboreje y’ibisate byinshi n’imihanda
+        yimodoka igice cy’umuhanda kiri hakurya y’umurongo mugari wera ucibwa ku
+        muhanda ngo ugaragaze inkombe mpimbano zawo kigenewe ibi bikurikira:
+      </div>
+      <div class="option">a) guhagararwamo umwanya muto gusa</div>
+      <div class="option">b) guhagararwamo umwanya munini gusa</div>
+      <div class="option answer">c) guhagararwamo umwanya muto n’umunini</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        90. Ibimenyetso by’agateganyo bigizwe n’imitemeri y’ibara risa n’icunga
+        rihishije bishobora gusimbura ibi bikurikira:
+      </div>
+      <div class="option">a) imirongo yera irombereje idacagaguye gusa</div>
+      <div class="option answer">
+        b) imirongo yera irombereje idacagaguye n’icagaguye
+      </div>
+      <div class="option">c) imirongo icagaguye n’idacagaguye ibangikanye</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        91. Iyo bitagishoboka kubona muri m 200 imodoka zikuruwe n’inyamaswa,
+        ingorofani, inyamaswa zitwaye imizigo cyangwa zigenderwamo kimwe
+        n’amatungo bigomba kurangwa na :
+      </div>
+      <div class="option">a) imbere ni itara ryera</div>
+      <div class="option">
+        b) imbere ni itara ry’umuhondo cyangwa risa n’icunga rihishije
+      </div>
+      <div class="option">c) inyuma ni itara rimwe ritukura</div>
+      <div class="option answer">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        92. Uretse igihe hari amategeko yihariye akurikizwa muri ako karere
+        ikinyabiziga cyose gihagaze umwanya muto cyangwa munini, iyo gihagaze mu
+        mwanya wo kuruhande wagenewe abanyamaguru, kugirango bashobore kugenda
+        batagombye kunyura mu muhanda, umuyobozi agombye kubasigira akayira
+        gafite byibura ibipimo bikurikira by’ubugari:
+      </div>
+      <div class="option answer">a) m 1</div>
+      <div class="option">b) m 2</div>
+      <div class="option">c) m 0.5</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        93. Icyapa cyerekana ahantu hagenewe guhagararwamo n’imodoka nini
+        zagenewe gutwara abantu cyirangwa n’ubuso bw’amabara akurikira:
+      </div>
+      <div class="option">a) ubururu</div>
+      <div class="option">b) umweru</div>
+      <div class="option">c) umutuku</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        94. Icyapa cyerekana ko inzira giteyeho mu ntangiriro idakomeza
+        kigaragazwa n’ikirango (ikimenyetso) cy’amabara akurikira:
+      </div>
+      <div class="option">a) umukara n’umutuku</div>
+      <div class="option">b) umukara n’umweru</div>
+      <div class="option answer">c) umweru n’umutuku</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        95. Buri modoka yagenewe gutwara abantu, ariko umubare wabo ntarengwa
+        ukaba munsi ya 6 umuyobozi abariwemo igomba kugira imikandara yo kurinda
+        ibyago igenewe aba bakurikira:
+      </div>
+      <div class="option">a) umuyobozi</div>
+      <div class="option">b) umugenzi wicaye ku ntebe y’imbere</div>
+      <div class="option">
+        c) ishobora no kugira imikandara kuzindi ntebe z’inyuma
+      </div>
+      <div class="option answer">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        96. Ibiziga by’ibinyabiziga bigendeshwa na moteri n’ibya velomoteri
+        kimwe n’ibya romoruki zabyo bigomba kuba byambaye inziga zihagwa zifite
+        amano n’ubujyakuzimu butari munsi ya milimetero imwe ku migongo yabyo
+        yose nubudodo bwabyo ntibugire ahantu na hamwe bugaragara kandi
+        ntibugire aho byacitse bikomeye mu mpande zabyo ariko ibyo
+        ntibikurikizwa ku binyabiziga bikurikira:
+      </div>
+      <div class="option answer">
+        a) ibinyabiziga bidapakiye kandi bitajya birenza umuvuduko wa km 25 mu
+        isaha ahateganye
+      </div>
+      <div class="option">
+        b) ibinyabiziga bya police bijya ahatarenga km 25 uvuye aho biba
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        97. Iyo umukumbi ugizwe n’amatungo maremare arenze ane cyangwa amatungo
+        magufi arenze atandatu mu nzira nyabagendwa iyo hatakibona neza kuburyo
+        umuyobozi abona muri m 200 ugomba kugaragazwa kuburyo bukurikira:
+      </div>
+      <div class="option">
+        a) itara ry’urumuri rwera cyangwa rusa n’icunga rihishije imbere
+        y’umukumbi
+      </div>
+      <div class="option">
+        b) itara ry’urumuri rutukura cyangwa umuhondo ritwawe inyuma y’umukumbi
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        98. Ibinyabiziga biherekeranyije mu butumwa ntibishobora gutonda
+        uburebure burenga umurongo wa m 500. Iyi bibaye bityo ibinyabiziga
+        biherekeranye mu butumwa bishobora kugabanwamo amatsinda atonze umurongo
+        atarengeje m 50 z’uburebure kandi hagati yayo hakaba byibura m 50 ariko
+        ibyo ntibikurikizwa kubinyabiziga bikurikira:
+      </div>
+      <div class="option">a) ibinyabiziga bya police biherekeranyije</div>
+      <div class="option answer">
+        b) ibinyabiziga by’abasirikare biherekeranyije mu nsisiro
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        99. Iyo ikinyabiziga gikururwa n’inyamaswa nacyo gikuruye ikindi
+        uburebure bw’ibikururwa bukaba burenga m 18 hatabariwemo icyo
+        kinyabiziga cya mbere kiziritseho hagomba ibi bikurikira:
+      </div>
+      <div class="option answer">a) umuherekeza w’ikinyabiziga cya kabiri</div>
+      <div class="option">b) abaherekeza babiri</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        100. Ibinyabiziga bikurikira ntibitegetswe kugira ibimenyetso
+        bibyerekana iyo byambukiranya umuhanda cyangwa bigenda ku ruhande rwayo:
+      </div>
+      <div class="option">a) ibinyabiziga bigendwamo n’abana</div>
+      <div class="option">b) ibinyabiziga bigendwamo n’abamugaye</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        100. Ibinyabiziga bikurikira ntibitegetswe kugira ibimenyetso
+        bibyerekana iyo byambukiranya umuhanda cyangwa bigenda ku ruhande rwawo:
+      </div>
+      <div class="option">a) ibinyabiziga bigendwamo n’abana</div>
+      <div class="option">b) ibinyabiziga bigendwamo n’abamugaye</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        101. Icyapa cy’inyongera kigaragaza ikibanza cy’ingando cyangwa
+        cy’abantu benshi bagendera ku nyamaswa kirangwa n’amabara akurikira:
+      </div>
+      <div class="option answer">a) ubururu, umweru n’umukara</div>
+      <div class="option">b) umukara umweru n’umuhondo</div>
+      <div class="option">
+        c) icyatsi kibisi, umuhondo n’ikirango cy’umukara
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        102. Icyapa cyerekana ahantu amategeko y’Umuhanda urombeje w’ibice
+        byinshi atangirira gukurikizwa, kirangwa n’ibirango (ibimenyetso)
+        by’amabara akurikira:
+      </div>
+      <div class="option">a) umweru n’umukara</div>
+      <div class="option">b) umweru n’umutuku</div>
+      <div class="option">c) umweru n’umuhondo</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        103. Igihe ikorwa ry’imirimo ribangamiye cyane cyangwa buke uburyo bwo
+        kugenda mu nzira nyabagendwa, ahakorerwa imirimo hagaragazwa ku buryo
+        bukurikira:
+      </div>
+      <div class="option">
+        a) icyapa cyera cya mpande enye, zingana zifite uruhande rwa metero 0.30
+      </div>
+      <div class="option">b) uruzitiro ruri ku mpera y’iburyo</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        104. Iyo mu muhanda, imirimo yihariye ubugari butuma abayobozi bagomba
+        kuva mu mwanya wabo usanzwe kugirango bakomeze urugendo, ahategetswe
+        kunyurwa hagaragazwa n’ikimenyetso gishyirwa aho imirimo irangirira mu
+        ruhande rugenderwamo. Icyo kimenyetso kirangwa n’amabara akurikira:
+      </div>
+      <div class="option answer">a) ubuso bw’ubururu ikirango cy’umweru</div>
+      <div class="option">
+        b) umuzenguruko w’umutuku, ubuso umweru n’ikirango cy’umukara
+      </div>
+      <div class="option">
+        c) umuzenguruko w’umutuku, ubuso mu ibara ryera, ikirango mu ibara
+        ry’umutuku n’umukara
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        105. Icyapa cyerekana ko hari amabwiriza yihariye mu buryo bwo kugendera
+        mu cyambu cyangwa ku kibuga cy’indege giteye ku buryo bukurikira:
+      </div>
+      <div class="option">
+        a) ishusho mpandeshatu, ubuso mu ibara ryera, ikirango mu ibara
+        ry’umukara
+      </div>
+      <div class="option answer">
+        b) ishusho mpandenye, ubuso mu ibara ry’ubururu n’ikirango kiri mu ibara
+        ryera
+      </div>
+      <div class="option">
+        c) ishusho y’uruziga mu ibara ry’ubururu ni ikirango kiri mu ibara ryera
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        106. Nijoro igihe ijuru rikeye, itara ribonesha icyapa kiranga numero
+        y’ikinyabiziga rigomba gutuma izo numero zisomerwa nibura mu ntera
+        ikurikira:
+      </div>
+      <div class="option">a) m150</div>
+      <div class="option">b) m50</div>
+      <div class="option answer">c) m20</div>
+      <div class="option">d) m10</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        107. Ibyapa byerekana icyago cyidahoraho kandi bigenewe kwerekana aho
+        bagana cyangwa aho berekeza umuhanda nk’igihe cy’impanuka cyangwa hari
+        imirimo ikorwa mu muhanda birangwa n’amabara akurikira:
+      </div>
+      <div class="option">a) umweru n’umukara</div>
+      <div class="option">b) umweru n’umuhondo</div>
+      <div class="option">c) ubuso bw’umweru gusa</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        108. Birabujijwe kubangamira imigendere isanzwe y’ibindi binyabiziga
+        kubera ibi bikurikira:
+      </div>
+      <div class="option">a) kugabanya umuvuduko kuburyo budasanzwe</div>
+      <div class="option">b) gukacira feri bidatewe no kwirinda ibyago</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        109. Iyo kuva bwije kugeza bukeye cyangwa bitewe n’uko ibihe bimeze
+        bitagishoboka kubona neza muri m 200, mu nzira nyabagendwa, romoruki
+        iziritse kuri velomoteri cyangwa ipikipiki idafite akanyabiziga ku
+        ruhande, uretse velomoteri idafite umuyobozi, kandi uburumbarare bwayo,
+        cyangwa bw’ibyo yikoreye bukaba butuma itara ry’ikinyabiziga biyikurura
+        ritagaragara, iyo romoruki igaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option">a) itara ryera riri kuri romoruki inyuma</div>
+      <div class="option">b) itara ry’umuhondo riri kuri romoruki inyuma</div>
+      <div class="option">c) itara risa n’icunga riri kuri romoruki inyuma</div>
+      <div class="option answer">d) ibi bisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        110. Amatara maremare y’ikinyabiziga agomba kuzimwa mu bihe bikurikira:
+      </div>
+      <div class="option">
+        a) iyo umuhanda umurikiwe hose kandi umuyobozi ashobora kubona nibura mu
+        ntera ingana na metero 200
+      </div>
+      <div class="option">
+        b) iyo ikinyabiziga gikurikiye mu ntambwe zitagera muri m100 keretse iyo
+        umuyobozi wacyo ashaka kunyura kucyo akurikiye acana azimya vuba vuba
+        amatara maremare
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        111. Iyo akanyabiziga gasunikwa cyangwa ibyo gatwaye bidatuma umuyobozi
+        abona neza imbere ye, uwo muyobozi agomba gukora ibi bikurikira:
+      </div>
+      <div class="option">a) gushaka umuherekeza</div>
+      <div class="option answer">b) gukurura ikinyabiziga cye</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        112. Uretse igihe hari amategeko yihariye akurikizwa muri ako karere
+        cyangwa imitunganyirize bwite y’aho, ikinyabiziga cyose cyangwa
+        inyamaswa ihagaze umwanya muto cyangwa munini igomba kuba iri aha
+        hakurikira:
+      </div>
+      <div class="option">
+        a) mu kaboko k’iburyo hakurikijwe aho yaganaga uretse igihe ari mu
+        muhanda w’icyerekezo kimwe
+      </div>
+      <div class="option">
+        b) ahegereye bishobotse akayira k’abanyamaguru iyo umuhanda ugafite
+        ariko umwanya w’ibiziga n’akayira ntube urenga santimetero 50
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        113. Iyo ikinyabiziga gihagaritswe n’ijoro ku buryo abayobozi bakigana
+        badashobora kumenya ko kibabereye imbogamizi, kigomba kurangirwa kure
+        n’ikimenyetso cyabigenewe kiri ahantu hagaragara kugirango kiburire
+        hakiri kare abandi bayobozi baza bagisanga, ariko ntibireba ibinyabiziga
+        bikurikira:
+      </div>
+      <div class="option">a) velomoteri</div>
+      <div class="option">b) ipikipiki idafite akanyabiziga ku ruhande</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        114. Abanyamaguru batatanye cyangwa bagize udutsiko tudafatanyije
+        gahunda kdi batanayobowe n’umwarimu bategetswe kunyura mu tuyira turi ku
+        mpande z’umuhanda no ku nkengero zigiye hejuru uretse ubutaka
+        butsindagiye butandukanya imihanda ibiri bwo kunyurwamo gusa n’aba
+        bakurikira:
+      </div>
+      <div class="option answer">
+        a) abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya
+        umuhanda
+      </div>
+      <div class="option">b) abanyamaguru bagize udutsiko tw’abantu benshi</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        115. Ibinyabiziga biherekeranyije mu butumwa ntibishobora gutonda
+        uburebure burenga umurongo wa m 500, iyo bibaye bityo ibinyabiziga
+        biherekeranyije mu butumwa bishobora kugabanywamo amatsinda atonze
+        umurongo utarengeje ibipimo bikurikira:
+      </div>
+      <div class="option answer">a) utarengeje m50</div>
+      <div class="option">b) utarengeje m100</div>
+      <div class="option">c) utarengeje 150</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        116. Ibyapa byereka inkomane y’inzira nyabagendwa n’inzira ya
+        gariyamoshi bigomba iteka kumurikwa cyangwa kugarura urumuri ku buryo
+        bigaragarira nibura mu ntera ikurikira igihe ijuru rikeye:
+      </div>
+      <div class="option">a) m200</div>
+      <div class="option">b) m250</div>
+      <div class="option">c) m300</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        117. Imbibi ziri ku mpera z’ubwihugiko bw’abanyamaguru kandi ziri mu
+        muhanda kimwe n’imbibi n’ibindi bikoresho bigenewe gutuma bagenda mu
+        muhanda nta muvundo zisigwa irangi ry’ibara rikurikira:
+      </div>
+      <div class="option answer">a) irangi ry’umuhondo ngarurarumuri</div>
+      <div class="option">b) irangi ry’umweru ngarurarumuri</div>
+      <div class="option">c) irangi risa n’icunga rihishije ngarurarumuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        118. Kugirango ikinyabiziga kive ahantu hari urwondo cyangwa hanyerera
+        bidasanzwe hashobora gukoreshwa uburyo bukurikira:
+      </div>
+      <div class="option">a) inziga zishobora gushyirwaho udushyundu</div>
+      <div class="option answer">
+        b) inziga zishobora gushyirwaho iminyururu irwanya ubunyerere
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        119. Iyo imizigo igizwe n’ibinyampeke, ikawa, amakara, ubwatsi
+        bw’amatungo bidahambiriye, ubugari bwayo bushobora kugera kuri m2 na
+        cm75 ariko iyo iyo mizigo ijyanwa mu karere katarenga km25 uvuye aho
+        yapakiriwe, usibye mu nsisiro, ubugari bwayo bushobora kugera ku bipimo
+        bikurikira:
+      </div>
+      <div class="option">a) m4</div>
+      <div class="option">b) m3 na cm50</div>
+      <div class="option answer">c) m3</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        120. Mu mujyi no ku mihanda y’igihugu igenwa na minisitiri ushinzwe
+        gutwara abantu n’ibintu, ubwikorere ntarengwa ku ikamyo iyo ariyo yose
+        ntibushobora kurenga ibipimo bikurikira:
+      </div>
+      <div class="option">a) toni 10</div>
+      <div class="option">b) toni 16</div>
+      <div class="option">c) toni 24</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        121. Iyo bitewe n’imiterere y’ahantu intera itandukanya icyapa n’ahantu
+        habi iri munsi ya m150 ku buryo bugaragara, iyo ntera yerekanishwa
+        icyapa cy’inyongera giteye ku buryo bukurikira:
+      </div>
+      <div class="option">a) kare ifite ubuso bw’ibara ryera</div>
+      <div class="option answer">
+        b) urukiramende rufite ubuso bw’ibara ryera
+      </div>
+      <div class="option">c) mpandeshatu ifite umuzenguruko utukura</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        122. Nijoro, amatara yo kubisikana y’ibara ryera cyangwa y’umuhondo
+        agomba, igihe ijoro rikeye kumurika mu muhanda nibura mu ntera
+        ikurikira:
+      </div>
+      <div class="option">a) m100</div>
+      <div class="option">b) m50</div>
+      <div class="option answer">c) m40</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        123. Ikintu cyose cyatuma hahindurwa ibyanditse bireba nyirikarita
+        cyangwa ibiranga ikinyabiziga kigomba kumenyeshwa ibiro by’umusoro haba
+        mu magambo cyangwa mu ibaruwa ishinganye ibyo bikorwa mu gihe kingana
+        gute:
+      </div>
+      <div class="option">a) mu mezi 2</div>
+      <div class="option">b) mu kwezi kumwe</div>
+      <div class="option">c) mu minsi cumi n’itanu</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        124. Kugirango berekane ahantu habi cyane, hakoreshwa ikimenyetso
+        cy’itara ry’umuhondo rimyasa, rivuga uburenganzira bwo gutambuka icyo
+        kimenyetso barushijeho kwitonda. Ese icyo kimenyetso gihindura iki ku
+        mategeko agenga gutambuka mbere:
+      </div>
+      <div class="option answer">a) ntacyo gihindura</div>
+      <div class="option">b) abo rireba nibo batambuka mbere</div>
+      <div class="option">
+        c) abatwaye ibinyabiziga binini nibo batambuka mbere
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        125. Romoruki zifite ubugari ntarengwa bwa sentimetero 80 zishobora
+        gushyirwaho akagarurarumuri kamwe gusa iyo zikuruwe n’ibinyabiziga
+        bikurikira:
+      </div>
+      <div class="option">a) velomoteri</div>
+      <div class="option">b) ipikipiki ifite akanyabiziga kuruhande</div>
+      <div class="option">c) igare</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        126. Amatara maremare y’ibara ryera cyangwa ry’umuhondo agomba nijoro
+        igihe ijuru rikeye kumurika mu ntera ikurikira ku binyabiziga bifite
+        moteri itarengeje ingufu zigera kuri sentimetero kibe 125:
+      </div>
+      <div class="option">a) m100</div>
+      <div class="option answer">b) m75</div>
+      <div class="option">c) m25</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        127. Iyo kuva bwije kugeza bukeye cyangwa bitewe n’uko ibintu bimeze
+        bitagishoboka kubona muri m 200, ibinyabiziga cyangwa imitwaro bifite
+        ubugari burenga m 2.50 iyo bigenda mu nzira nyabagendwa bigaragazwa ku
+        buryo bukurikira:
+      </div>
+      <div class="option">a) inyuma ni amatara abiri atukura</div>
+      <div class="option">
+        b) iyo bibaye ngombwa no ku mpera y’amabondo y’ikinyabiziga cyangwa
+        y’imitwaro ni itara ndangaburumbarare risa n’icunga rihishije cyangwa
+        ry’umuhondo
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        128. Igice cy’umuhanda kiri hakurya y’umurongo mugari wera udacagaguye
+        ugaragaza inkombe mpimbano y’umuhanda kiba kigenewe ibi bikurikira:
+      </div>
+      <div class="option">a) guhagararwamo umwanya muto gusa</div>
+      <div class="option">
+        b) guhagararwamo umwanya muto n’umunini ndetse no kumihanda irombereje
+        y’ibisate byinshi n’imihanda y’imodoka
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        130. Iminyururu n’ibindi byuma bifashisha bishobora kuvanwaho cyangwa
+        binagana, hatabariwemo ibimenyetso byerekana ibyerekezo bigomba
+        gutungurwa ku kinyabiziga ku buryo igihe byizunguza bitarenga impande
+        zihera uburumbarare bw’ikinyabiziga kandi ibyo byuma bifashisha
+        ntibigomba gukururuka ku butaka ariko ibyo ntibibujijwe ku binyabiziga
+        bikurikira:
+      </div>
+      <div class="option">a) imashini zihinga</div>
+      <div class="option">
+        b) ibinyabiziga bitwaye ibintu bidashobora gufata inkongi
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        131. Ku binyabiziga cyangwa ibinyabiziga bikururana igice kirenga ku
+        biziga ntigishobora kurenga ibipimo bikurikira:
+      </div>
+      <div class="option">a) iby’inyuma : m3</div>
+      <div class="option answer">b) iby’imbere: m2.70</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        132. Uretse bibonewe uruhushya, ubundi birabujijwe gushyira no gukomeza
+        kugendesha imodoka cyangwa romoruki mu nzira nyabagendwa iyo uburemere
+        bw’ibyikorewe burenze uburemere ntarengwa bwemewe n’ikarita iranga
+        ikinyabiziga ariko ibyo ntibikurikizwa ku binyabiziga bikurikira:
+      </div>
+      <div class="option">a) ibinyabiziga bya police</div>
+      <div class="option">b) ibinyabiziga bihinga</div>
+      <div class="option answer">c) imashini zikoreshwa mu kubaka imihanda</div>
+      <div class="option">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        133. Gushyira mu muhanda ku buryo budasanzwe ibinyabiziga bikururana
+        birenze bitatu bigomba gutangirwa uruhusa, uretse imashini ihinga iyo
+        zigenda uregendo rutarenze km 25, ibinyabiziga bikururana bitwaye
+        ibyamamazwa n’ibindi biteganwa n’iri teka ariko igiteranyo cy’uburebure
+        bw’ibyo binyabiziga bikururana ntigishobora kurenga ibipimo bikurikira:
+      </div>
+      <div class="option">a) m50</div>
+      <div class="option">b) m35</div>
+      <div class="option answer">c) m25</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        134. Ibinyamitende itatu bifite moteri bigomba kugira amatara akurikira:
+      </div>
+      <div class="option">
+        a) amatara abiri ndangambere n’amatara abiri ndanganyuma yerekana ko
+        ikinyabiziga gihagaze
+      </div>
+      <div class="option">b) utugarurarumuri tubiri</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        135. Ibyapa bibuza n’ibitegeka bikurikizwa gusa aha hakurikira:
+      </div>
+      <div class="option">a) mu masangano</div>
+      <div class="option answer">
+        b) mu gice cy’inzira nyabagendwa kiri hagati yaho bishinze n’inkomane
+        ikurikiyeho ku ruhande rw’inzira bishinzeho
+      </div>
+      <div class="option">
+        c) ibyo byapa bishyirwaho hakurikijwe intera ibitandukanya
+      </div>
+      <div class="option">d) B na C ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        136. Icyapa cy’inyongera kerekana aho bagobokera ibinyabiziga kirangwa
+        n’amabara akurikira:
+      </div>
+      <div class="option">a) ubururu, umweru, umutuku</div>
+      <div class="option answer">b) umweru, umukara, ubururu</div>
+      <div class="option">c) umutuku, umweru n’umukara</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        137. Icyapa cyerekana uburebure bw’igice cyatera ibyago cyangwa
+        bw’ahantu amabwiriza y’icyo cyapa agomba gukurikizwa kirangwa n’ubuso
+        n’ibimenyetso bikurikira:
+      </div>
+      <div class="option">a) ubuso umweru, ikimenyetso ubururu</div>
+      <div class="option">b) ubuso ubururu, ikimenyetso umweru</div>
+      <div class="option">c) ubuso ubururu, ikimenyetso umweru n’umukara</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        138. Umurongo w’umuhondo ucagaguye uciye ku nkombe nyayo y’umuhanda,
+        umusezero w’inzira y’abanyamaguru cyangwa w’inkengero y’umuhanda yegutse
+        uvuga ibi bikurikira:
+      </div>
+      <div class="option">
+        a) guhagarara umwanya muto birabujijwe ku burebure bw’uwo murongo
+      </div>
+      <div class="option">
+        b) guhagarara umwanya muto n’umunini birabujijwe ku burebure bw’uwo
+        murongo
+      </div>
+      <div class="option">c) aho bahagarara umwanya munini cyangwa muto</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        139. Ku binyabiziga cyangwa ibinyabiziga bikururana igice kirenga ku
+        biziga ntigishobora kurenga ibipimo bikurikira:
+      </div>
+      <div class="option">a) iby’inyuma m 3.40</div>
+      <div class="option">b) iby’imbere m 2.50</div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        171. Mu migi no ku yindi mihanda y’igihugu igenwa na minisitiri ushinzwe
+        gutwara abantu n’ibintu uburebure ntarengwa kuri buri mitambiko 3
+        ifungwaho ibiziga bine ni:
+      </div>
+      <div class="option answer">a) toni 24</div>
+      <div class="option">b) toni 10</div>
+      <div class="option">c) toni 16</div>
+      <div class="option">d) toni 53</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        172. Iyo hagati y’uruhande rw’imbere rwa romoruki n’uruhande rw’inyuma
+        rw’ikinyabiziga kiyikurura hari umwanya urenze m 3 ikibizirikanyije
+        kigomba kugaragazwa ku buryo bukurikira iyo amatara y’ikinyabiziga
+        agomba gucanwa:
+      </div>
+      <div class="option">
+        a) agatambaro gatukura gafite nibura cm 50 z’uruhande
+      </div>
+      <div class="option answer">
+        b) itara risa n’icunga rihishije rigaragara mu mbavu igihe
+        ikibizirikanyije kimuritswe
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        173. Itara ryo guhagarara ry’ibara ritukura rigomba kuba ridahumisha,
+        kandi rigomba kugaragarira mu ntera ikurikira:
+      </div>
+      <div class="option">a) nijoro igihe ijuru rikeye nibura muri m 200</div>
+      <div class="option">b) ku manywa igihe cy’umucyo nibura muri m50</div>
+      <div class="option">c) nijoro nibura muri m 100 igihe ijuru rikeye</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        174. Birabujijwe kongera ku mpande z’ikinyabiziga kigendeshwa na moteri
+        cyangwa velomoteri ibi bikurikira:
+      </div>
+      <div class="option">a) imitako</div>
+      <div class="option">
+        b) ibintu bifite imigongo cyangwa ibirenga ku mubyimba kandi bishobora
+        gutera ibyago abandi bagenzi
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        175. Ikintu cyose cyatuma hahindurwa ibyanditswe bireba nyirikarita
+        cyangwa ibiranga ikinyabiziga kigomba kumenyeshwa ibiro by’imisoro haba
+        mu magambo cyangwa mu ibaruwa ishinganye. Ibyo bikorwa mu gihe kingana
+        gute:
+      </div>
+      <div class="option">a) mu minsi 5</div>
+      <div class="option answer">b) mu minsi 8</div>
+      <div class="option">c) mu minsi 15</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">176. Kunyuranaho bikorerwa:</div>
+      <div class="option">a) mu ruhande rw’iburyo gusa</div>
+      <div class="option">b) igihe cyose ni ibumoso</div>
+      <div class="option">c) iburyo iyo unyura ku nyamaswa</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        177. Iyo ubugari bw’inzira nyabagendwa igenderwamo n’ibinyabiziga
+        budahagije kugirango bibisikane nta nkomyi abagenzi bategetswe:
+      </div>
+      <div class="option">a) kunyura mu nzira z’impande z’abanyamaguru</div>
+      <div class="option">b) guhagarara aho bageze</div>
+      <div class="option answer">c) koroherana</div>
+      <div class="option">d) gukuraho inkomyi</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        178. Umuyobozi ugenda mu muhanda igihe ubugari bwawo budatuma anyuranaho
+        nta nkomyi ashobora kunyura mu kayira k’abanyamaguru ariko amaze kureba
+        ibi bikurikira:
+      </div>
+      <div class="option">a) umuvuduko w’abanyamaguru</div>
+      <div class="option">b) ubugari bw’umuhanda</div>
+      <div class="option">c) umubare w’abanyamaguru</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        179. Icyapa cyerekana umuvuduko ntarengwa ikinyabiziga kitagomba kurenza
+        gishyirwa ku binyabiziga bifite uburebure ntarengwa bukurikira:
+      </div>
+      <div class="option">a) burenga toni 1</div>
+      <div class="option">b) burenga toni 2</div>
+      <div class="option">c) burenga toni 24</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        180. Iyo nta mategeko awugabanya by’umwihariko, umuvuduko ntarengwa
+        w’amapikipiki mu isaha ni:
+      </div>
+      <div class="option">a) km 25</div>
+      <div class="option">b) km 70</div>
+      <div class="option">c) km 40</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        181. Ahatari mu nsisiro umuvuduko ntarengwa wa velomoteri mu isaha ni:
+      </div>
+      <div class="option answer">a) km 50</div>
+      <div class="option">b) km 40</div>
+      <div class="option">c) km 30</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        182. Birabujijwe guhagarara akanya kanini aha hakurikira:
+      </div>
+      <div class="option">a) mu duhanda tw’abanyamagare</div>
+      <div class="option">b) mu duhanda twagenewe velomoteri</div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        183. Amatara maremare y’ikinyabiziga agomba kutamurika mu bihe
+        bikurikira:
+      </div>
+      <div class="option">
+        a) iyo umuhanda umurikiwe umuyobozi abasha kureba muri m 200
+      </div>
+      <div class="option answer">
+        b) iyo ikinyabiziga kigiye kubisikana nikindi
+      </div>
+      <div class="option">c) iyo ari mu nsisiro</div>
+      <div class="option">d) ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        184. Ubugari bwa romoruki ikuruwe n’igare cyangwa velomoteri ntiburenza
+        ibipimo bikurikira:
+      </div>
+      <div class="option">a) cm 25</div>
+      <div class="option">b) cm 125</div>
+      <div class="option">c) cm 45</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        185. Uburyo bukoreshwa kugirango ikinyabiziga kigende gahoro igihe feri
+        idakora neza bwitwa:
+      </div>
+      <div class="option">a) feri y’urugendo</div>
+      <div class="option">b) feri yo guhagarara</div>
+      <div class="option answer">c) feri yo gutabara</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        186. Nta mwanya n’umwe feri ifungiraho ushobora kurekurana n’ibiziga
+        keretse:
+      </div>
+      <div class="option">a) iyo bireba feri y’urugendo</div>
+      <div class="option">b) iyo kurekurana ari ibyakanya gato</div>
+      <div class="option">
+        c) iyo bireba feri yo guhagarara umwanya munini, ubwo kurekurana bikaba
+        bidashoboka bidakozwe n'umuyobozi
+      </div>
+      <div class="option answer">d) byose ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        187. Ikinyabiziga ntigishobora kugira amatara arenze abiri y’ubwoko
+        bumwe keretse kubyerekeye amatara akurikira:
+      </div>
+      <div class="option">a) itara ndangamubyimba</div>
+      <div class="option">b) itara ryerekana icyerekezo</div>
+      <div class="option">c) itara ndangaburumbarare</div>
+      <div class="option answer">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        188. Itara ndanganyuma rigomba gushyirwa aha hakurikira:
+      </div>
+      <div class="option">a) ku nguni y’iburyo y’ikinyabiziga</div>
+      <div class="option">b) ku gice cy’inyuma ku kinyabiziga</div>
+      <div class="option answer">
+        c) ahegereye inguni y’ibumoso y’ikinyabiziga
+      </div>
+      <div class="option">d) ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        189. Nibura ikinyabiziga gitegetswe kugira uduhanagurabirahuri
+        dukurikira:
+      </div>
+      <div class="option">a) 2</div>
+      <div class="option">b) 3</div>
+      <div class="option answer">c)1</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        190. Ibiziga by’ibinyabiziga bigendeshwa na moteri n’ibya velomoteri
+        kimwe n’ibya romoruki zabyo bigomba kuba byambaye inziga zihagwa zifite
+        amano n’ubujyakuzimu butari munsi ya milimetero imwe ku migongo yabyo
+        yose, n’ubudodo bwabyo ntibugire ahantu na hamwe bugaragara kdi
+        ntibigire aho byacitse bikomeye mu mpande zabyo. Ariko ibyo
+        ntibikurikizwa ku binyabiziga bikurikira:
+      </div>
+      <div class="option answer">
+        a) ibinyabiziga bidapakiye kdi bitajya birenza umuvuduko wa km 25 mu
+        isaha ahateganye
+      </div>
+      <div class="option">
+        b) ibinyabiziga bya police bijya ahatarenga km 25 uvuye aho biba
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        191. Birabujijwe kugenza ibinyabiziga… ariko ibyo ntibikurikizwa ku
+        binyabiziga bikurikira:
+      </div>
+      <div class="option">a) ku binyabiziga by’ingabo</div>
+      <div class="option answer">
+        b) ibinyabiziga bihinga iyo bigendeshwa mu karere katarenga km 25 uvuye
+        aho ziba
+      </div>
+      <div class="option">c) ibinyabiziga bya police</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        192. Imirongo yera iteganye n’umurongo ugabanya umuhanda mo kabiri mu
+        burebure bwawo ugaragaza:
+      </div>
+      <div class="option">a) ahanyurwa n’amagare na velomoteri</div>
+      <div class="option">b) ahanyurwa n’ingorofani n’ibinyamitende</div>
+      <div class="option answer">c) ahanyurwa n’abanyamaguru</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        193. Iyo harimo indi myanya birabujijwe gutwara ku ntebe y’imbere
+        y’imodoka abana badafite imyaka ikurikira:
+      </div>
+      <div class="option">a) imyaka 10</div>
+      <div class="option answer">b) imyaka 12</div>
+      <div class="option">c) imyaka 7</div>
+      <div class="option">d) nta gisubizocy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        194. Iyo ikinyabiziga kitagikora cyangwa cyoherejwe mu mahanga burundu
+        ibyapa ndanga bigomba gukurwaho bikoherezwa mu biro by’imisoro, ibyo
+        bikorwa mu gihe kingana gute:
+      </div>
+      <div class="option">a) ibyumweru bibiri</div>
+      <div class="option answer">b) amezi abiri</div>
+      <div class="option">c) ukwezi kumwe</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        195. Inkombe z’inzira nyabagendwa cyangwa z’umuhanda zishobora
+        kugaragazwa n’ibikoresho ngarurarumuri ibyo bikoresho bigomba
+        gushyirwaho ku buryo abagenzi babibona:
+      </div>
+      <div class="option">a) babona gusa ibumoso bwabo ibyibara ryera</div>
+      <div class="option">
+        b) iburyo babona iby’ibara ritukura cyangwa risa n’icunga rihishije gusa
+      </div>
+      <div class="option answer">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        196. Iyo kuyobya umuhanda ari ngombwa bigaragazwa kuva aho uhera no
+        kuburebure bwawo n’icyapa gifite ubuso bw’amabara akurikira:
+      </div>
+      <div class="option">a) umukara</div>
+      <div class="option">b) umweru</div>
+      <div class="option">c) umutuku</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        197. Ku mihanda yagenwe na minisitiri ubifite mu nshingano ibyapa
+        biburira n’ibyapa byerekana bigomba kugaragazwa kuva bwije kugera bukeye
+        n’urumuri rwihariye cyangwa amatara ku mihanda cyangwa ibintu
+        ngarurarumuri. Igihe ijuru rikeye intera y’ahagaragara igomba kuba
+        nibura:
+      </div>
+      <div class="option">a) m50</div>
+      <div class="option">b) m120</div>
+      <div class="option">c) m150</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        198. Ibizirikisho by’iminyururu cyangwa by’insinga kimwe n’ibindi
+        by’ingoboka bikoreshwa gusa igihe nta kundi umuntu yabigenza kandi nta
+        kindi bigiriwe uretse gusa kugirango ikinyabiziga kigere aho kigomba
+        gukorerwa kandi nturenze na rimwe km 20 mu isaha, ibyo bizirikisho
+        bigaragazwa ku buryo bukurikira:
+      </div>
+      <div class="option">a) agatambaro gatukura kuri cm 50 z’umuhanda</div>
+      <div class="option">b) ikimenyetso cy’itara risa n’icunga rihishije</div>
+      <div class="option answer">
+        c) icyapa cyera cya mpande enye zingana gifite cm 30 kuri buri ruhande
+      </div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        199. Uretse mu mijyi, kuyindi mihanda yagenywe na minisiteri uburemere
+        ntarengwa bwemewe ku binyabiziga bifatanye bifite imitambiko itatu ni:
+      </div>
+      <div class="option answer">a) toni 12</div>
+      <div class="option">b) toni 16</div>
+      <div class="option">c) toni 10</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        200. Uretse mu mujyi kuyindi mihanda yajyenwe na minisitiri ushinzwe
+        gutwara abantu n’ibintu, uburemere ntarengwa ku binyabiziga bifite
+        imitambiko itatu cyangwa irenga hatarimo mukuzungu ni:
+      </div>
+      <div class="option">a) toni 10</div>
+      <div class="option">b) toni 12</div>
+      <div class="option">c) toni 15</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        201. Iyo nta mategeko awugabanya by’umwihariko umuvuduko ntarengwa ku
+        modoka zidafite ibizibuza kwiceka kuberako ariko zakozwe ni:
+      </div>
+      <div class="option">a) km 70 mu isaha</div>
+      <div class="option">b) km 40 mu isaha</div>
+      <div class="option answer">c) km 25 mu isaha</div>
+      <div class="option">d) km20 mu isaha</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        202. Iyo nta mategeko awugabanya by’umwihariko umuvuduko ntarengwa ku
+        modoka zidafite ibizibuza kwiceka kuberako ariko zakozwe ni:
+      </div>
+      <div class="option">a) km 20 mu isaha</div>
+      <div class="option">b) km 40 mu isaha</div>
+      <div class="option">c) km 35 mu isaha</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        203. Ikinyabiziga kibujijwe guhagarara akanya kanini aha hakurikira:
+      </div>
+      <div class="option answer">
+        a) imbere y’ahantu nyabagendwa hinjirwa n’ahasohokerwa n’abantu benshi
+      </div>
+      <div class="option">
+        b) mu muhanda aho ugabanyijemo ibisate bigaragazwa n’imirongo icagaguye
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        204. Iyo kuva bwije kugeza bukeye…udutsiko twose tw’abanyamaguru
+        nk’imperekerane cyangwa udutsiko tw’abanyeshuri bari ku murongo bayobowe
+        n’umwarimu, iyo bagenda mu muhanda ku isonga hakaba hari abantu barenze
+        umwe bagomba kugaragazwa:
+      </div>
+      <div class="option">a) imbere ni itara ry’umuhondo ritwariwe ibumoso</div>
+      <div class="option answer">
+        b) inyuma ni itara ryumutuku ritwariwe ibumoso n’umuntu uri ku murongo
+        w’inyuma hafi y’umurongo ugabanya umuhanda mo kabiri
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        205. Imburira zimurika zemerewe gukoreshwa kugirango bamenyeshe
+        umuyobozi ko bagiye kumunyuraho aha hakurikira:
+      </div>
+      <div class="option answer">a) mu nsisiro cyangwa ahandi hose</div>
+      <div class="option">b) ahegereye inyamaswa zikurura</div>
+      <div class="option">c) hafi y’amatungo</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        206. Ibinyabiziga bifite ubugari bufite ibipimo bikurikira bigomba
+        kugira amatara ndangaburumbarare:
+      </div>
+      <div class="option">a) metero 3</div>
+      <div class="option">b) metero 2 na cm 50</div>
+      <div class="option">c) metero 1 na cm 1038</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        207. Nta tara na rimwe cyangwa akagarurarumuri bishobora kuba bifunze
+        kuburyo igice cyabyo cyo hasi cyane kimurika kiba kiri hasi y’ibipimo
+        bikurikira kuva ku butaka igihe ikinyabiziga kidapakiye:
+      </div>
+      <div class="option">a) cm 30</div>
+      <div class="option">b) cm 20</div>
+      <div class="option">c) cm 50</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        208. Ahari hejuru cyane y’ubuso bumurika h’amatara ndangambere na
+        ndanganyuma ntihashobora kuba aharenze ibipimo bikurikira hejuru
+        y’ubutaka iyo ikinyabiziga kidapakiye:
+      </div>
+      <div class="option">a) m1 na cm 50</div>
+      <div class="option">b) m1 na cm 75</div>
+      <div class="option">c) m 1 na cm 80</div>
+      <div class="option answer">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        209. Buri modoka cyangwa buri romoruki ikuruwe n’iyo modoka bishobora
+        kugira itara risa n’icyatsi kibisi bituma umuyobozi yerekana ko yabonye
+        ikimenyetso cy’uwitegura kumunyuraho. Iryo tara rigomba gushyirwa aha
+        hakurikira:
+      </div>
+      <div class="option">a) hafi y’inguni y’ibumoso bw’ikinyabiziga</div>
+      <div class="option answer">
+        b) inyuma hafi y’impera y’ibumoso bw’ikinyabiziga
+      </div>
+      <div class="option">c) inyuma ahegereye inguni y’iburyo</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        210. Ubugari bw’imizigo yikorewe n’ipikipiki ifite akanyabiziga ko
+        kuruhande kimwe n’ubwa romoruki ikuruwe na bene icyo kinyabiziga
+        ntibushobora kurenza ibipimo bikurikira ku bugari bw’icyo kinyabiziga
+        kidapakiye:
+      </div>
+      <div class="option">a) m 1.25</div>
+      <div class="option answer">b) cm 30</div>
+      <div class="option">c) cm 75</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        211. Mu gihe telefone yawe ihamagawe utwaye imodoka wakora iki?
+      </div>
+      <div class="option">a) Kwitaba cyangwa guhagarara ako kanya</div>
+      <div class="option">b) kutayitaba</div>
+      <div class="option answer">c) Gushyira imodoka iruhande ukayitaba</div>
+      <div class="option">d) B na c ni ibisubizo byukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        212. Mu gihe telefone yawe ihamagawe utwaye imodoka wakora iki?
+      </div>
+      <div class="option">a) Kwitaba cyangwa guhagarara ako kanya</div>
+      <div class="option">b) kutayitaba</div>
+      <div class="option answer">c) Gushyira imodoka iruhande ukayitaba</div>
+      <div class="option">d) B na c ni ibisubizo byukuri</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        213. Niki wakora mbere y’uko uhindura icyerekezo?
+      </div>
+      <div class="option">
+        a) Gutanga ikimenyetso cy’ukuboko no gukoresha amatara ndangacyerekezo.
+      </div>
+      <div class="option">
+        b) Itegereze neza niba icyapa kikwemerera guhindura icyerekezo.
+      </div>
+      <div class="option answer">c) A na B n’ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        214. Niki muribi wakwirinda mugihe ushaka kunyuranaho?
+      </div>
+      <div class="option answer">
+        a) Nyuma y’ikona ugategereza kubona uburyo bwo kunyuranaho.
+      </div>
+      <div class="option">b) Mumuhanda w’icyerekezo kimwe</div>
+      <div class="option">c) Aho utagomba kurenza ibirometero 30 mu isaha.</div>
+      <div class="option">d) Ugeze mumuhanda utaringaniye neza</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        215. Mugihe ukurikiranye na romoruki, n'ukubera iki ugomba gusiga
+        umwanya uhagije hagati yawe nayo?
+      </div>
+      <div class="option">a) Bituma ubasha gukata ikorosi vuba.</div>
+      <div class="option answer">
+        b) Bifasha umuyobozi wa romoruki kukurebera mundorerwamo.
+      </div>
+      <div class="option">c) Bifasha romoruki guhagarara byoroshye.</div>
+      <div class="option">d) Bikurinda umuyaga.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        216. Utegereje gukata iburyo kwiherezo ry’umuhanda, ukingirijwe nimodoka
+        ihagaze. Niki wakora?
+      </div>
+      <div class="option answer">
+        a) Guhagarara hanyuma ukagenda gake gake witonze kugezaho ureba neza.
+      </div>
+      <div class="option">
+        b) Kwihuta wegera imbere aho ushobora kureba ugafunga ikindi cyerekezo.
+      </div>
+      <div class="option">
+        c) Gutegereza abanyamaguru bakakumenyesha ko ntakibazo wakata.
+      </div>
+      <div class="option">
+        d) Guhindukiza imodoka vuba kugirango ushake indi nzira wakoresha.
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        217. Mugihe uri murugendo rurerure mumuhanda urombereje w’ibice byinshi,
+        niki wakora mugihe wumva utangiye kugira ibitotsi?
+      </div>
+      <div class="option">a) Gucuranga umuziki cyane.</div>
+      <div class="option">b) Kwihuta cyane kugirango usoze urugendo vuba.</div>
+      <div class="option answer">
+        c) Kuva mumuhanda urombereje w’ibice byinshi, ugahagarara ahantu
+        hatekanye.
+      </div>
+      <div class="option">d) Ntagisubizo cy’ukuri kirimo.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        218. Kuki ugomba gucana amatara mugihe hatangiye kwijima?
+      </div>
+      <div class="option">a) Kugirango akerekanamuvuduko kagaragare neza.</div>
+      <div class="option answer">b) Kugirango abandi biborohere kukubona.</div>
+      <div class="option">
+        c) Kugira ngo ujyane nabandi bayobozi bibinyabiziga.
+      </div>
+      <div class="option">d) Kuko amatara yo ku muhanda ari kwaka.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        219. Urimo kugenda munzira nyabagendwa ni gute wanyura k’umuyobozi
+        w’igare?
+      </div>
+      <div class="option">a) Kuvuza ihoni mugihe umunyuraho.</div>
+      <div class="option">b) Kumunyuraho umwegereye.</div>
+      <div class="option answer">
+        c) Gusiga umwanya uhagije igihe umunyuraho.
+      </div>
+      <div class="option">d) Kugabanya umuvuduko mbere y’uko umunyuraho.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        220. Niki wakora igihe utabona neza usubira inyuma?
+      </div>
+      <div class="option">a) Kumanura ikirahure cy’imodoka urebe inyuma.</div>
+      <div class="option">b) Gufungura umuryango w’imodoka ureba inyuma.</div>
+      <div class="option answer">
+        c) Gushaka umuntu uri hanze y’ikinyabiziga ukuyobora.
+      </div>
+      <div class="option">d) Gukoresha akarebanyuma kakwegereye.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        221. Igihe ukurikiwe n’ikinyabiziga gitwara abarwayi gicanye amatara
+        y’intabaza arabagirana. Wakora iki?
+      </div>
+      <div class="option answer">
+        a) Kugihigamira ako kanya ndetse byaba ngombwa ugahagarara.
+      </div>
+      <div class="option">b) Kongera umuvuduko kugirango ugisige.</div>
+      <div class="option">c) Kugumana umuvuduko wari ufite.</div>
+      <div class="option">d) Guhagarara bitunguranye mu muhanda.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        222. Wifuza kugana ibumoso imbere yawe. Kubera iki ushaka umwanya mwiza
+        kandi uhagije?
+      </div>
+      <div class="option">
+        a) Kwemerera abandi bayobozi b’ibinyabiziga kugutambukaho.
+      </div>
+      <div class="option">
+        b) Kugirango ubone neza ikindi kerekezo ushaka gufata.
+      </div>
+      <div class="option answer">
+        c) Kugirango ufashe abandi bose bakoresha umuhanda icyo ushaka gukora.
+      </div>
+      <div class="option">
+        d) Kwemerera abandi bayobozi b’ibinyabiziga kukunyura muruhande
+        rw’ibumoso.
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        223. Utwaye ikinyabiziga inyuma ya romoruki. Umuyobozi wayo akaguha
+        ikimenyetso cyo kumutambukaho iburyo kandi ugana ibumoso, wakora iki?
+      </div>
+      <div class="option answer">a) Kugabanya umuvuduko ukareka akagenda.</div>
+      <div class="option">b) Gukomeza iburyo bwawe.</div>
+      <div class="option">c) Kumunyuraho iburyo bwe.</div>
+      <div class="option">
+        d) Kugumana umuvuduko wari ufite ukamuvugiriza ihoni.
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        225. Wegereye inzira y’abanyamaguru ugasanga bategereje kwambuka. Ugomba
+        gukora iki?
+      </div>
+      <div class="option">
+        a) Kureka abakuze n’abafite ubumuga bagatambuka mbere.
+      </div>
+      <div class="option answer">
+        b) Kugabanya umuvuduko witegura guhagarara.
+      </div>
+      <div class="option">c) Gukoresha amatara abamenyesha kwambuka.</div>
+      <div class="option">
+        d) Gukoresha ibimenyetso byamaboko bibemerera kwambuka.
+      </div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        227. Kumanywa urumuri rudahagije hatabona neza. Ni ayahe matara
+        y’urugendo ugomba gukoresha?
+      </div>
+      <div class="option">a) Amatara yo kubisika na matara kamena-bihu.</div>
+      <div class="option answer">b) Amatara kamena-bihu y’imbere.</div>
+      <div class="option">c) Amatara yo kubisikana.</div>
+      <div class="option">d) Amatara kamena-bihu y’inyuma.</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        227. Niyihe mpamvu ituma tugomba kugabanya umuvuduko mugihe hari ibihu?
+      </div>
+      <div class="option">a) Igihe feri idakora.</div>
+      <div class="option">b) Igihe uhumishijwe n’amatara yo kubisikana.</div>
+      <div class="option">c) Igihe moteri imara ngo izime.</div>
+      <div class="option answer">
+        d) Nuko biba bitoroshye kubona ikiri imbere.
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        228. Niki ugomba gukora igihe uhagaze ku muhanda igihe cy’ibihu?
+      </div>
+      <div class="option answer">a) Kureka amatara ndanga akaguma yaka.</div>
+      <div class="option">
+        a) Kureka amatara yo kubisikana na kamena-bihu akaguma yaka.
+      </div>
+      <div class="option">b) Kureka amatara yo kubisikana akaguma yaka.</div>
+      <div class="option">c) Kureka amatara y’urugendo akaguma yaka.</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        232. Ni hehe byemewe kunyuranaho munzira y’icyerekezo kimwe?
+      </div>
+      <div class="option answer">a) ku gisate kiri Ibumoso bw’umuhanda</div>
+      <div class="option">b) Kunyuranaho ntibyemewe</div>
+      <div class="option">c) Ku gisate kiri iburyo bw’umuhanda gusa</div>
+      <div class="option">d) Ku gisate cy’ibumoso cyangwa iburyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        233. N’uwuhe muntu ushobora gusimbura ibimenyetso byo mumuhanda,
+        dutegetswe kubaha?
+      </div>
+      <div class="option">a) Umuyobozi w’ikinyamitende</div>
+      <div class="option">b) Umunyamaguru</div>
+      <div class="option answer">c) Umukozi ubifitiye ububasha</div>
+      <div class="option">d) Umuyobozi wa bisi</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        262. Ni iki gikenewe muri ibi bikurikira kugirango ubashe gutwara
+        imodoka mu muhanda biteganywa n’itegeko?
+      </div>
+      <div class="option">
+        a) Uruhushya rwa burundu rwo gutwara ibinyabiziga rugifite agaciro
+      </div>
+      <div class="option">b) Ubwishingizi bw’ikinyabizaga bugifite agaciro</div>
+      <div class="option">c) Icyemezo cy’iyandikwa ry’ikinyabiziga</div>
+      <div class="option answer">d) Ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        263. Ikinyabiziga gishya gikenerwa gusuzumwa bwa mbere nyuma y’igihe
+        kingana iki?
+      </div>
+      <div class="option">a) Nyuma y’umwaka umwe</div>
+      <div class="option answer">b) Nyuma y’imyaka ibiri</div>
+      <div class="option">c) A na b ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        264. Ni ryari ushobora kwakiriza icyarimwe amatara yose ndangacyerekezo
+        y’ikinyabiziga?
+      </div>
+      <div class="option">
+        a) Mu gihe ushaka kuburira abandi bakoresha umuhanda
+      </div>
+      <div class="option">
+        b) Mu gihe ikinyabiziga cyawe gishobora guteza ibyago
+      </div>
+      <div class="option answer">c) A na b ni ibisubizo by’ukuri</div>
+      <div class="option">d) Ntagisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        265. Ugeze ahabereye impanuka yo mumuhanda bwambere ugasanga
+        abakomeretse bikomeye. Wakiriza icyarimwe amatara y’ibyerekezo byombi,
+        niki kindi ushobora gukora?
+      </div>
+      <div class="option answer">
+        a) Kumenya neza niba imbangukiragutabara yahamagawe
+      </div>
+      <div class="option">
+        a) Guhagarika ibinyabiziga bindi no kubasaba ubufasha
+      </div>
+      <div class="option">b) A na b ni ibisubizo by’ukuri</div>
+      <div class="option">c) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        267. Wakoze impanuka yo mu muhanda, ni ikihe cyangombwa polisi ishobora
+        kugusaba kucyerekana?
+      </div>
+      <div class="option">a) Icyemezo cy’iyandikwa ryi ikinyabiziga</div>
+      <div class="option answer">
+        b) Uruhusa rwa burundu rwo gutwara ikinyabiziga
+      </div>
+      <div class="option">b) Uruhushya rw’agateganyo</div>
+      <div class="option">c) Imikorere y’ikinyabiziga</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        269. Umuyobozi usunika ipikipiki agomba gufatwa nka:
+      </div>
+      <div class="option">a) Umunyamaguru</div>
+      <div class="option answer">b) Umuyobozi w’ikinyabiziga</div>
+      <div class="option">c) Umugenzi</div>
+      <div class="option">d) A na b ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        270. Icyapa gikoze mw’ishusho ya mpandeshatu kimenyesha:
+      </div>
+      <div class="option answer">a) ibyago</div>
+      <div class="option">b) ibibujijwe</div>
+      <div class="option">c) ibitegetswe</div>
+      <div class="option">d) ntagisubizo cy’ukuri kirimo</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        279. Mu muhanda ufite uruhererekane rw’amakoni, feri y’urugendo
+        ikoreshwa ryari?
+      </div>
+      <div class="option answer">a) Mbere ya buri koni</div>
+      <div class="option">b) Muri buri koni</div>
+      <div class="option">c) Nyuma ya buri koni</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        282. Uri umuyobozi wa velomoteri, uhuye n’umwe munshuti zawe agusaba ko
+        wa mutwara ukamusiga ku’wundi muhanda. Ufite imyaka 18 ariko nta ngofero
+        yindi yabigenewe. Wamutwara?
+      </div>
+      <div class="option">a) yego</div>
+      <div class="option">b) yego usibye urugendo rurerure</div>
+      <div class="option">c) yego usibye urugendo rugufi</div>
+      <div class="option answer">d) Oya</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        284. Mbere yo kunyura kumuyobozi w’ikinyabiziga cy’imitende ibiri,
+        ngomba gucana akaranga cyerekezo k’ibumoso?
+      </div>
+      <div class="option answer">a) Yego buri gihe</div>
+      <div class="option">b) Yego igihe hari ikinyabiziga kinkurikiye</div>
+      <div class="option">
+        c) Yego iyo nkurikiwe nibindi binyabiziga by’imitende ibiri
+      </div>
+      <div class="option">
+        d) Oya nta na rimwe kunyura kubinyabiziga by’imitende ibiri
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        285. Nshobora kunyuraho umuyobozi w’ikinyabiziga wahagaze imbere
+        y’inzira y’abanyamaguru?
+      </div>
+      <div class="option">a) yego</div>
+      <div class="option">b) yego nyuma yo kuvuza ihoni</div>
+      <div class="option">c) yego mu gihe nkurikiwe n’ibindi binyabiziga</div>
+      <div class="option answer">d) Oya</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">286. Hejuru y’akanunga:</div>
+      <div class="option">
+        a) Nshobora kunyura ku kinyabiziga icyo aricyose mu gihe nagabanyije
+        umuvuduko
+      </div>
+      <div class="option">
+        b) Nshobora kunyura gusa kubinyabiziga by’imitende ibiri
+      </div>
+      <div class="option answer">c) Kunyuranaho ibumoso birabujijwe</div>
+      <div class="option">d) a na b ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        287. Mu gihe cy’impanuka mu muhanda n’ubundi bushotoranyi ni iyihe
+        nimero ya telefone y’ubutabazi wahamagara?
+      </div>
+      <div class="option">a) 911</div>
+      <div class="option">b) 100</div>
+      <div class="option answer">c) 112</div>
+      <div class="option">d) 131</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        288. Ugeze bwa mbere ahabereye impanuka yo mu muhanda harimo inkomere
+        wakora iki?
+      </div>
+      <div class="option">a) Gusohora inkomere mu kinyabiziga</div>
+      <div class="option">b) Kubaha icyo kunywa</div>
+      <div class="option answer">
+        c) Kumumenyesha impanuka no guhamagara ubutabazi
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">289. Mugihe ikinyabiziga cyacu bakinyuzeho:</div>
+      <div class="option answer">a) Tugomba kugabanya umuvuduko</div>
+      <div class="option">b) Tugomba kongera umuvuduko</div>
+      <div class="option">c) Tugomba kongera umuvuduko n’ubwitonzi</div>
+      <div class="option">d) Nta gisubizo cy’ ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">290. Ntibyemewe gukoresha telephone:</div>
+      <div class="option">a) Mu biro bya leta</div>
+      <div class="option">b) Mu biro bya Polisi</div>
+      <div class="option answer">c) Igihe utwaye ikinyabiziga</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        291. Mbere yo kunyura ku kindi kinyabiziga, ni ngombwa kumenya ko:
+      </div>
+      <div class="option">a) Nta kindi kinyabiziga kinturutse inyuma</div>
+      <div class="option answer">
+        b) Umuhanda ubona neza, no kwitondera kunyuranaho
+      </div>
+      <div class="option">
+        c) Ikinyabiziga kinturutse imbere gishaka gukatira I bumoso
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        292. Ikindi kinyabiziga kiguturutse inyuma kiguterera amatara y’urumuri
+        rumyasa, wakora iki?
+      </div>
+      <div class="option">
+        a) Kongera umuvuduko kugira ngo intera iri hagati yawe n’ukuri inyuma
+        igumeho
+      </div>
+      <div class="option">
+        b) Fata feri y’urugendo kugira ngo umwereke ko ugiye guhagarara
+      </div>
+      <div class="option answer">
+        c) Emerera icyo kinyabiziga kugutambukaho niba imbere ntacyago gihari
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        293. Mu gihe umuntu ufite ubumuga bwo kutabona yambuka umuhanda yitwaje
+        inkoni yera y’abatabona:
+      </div>
+      <div class="option answer">
+        a) Umuyobozi w’ikinyabiziga agomba gufata iyo nkoni nk’icyapa
+        kimumenyesha ko agomba guhagarara
+      </div>
+      <div class="option">b) Vuza ihoni ukomeze</div>
+      <div class="option">c) Gabanya nurangiza ukomeze witonze</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">294. Amatara y’urugendo, mu gihe cy’ibihu:</div>
+      <div class="option">a) Ni meza kuko atuma ureba kure</div>
+      <div class="option answer">
+        b) Ni mabi kuko arakugarukira akaguhuma amaso
+      </div>
+      <div class="option">c) Akwizeza ko abandi bakubona</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">295. Gutwara uzungazunga mu muhanda:</div>
+      <div class="option">a) Ni bibi ku kinyabiziga cy’imitende ibiri</div>
+      <div class="option answer">b) Ni bibi igihe cyose</div>
+      <div class="option">c) Ni bibi ku kinyabiziga cy’imitende ine</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">296. Telephone ngendanwa ntigomba gukoreshwa:</div>
+      <div class="option">a) Ahari ibimenyetso bimurika</div>
+      <div class="option">
+        b) Igihe utwaye ikinyabiziga Ku muvuduko wa 20km/h
+      </div>
+      <div class="option">c) A na B ni ibisubizo by’ukuri</div>
+      <div class="option answer">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">297. Kunyuranaho bibujijwe gusa igihe:</div>
+      <div class="option">
+        a) Igihe mu muhanda hagati hashushanyijemo umurongo w’umweru ucagaguye
+      </div>
+      <div class="option answer">
+        b) Umuhanda ushushanyijwemo umurongo wera udacagaguye
+      </div>
+      <div class="option">c) Ikinyabiziga gitwawe ku musozi unyerera</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        298. Mu gihe utwaye ikinyabiziga ni joro ucanye amatara maremare ugahura
+        n’ikindi kinyabiziga giturutse mu kindi cyerecyezo:
+      </div>
+      <div class="option">a) Gukomeza ibumoso</div>
+      <div class="option">b) Kuzimya ucana amatara maremare n’amagufi</div>
+      <div class="option answer">
+        c) Kuzimya amatara maremare kugeza ikindi kinyabiziga gitambutse
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        299. Igihe umuyobozi w’inyamaswa, afite inyamaswa idatuje, asaba ko
+        ibinyabiziga bihagarara:
+      </div>
+      <div class="option answer">
+        a) Umuyobozi w’ikinyabiziga agomba guhagarara
+      </div>
+      <div class="option">
+        b) Umuyobozi w’ikinyabiziga agomba kuvuza ihoni akagumana umuvuduko
+      </div>
+      <div class="option">
+        c) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko
+      </div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        300. Iyo mu muhanda hashushanyijemo umurongo wera ucagaguye, ntugomba:
+      </div>
+      <div class="option">a) Ntugomba kujya mu kindi gice cy’umuhanda</div>
+      <div class="option answer">
+        b) Ushobora kujya mu kindi gice cy’umuhanda bibaye ngombwa
+      </div>
+      <div class="option">c) Agomba guhagarika ikinyabiziga</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">301. Kuvuza ihoni bibujijwe:</div>
+      <div class="option">a) Ku musigiti, ku rusengero, ku rutambiro</div>
+      <div class="option answer">b) Hafi y’ibitaro</div>
+      <div class="option">c) Hafi y’ubuyobozi bwa polisi</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        302. Icyemezo cy’Isuzuma ry’ikinyabiziga kimara igihe kingana iki?
+      </div>
+      <div class="option">a) Amezi 6 kubinyabiziga bikora ubucuruzi</div>
+      <div class="option">b) Amezi 12 ku binyabiziga bidakora ubucuruzi</div>
+      <div class="option">c) Imyaka 2</div>
+      <div class="option answer">d) A na B ni ibisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        303. N’iyihe myifatire myiza wagira ugeze aho abana bari hafi y’inzira
+        nyabagendwa?
+      </div>
+      <div class="option answer">
+        a) Itonde, witegereze niba bibaye ngombwa ubaburire unitegura kuba
+        wahagarara
+      </div>
+      <div class="option">b) Ihute urenge aho abo bana bari</div>
+      <div class="option">c) Komeza ugume ku muvuduko munini</div>
+      <div class="option">d) Komeza ugendere kuruhande rw’iburyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        306. Umuyobozi w’ikinyabiziga ageze hafi y’inzira y’abanyamaguru
+        yakwitwara ate?
+      </div>
+      <div class="option answer">
+        a) Kugabanya umuvuduko mu gihe cyiza, ukitegura guhagarara
+      </div>
+      <div class="option">
+        b) Gukomeza agendera ku muvuduko uri hejuru, mu gihe umunyamaguru
+        ategereje
+      </div>
+      <div class="option">
+        c) Kuguma ku muvuduko yari afite mu gihe umunyamaguru atarambuka
+      </div>
+      <div class="option">d) Kuvuza ihoni akaguma ku muvuduko yahozeho</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        307. Umuyobozi w’ikinyabiziga akurikiye ibinyabiziga bibiri, yifuza
+        kubinyuraho. N’iki yashingiraho mbere yo kubanyuraho?
+      </div>
+      <div class="option">a) Ugomba kuzinyuraho zombi</div>
+      <div class="option answer">
+        b) Sibyiza ko yazinyuraho atabasha kureba neza imbere ye
+      </div>
+      <div class="option">
+        c) Ibyapa by’aho ageze ntibimwemerera kunyuranaho
+      </div>
+      <div class="option">d) Imbere har’inzira y’abanyamaguru</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        309. N’ayahe matara umuyobozi w’ikinyabiziga agomba gukoresha mugihe
+        cy’ibihu?
+      </div>
+      <div class="option answer">
+        a) Amatara kamena bihu y’imbere n’ay’inyuma hamwe n’amatara magufi
+      </div>
+      <div class="option">b) Amatara kamena-bihu y’imbere n’ay’inyuma</div>
+      <div class="option">c) Amatara magufi</div>
+      <div class="option">d) Urumuri rusanzwe</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        312. N’iki umuyobozi w’ikinyabiziga yakora aramutse ahumishijwe
+        n’urumuri rw’amatara y’ikinyabiziga giturutse mu kindi cyerekezo?
+      </div>
+      <div class="option">
+        a) Humisha ikinyabiziga giturutse mu kindi cyerekezo ucana amatara
+        maremare
+      </div>
+      <div class="option answer">
+        b) Egera kunkombe y’iburyo bw’umuhanda nibinashoboka ugabanye umuvuduko
+      </div>
+      <div class="option">
+        c) Canira amatara ikinyabiziga kiva mukindi cyerekezo
+      </div>
+      <div class="option">
+        d) Ongera umuvuduko kugira ngo usohoke mururwo rumuri vuba bishoboka
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        313. Niki ugomba gukora igihe wegereye ikimenyetso kimurika kiva
+        mucyatsi kijya mumuhondo?
+      </div>
+      <div class="option">a) Ongera umuvuduko kugirango usoze ikoni</div>
+      <div class="option">b) Komeza kuko itara ry’icyatsi rigiye kwaka</div>
+      <div class="option answer">c) Hagarara niba utateza ibyago</div>
+      <div class="option">
+        d) Komeza ubwitonzi witegura guhagarara mugihe itara rihindutse umutuku
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        319. Niki umuyobozi w’ikinyabiziga yakora mu gihe abonye icyapa kiburira
+        cya mpande eshatu gitukura mu muhanda?
+      </div>
+      <div class="option">a) Hagarara utegereze amabwiriza</div>
+      <div class="option answer">
+        b) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko ateganya icyago
+        imbere ye
+      </div>
+      <div class="option">c) Kukireka, ukagumana umuvuduko ufite ugakomeza</div>
+      <div class="option">
+        d) Hagarara kuri icyo cyapa cya mpande eshatu mbere yo gukomeza
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        320. Niki umuyobozi w’ikinyabiziga agomba gukora ahuye n’amatungo mu
+        muhanda?
+      </div>
+      <div class="option">a) Kuvuza ihoni kugirango zihunge</div>
+      <div class="option answer">
+        b) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko zigatambuka
+      </div>
+      <div class="option">
+        c) Kwatsa amatara maremare kugirango utambuke wihuta mu buryo bushoboka
+        bwose
+      </div>
+      <div class="option">d) Kuvuza ihoni ukanyuraho witonze</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        321. Niki umuyobozi w’ikinyabiziga yakora abonye otobisi iri kuva aho
+        zagenewe guhagararwamo?
+      </div>
+      <div class="option">
+        a) Gukomeza iruhande kuko ufite uburenganzira bwo gukomeza
+      </div>
+      <div class="option answer">b) Gabanya umuvuduko maze ureke ikomeze</div>
+      <div class="option">c) Gerageza unyureho kugirango atagutinza</div>
+      <div class="option">d) Menyesha umuyobozi wa otobisi aguhe inzira</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        322. Niki umuyobozi w’ikinyabiziga yakora mugihe ahuye n’ikinyabiziga
+        cyakije itara ry’umuhondo rimyatsa?
+      </div>
+      <div class="option">
+        a) Mu gihe ikinyabiziga giturutse mu kindi cyerekezo kitagishoboye
+        kugenda
+      </div>
+      <div class="option">
+        b) Mu gihe ikinyabiziga ndakumirwa giturutse mu kindi cyerekezo
+      </div>
+      <div class="option">
+        c) Mu gihe ikinyabiziga giturutse mu cyindi cyerekezo cy’ihuta
+      </div>
+      <div class="option answer">
+        d) Kugabanya umuvuduko witegura guhagarara
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        323. Umuyobozi w’ikinyabiziga yakara iki mu gihe anyuzweho n’ikindi
+        kinyabiziga?
+      </div>
+      <div class="option answer">a) Gukomezanya umuvuduko warufite</div>
+      <div class="option">b) Kujya i buryo</div>
+      <div class="option">c) Kujya I bumoso</div>
+      <div class="option">d) Kwongera umuvuduko</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        325. Umuyobozi w’ikinyabiziga ugeze mu isangano ry’umuhanda ugenzurwa ni
+        ibimenyetso by’amatara yaka agasanga ataka (adakora), yakora iki?
+      </div>
+      <div class="option answer">
+        a) Guca mu isangano n’ubwitonzi nkaho ntakimenyetso kikuyobora kirimo,
+        witondera abandi bayobozi b’ibinyabiziga
+      </div>
+      <div class="option">b) Gutwara neza ntagutinda mw’isangano</div>
+      <div class="option">
+        c) Guhagarara mw’isangano no guha inzira abayobozi b’ibinyabiziga
+        baturuka iburyo bwawe
+      </div>
+      <div class="option">
+        d) Gucana amatara yose ndanga cyerekezo ugakomeza
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        326. Ni iki umuyobozi w’ikinyabiziga yakora ahuye n’ishyo ry’amatungo
+        munzira nyabagendwa?
+      </div>
+      <div class="option">a) Kuvuza ihoni kugirango ayo matungo atambuke</div>
+      <div class="option answer">
+        b) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko no gutambukana
+        ubwitonzi
+      </div>
+      <div class="option">
+        c) Kwatsa amatara maremare n’amagufi no gutambuka vuba bishoboka
+      </div>
+      <div class="option">d) Kuvuza ihoni no gutambukana ubwitonzi</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        327. Umuyobozi w’ikinyabiziga yakora iki igihe ageze ku kazamuko
+        gashinze cyane?
+      </div>
+      <div class="option answer">
+        a) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko akaguma kuruhande
+        rw’iburyo yirinda ibyago
+      </div>
+      <div class="option">
+        b) Gukandagira ikirenge cya amburiyage no kuvuza ihoni ryo kumunyesha
+      </div>
+      <div class="option">
+        c) Kugumana umuvuduko n’ikirekezo wari ufite mu muhanda
+      </div>
+      <div class="option">d) Guhagarara ku mpera zuwo musozi</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        328. Umuyobozi w’ikinyabiziga yakora iki ahuye n’ikinyabiziga giturutse
+        mukindi kerekezo, gicanye amatara yumuhondo aburira?
+      </div>
+      <div class="option answer">
+        a) Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko no gutambukana
+        ubwitonzi
+      </div>
+      <div class="option">b) Ikinyabiziga cy’ubutabazi</div>
+      <div class="option">c) Yagize ibyago</div>
+      <div class="option">d) Umuvudoko urenze</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        329. Niki umuyobozi w’ikinyabiziga yakora ageze hafi y’inzira ifunganye
+        igihe ahuye n’ikindi kinyabiziga giturutse mukindi cyerekezo?
+      </div>
+      <div class="option">
+        a) Agomba kuguma mumwanya yarimo agategereza gutambuka kw’ikindi
+        kinyabiziga
+      </div>
+      <div class="option answer">
+        b) Kugabanya umuvuduko no gusiga umwanya uhagije hagati y’ibinyabiziga
+        byombi
+      </div>
+      <div class="option">
+        c) Gutegereza ko undi muyobozi w’ikinyabiziga ava mu muhanda
+      </div>
+      <div class="option">
+        d) Gutwarira ikinyabiziga mu muhanda hagati kugirango abandi bayobozi
+        bahagararare
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        330. Umuyobozi w’ikinyabiziga agendera inyuma y’ikindi kinyabiziga akaba
+        adateganya kukinyuraho yakora iki?
+      </div>
+      <div class="option">a) Kuguma yicyo kinyabiziga hagati mu muhanda</div>
+      <div class="option answer">
+        b) Kuguma inyuma yacyo kugirango yemerere ibindi binyabiziga gutambuka
+      </div>
+      <div class="option">
+        c) Gutwarira inyuma ye umwegereye cyane kugirango ureke ibindi
+        binyabiziga bibanyureho
+      </div>
+      <div class="option">
+        d) Gutanga ibimenyetso kubindi binyabiziga ko byabanyuraho
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        331. Niryari amatara ndanga cyerekezo agomba kugaragazwa kubandi
+        bakoresha umuhanda?
+      </div>
+      <div class="option">
+        A) Igihe gusa ari ngombwa amenyesha ibindi binyabiziga bimukurikiye
+      </div>
+      <div class="option">
+        B) Igihe gusa ari ngombwa kuburira abandi bayobozi bava mukindi
+        cyerekezo
+      </div>
+      <div class="option answer">
+        C) Mugihe gikwiye ushaka kumenyesha abandi bakoresha umuhanda icyo ugiye
+        gukora
+      </div>
+      <div class="option">
+        D) Keretse ahari ibimenyetso byo mu muhanda byerekana icyerekezo cyawe
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        332. Gutinda gutanga ibimenyetso ku muyobozi w’ikinyabiziga ni gute
+        bibangamira abandi bakoresha umuhanda?
+      </div>
+      <div class="option">
+        a) Bigira ingaruka gusa kubaturuka mukindi cyerekezo
+      </div>
+      <div class="option answer">
+        b) Bishobora gutuma batabona igihe gihagije cyo gushyira mubikorwa icyo
+        amenyeshejwe
+      </div>
+      <div class="option">
+        c) Baba bafite igihe gihagije cyo gushyira mu bikorwa ibyo bamyeshejwe
+      </div>
+      <div class="option">d) Ntacy bibabangamiraho</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        333. Ni ubuhe buryo bwiza bwakurikizwa igihe hari umuntu wakomerekeye mu
+        mpanuka yo mu muhanda?
+      </div>
+      <div class="option">a) Kumushyira kunkengero y’umuhanda</div>
+      <div class="option answer">
+        b) Kutamukuramo keretse mugihe hari ibyago byaterwa n’inkongi y’umuriro
+        cyangwa akaba ashobora kugongwa n’ikindi kinyabiziga no guhamagara
+        ababishinzwe
+      </div>
+      <div class="option">
+        c) Gusaba uwakomeretse kunyeganyeza ibice by’umubiri kugira ngo umenye
+        aho ibikomere bye bigarukira
+      </div>
+      <div class="option">
+        d) Guhumuriza uwakomeretse ukamuha ikinyobwo gikonje
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        334. Niki umuyobozi w’ikinyabiziga yakora igihe agize uruhare mu mpanuka
+        yo mu muhanda, aho ntawakomeretse ariko ibinyabiziga bikaba byateza
+        icyago cyangwa byafunze umuhanda?
+      </div>
+      <div class="option answer">
+        a) Gushushanya aho zagonganiye no kuzishyira kuruhande
+      </div>
+      <div class="option">
+        b) Gukuramo abagenze ugashyiraho icyapa cya mpandeshatu gikura kumodoka
+      </div>
+      <div class="option">
+        c) Gutegereza ko abapolisi bahagera mbere yo gukura ibinyabiziga mu
+        muhanda
+      </div>
+      <div class="option">
+        d) Guhagarika ibindi binyabiziga kugeza ikibazo gikemutse mukabona
+        kubikura mu muhanda
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        335. Igihe umuyobozi w’ikinyabiziga agendera munzira y’icyerekezo kimwe
+        akifuza gukata ibumoso yakora iki?
+      </div>
+      <div class="option">
+        a) Gutwara yegera umurongo wo hagati mu muhanda yerekeza ibumoso
+      </div>
+      <div class="option">b) Gutwara yegera uruhande rw’iburyo bw’umuhanda</div>
+      <div class="option answer">
+        c) Gutwara yegera ku uruhande rw’ibumoso bw’umuhanda
+      </div>
+      <div class="option">
+        d) Gutwarira hafi y’umurongo ugabanya umuhanda mo kabili
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        336. Umuyobozi w’ikinyabiziga uri kugendera mu muhanda w’ibyerekezo
+        bibiri nuruhe ruhande rw’umuhanda agomba gukoresha?
+      </div>
+      <div class="option">
+        a) Uruhande rw’ibumoso bw’umuhanda uretse igihe atawaye imashini zihinga
+        cyangwa zikoreshwa indi mirimo
+      </div>
+      <div class="option">b) Mu gice cy’umuhanda yumva ashaka</div>
+      <div class="option answer">
+        c) Mu gice cy’iburyo bw’umuhanda uretse igihe ashaka kunyuranaho cyangwa
+        gukata ibumoso
+      </div>
+      <div class="option">d) Ku ruhande rw’ibumoso bw’umuhanda</div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        337. Igihe umuyobozi w’ikinyabiziga atwaye mu muhanda urombereje w’ibice
+        byinshi agomba kugendera mu kihe gice cy’umuhanda?
+      </div>
+      <div class="option">
+        a) Kugendera mugice icyo aricyo cyose kirimo ibinyabiziga bike
+      </div>
+      <div class="option">
+        b) Kugendera kugice cy’ibumoso keretse ushaka gusohokera iburyo
+      </div>
+      <div class="option answer">
+        c) Kugendera mu gice cy’iburyo bw’umuhanda keretse ushaka kunyuranaho
+      </div>
+      <div class="option">
+        d) Ntagutwarira mu ruhande rw’iburyo bw’umuhanda kuko hagenewe imodoka
+        ziremereye n’imodoka nini zitwara abantu
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        338. Umuyobozi w’ikinyabiziga yakora iki igihe ageze aho banyura
+        bazenguruka?
+      </div>
+      <div class="option answer">
+        a) Tanga inzira ku binyabiziga byamaze kwinjira aho banyura bazunguruka
+      </div>
+      <div class="option">b) Tanga inzira kubinyabiziga biremereye gusa</div>
+      <div class="option">
+        c) Tanga inzira gusa niba uri munzira ya kabiri iya gatatu isohoka
+      </div>
+      <div class="option">
+        d) Komeza kuko abandi bayobozi b’ibinyabiziga bagomba kuguha inzira yo
+        gukomeza
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        339. Ni kihe cyerekezo umuyobozi w’ikinyabiziga yinjiriramo iyo ageze
+        aho banyura bazenguruka?
+      </div>
+      <div class="option">a) Ibumoso</div>
+      <div class="option">
+        b) Ibumoso gusa igihe ayobowe ni kimenyetso kimurika
+      </div>
+      <div class="option">c) Iburyo cyangwa ibumoso</div>
+      <div class="option answer">d) Iburyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        341. Umuyobozi w’ikinyabiziga yakwitondera iki mbere yuko y’injira
+        munzira banyuramo bazengurutse?
+      </div>
+      <div class="option">
+        a) Ibinyabiziga bimuturuka inyuma umuvuduko bifite n’uburyo bimwegereye
+      </div>
+      <div class="option answer">
+        b) Ibinyabiziga biturutse ibumoso bwe n’umuvuduko bifite n’intera iri
+        hagati ye nabyo
+      </div>
+      <div class="option">
+        c) Ibinyabiziga biturutse iburyo n’umuvuduko bifite ni intera iri hagati
+        ye nabyo
+      </div>
+      <div class="option">
+        d) Ibinyabiziga bimututse imbere, umuvuduko bifite n’intera iri hagati
+        ye nabyo
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        342. Umuyobozi w’ikinyabiziga ugendera inyuma y’ikinyabiziga gitwara
+        abagenzi gihagaze gikuramo cyangwa gishyiramo abagenzi agomba:
+      </div>
+      <div class="option">a) Kunyuranaho ibumoso</div>
+      <div class="option">b) Gutegereza yihanganye</div>
+      <div class="option answer">c) a na b ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        343. Igihe ubonye icyapa kigaragaza ishuri wakora iki?
+      </div>
+      <div class="option answer">
+        a) Kugabanya umuvuduko no gukomeza witonze
+      </div>
+      <div class="option">
+        b) Gukomeza n’umuvuduko uri hejuru kuko umunyeshuli agomba gutegereza
+      </div>
+      <div class="option">c) Kuvuza ihoni</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        344. Umubare w’abagenzi bemewe gutwarwa mukinyabiziga wanditswe mu:
+      </div>
+      <div class="option">a) Icyemezo cy’iyandikwa ry’ikinyabiziga</div>
+      <div class="option">b) Inyemezabwishyu y’umusoro</div>
+      <div class="option answer">c) Ubwishingizi</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">345. Gutwara ikinyabiziga wasinze:</div>
+      <div class="option">
+        a) Biremewe kubinyabiziga byabikorera kugiti cyabo
+      </div>
+      <div class="option">b) Biremewe nijoro</div>
+      <div class="option answer">
+        c) Birabujijwe ku binyabiziga byose bifite moteri
+      </div>
+      <div class="option">d) Ibisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        346. Umuyobozi w’ikinyabiziga ashobora kunyuranaho:
+      </div>
+      <div class="option">a) Ahamanuka</div>
+      <div class="option">b) Igihe umuhanda ari mugari</div>
+      <div class="option answer">
+        c) Igihe umuyobozi w’ikinyabiziga kiri imbere ye amweretse ikimenyetso
+        kimwemerera kunyuranaho
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        347. Ugeze ahari inzira yabanyamaguru barindiriye kwambuka. Ntibatangiye
+        kwambuka, wakora iki?
+      </div>
+      <div class="option">a) Kuvuza ihoni</div>
+      <div class="option answer">b) Kwihangana ugatagereza</div>
+      <div class="option">c) Gukomeza</div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        348. Igihe utwaye umuntu mu kinyabiziga cyawe, akibagirwa kwambara
+        umukandara wo kwirinda ibyago ugomba:
+      </div>
+      <div class="option">
+        a) Gukuramo umukandara wo kwirinda ibyago wambaye mukawambara mwembi
+      </div>
+      <div class="option">
+        b) Kubyerengagiza wizeyeko nta mpanuka muri bukore
+      </div>
+      <div class="option">
+        c) Funga cyane umukandara wo kwirinda ibyago wawe
+      </div>
+      <div class="option answer">
+        d) Kubibutsa kwambara umukandara wo kwirinda ibyago
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        349. Igihe za otobisi zigenewe gutwara abanyeshuli zihagaze kugirango
+        zibafate cyangwa bavemo ugomba:
+      </div>
+      <div class="option">a) Kuvuza ihoni ugakomeza</div>
+      <div class="option answer">
+        b) Gukomeza ugabanyije umuvuduko n’ubwitonzi kuko bishoboka ko
+        abanyeshuli bakwambuka bitunguranye
+      </div>
+      <div class="option">c) Nta bwitonzi budasanzwe bukenewe</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        350. Igihe imodoka iparitse ku nkengero z’umuhanda mugihe cy’ijoro:
+      </div>
+      <div class="option">a) Imodoka igomba kuba ifunze</div>
+      <div class="option">
+        b) Umuntu ufite uruhushya rwo gutwara ikinyabiziga agomba kuba yicaye mu
+        mwanya w’umuyobozi
+      </div>
+      <div class="option">
+        c) Amatara yo guhagarara umwanya munini aguma yaka
+      </div>
+      <div class="option answer">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        351. Mu gihe hari undi muyobozi w’ikinyabiziga ugukurikiye watangiye
+        kukunyuraho:
+      </div>
+      <div class="option answer">
+        a) Ntugomba kugira undi muyobozi w’ikinyabiziga unyuraho
+      </div>
+      <div class="option">b) Ugomba kunyura ku kindi kinyabiziga</div>
+      <div class="option">
+        c) Ugomba kunyura kukindi kinyabiziga uvugije ihoni
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        352. Utwaye ikinyabiziga mu muhanda ufite ibyerekezo bibiri. Ikindi
+        kinyabiziga imbere yawe kiragenda buhoro, imbere yawe umuhanda nta
+        kibazo kunyuranaho, ugomba:
+      </div>
+      <div class="option answer">a) Kucyinyuraho bikorewe ibumoso</div>
+      <div class="option">b) Kucyinyuraho bikorewe iburyo</div>
+      <div class="option">
+        c) Kucyinyuraho ukoresheje uruhande urwo arirwo rwose
+      </div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        353. Ibice by’umuhanda byera bigari biteganye n’umurongo ugabanya
+        umuhanda mo kabili bisobanura:
+      </div>
+      <div class="option">a) Guhagara kw’ikinyabiziga</div>
+      <div class="option answer">b) Aho abanyamaguru bambukira</div>
+      <div class="option">c) Guha ubushobozi binyabiziga</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">354. Uturebanyuma dukoreshwa:</div>
+      <div class="option">a) Kwireba</div>
+      <div class="option">b) Kugenzura ibigendera mu muhanda inyuma</div>
+      <div class="option">c) Kureba abicaye inyuma</div>
+      <div class="option answer">d) Ntagisubizo cy’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        355. Kuki abanyamaguru batemerewe kwambuka umuhanda mw’ikoni cyangwa
+        hafi y’imodoka ihagaze?
+      </div>
+      <div class="option">a) Ingaruka kubindi binyabiziga</div>
+      <div class="option">b) Ingaruka kubandi bakoresha umuhanda</div>
+      <div class="option">
+        c) Abandi bayobozi b’ibinyabiziga baza bashobora kutabona abambuka
+        umuhanda
+      </div>
+      <div class="option answer">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">356. Kunyuranaho mw’ikoni:</div>
+      <div class="option">a) Biremewe</div>
+      <div class="option answer">b) Ntibyemewe</div>
+      <div class="option">c) Biremewe ukoranye ubwitonzi</div>
+      <div class="option">d) Ibisubizo byose ni ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        357. Umuyobozi w’ikinyabiziga igihe atwaye ikinyabiziga akagira
+        umunaniro utuma yasinzira yakora iki?
+      </div>
+      <div class="option answer">
+        a) Gufungura ikirahure cy’ikinyabiziga cyangwa gushyira ubukonje mu
+        modoka kugirango umwuka mwiza winjire mu kinyabiziga
+      </div>
+      <div class="option">
+        b) Guhagarara akaruhuka harimo no kugendagenda niba bishoboka
+      </div>
+      <div class="option">c) Kunanura amaboko no gufunga amaso mugihe gito</div>
+      <div class="option">d) Kongera ubushyuhe mu kinyabiziga</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        358. Niki umuyobozi w’ikinyabiziga yakora igihe atwaye ikinyabiziga
+        mugihe cy’ibihu, imvura nyinshi, umwuzure cyangwa umukungugu mwinshi?
+      </div>
+      <div class="option">
+        a) Kugendera mu tuyira turi kumpande z’umuhanda, ucunga ibimenyetso
+        bigarura urumuri
+      </div>
+      <div class="option">
+        b) Kugabanya umuvuduko hanyuma ugakoresha amatara magufi
+      </div>
+      <div class="option answer">
+        c) Gucana amatara maremare hanyuma ukagenda gahoro
+      </div>
+      <div class="option">
+        d) Kugendera mu murongo ugabanya umuhanda mo kabiri unareba ibimenyetso
+        by’umuhanda bigarura urumuri
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        359. Muri ibi byapa ni ubuhe bwoko bw’ibyapa bitegeka byo mu muhanda?
+      </div>
+      <div class="option">
+        a) Ibiri mw’ishusho y’urukiramende n’umuzenguruko w’umuhondo
+      </div>
+      <div class="option">
+        b) Ibiri mw’ishusho ya mpande eshatu mu n’uzenguruko mw’ibara ry’ubururu
+      </div>
+      <div class="option answer">
+        c) Ibiri mw’ishusho y’uruziga n’umuzenguruko mw’ibara ry’umutuku
+      </div>
+      <div class="option">
+        d) Ibiri mw’ishusho ya mpande enye zingana mubuso bw’umukara
+      </div>
+    </div>
+    <div class="qa-block">
+      <div class="question">
+        361. Amatara ndangacyerekezo agomba kugaragara nijoro igihe ijuru rikeye
+        mu ntera nibura ya:
+      </div>
+      <div class="option">a) m 100</div>
+      <div class="option">b) m 200</div>
+      <div class="option answer">(c) m150</div>
+      <div class="option">d) m250</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        362. Umurongo ucagaguye uvuga ko buri muyobozi abujijwe kuwurenga uretse
+        mu gihe:
+      </div>
+      <div class="option">a) Agomba kunyura ku kindi kinyabiziga</div>
+      <div class="option">b) Gukatira ibumoso</div>
+      <div class="option">
+        c) Guhindukira cyangwa kujya mukindi gice cy’umuhanda
+      </div>
+      <div class="option answer">(d) Ibi bisubizo byose nibyo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        363. Igice cy’inzira nyabagendwa kigarukira kumirongo ibiri yera
+        icagaguye ibangikanye kandi gifite ubugari budahagije kugirango imodoka
+        zitambuke neza kiba ari:
+      </div>
+      <div class="option">a) Inzira y’abanyamaguru</div>
+      <div class="option answer">(b) Agahanda k’amagare</div>
+      <div class="option">c) a na b byose ni ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        364. Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite:
+      </div>
+      <div class="option">
+        a) Ishusho y’uruziga mw’ibara ritukura, ubuso bwera n’ikirango
+        cy’umukara
+      </div>
+      <div class="option answer">
+        (b) Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bwera n’ikirango
+        cy’umukara
+      </div>
+      <div class="option">
+        c) Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bw’ubururu n’ikirango
+        cy’umukara
+      </div>
+      <div class="option">
+        d) Ishusho y’uruziga mw’ibara ritukura, ubuso bw’ubururu n’ikirango
+        cy’umukara
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        365. Ikinyabiziga kigendeshwa na moteri n’ikinyabiziga gikururwa
+        n’inyamaswa ntibishobora gukurura:
+      </div>
+      <div class="option">a) Ibinyabiziga birenze kimwe</div>
+      <div class="option">b) Ibinyabiziga bipakiye birenze bibiri</div>
+      <div class="option answer">(c) Ibinyabiziga birenze bibiri</div>
+      <div class="option">d) b na c ni byo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        368. Utugarurarumuri turi ku ruhande rw’imbere rw’ikinyabiziga tugomba
+        gusa:
+      </div>
+      <div class="option">a) n’umuhondo</div>
+      <div class="option">b) n’umutuku</div>
+      <div class="option answer">(c) n’umweru</div>
+      <div class="option">d) nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        372. Umuyobozi ubonye ko hari undi umukurikiye ashaka kumunyuraho agomba
+        kubahiriza ibi bikurikira:
+      </div>
+      <div class="option answer">
+        = (a) kwegera i ruhande rw’iburyo bw’umuhanda
+      </div>
+      <div class="option">b) kongera umuvuduko</div>
+      <div class="option">c) guhagarara</div>
+      <div class="option">d) a na c ni byo bisubizo by’ukuri</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        377. Iyo umuhanda ugabanijemo ibisate bibiri kandi ugendwamo mu
+        byerekezo byombi umuyobozi abujijwe:
+      </div>
+      <div class="option">a) kugendera mu gisate cy’iburyo</div>
+      <div class="option">b) kunyuranaho</div>
+      <div class="option answer">(c) kugendera mu gisate cy’ibumoso</div>
+      <div class="option">d) ibisubizo byose ni byo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        378. Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite:
+      </div>
+      <div class="option">
+        a) Ishusho y’uruziga mw’ibara ritukura, ubuso bwera n’ikirango
+        cy’umukara
+      </div>
+      <div class="option answer">
+        (b) Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bwera n’ikirango
+        cy’umukara
+      </div>
+      <div class="option">
+        c) Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bw’ubururu n’ikirango
+        cy’umukara
+      </div>
+      <div class="option">
+        d) Ishusho y’uruziga mw’ibara ritukura, ubuso bw’ubururu n’ikirango
+        cy’umukara
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        379. Icyapa cyerekana inzira y’amatungo itegetswe giteye:
+      </div>
+      <div class="option">
+        a) Uruziga mubuso bw’ubururu, ishusho y’inka mu ibara ry’umukara
+      </div>
+      <div class="option">
+        b) Uruziga mu ibara ryera, ishusho y’inka mwibara ry’ubururu
+      </div>
+      <div class="option">
+        c) Uruziga mu buso bw’ibara ry’ubururu, ishusho y’inka mu ibara ryera
+        n’ikirango cy’umukara
+      </div>
+      <div class="option answer">
+        (d) mpande eshatu mu buso bw’ibara ry’umweru n’ishusho y’inka mu ibara
+        ry’umukara
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        380. Icyapa cyerekana ko bibujijwe kuvuza amahoni kirangwa na:
+      </div>
+      <div class="option">
+        a) ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umukara
+      </div>
+      <div class="option">
+        b) ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umweru
+      </div>
+      <div class="option answer">
+        (c) ishusho y’uruziga, ubuso bw’umweru, ikiranga cy’umukara
+      </div>
+      <div class="option">d) ntagisubizi cy’ukuri kirimo</div>
+    </div>
+    <!-- Questions 381 to 386 and 393 -->
+    <div class="qa-block">
+      <div class="question">
+        381. Ibyapa biburira n’ibyo gutambuka mbere birangwa:
+      </div>
+      <div class="option answer">
+        (a) ishusho mpandeshatu mw’ibara ritukura, ubuso bwera n’ikiranga mu
+        ibara ry’umukara
+      </div>
+      <div class="option">
+        b) ishusho mpandeshatu mw’ibara ritukura, ubuso bw’ubururu n’ikiranga mu
+        ibara ry’umukara
+      </div>
+      <div class="option">
+        c) ishusho y’uruziga mw’ibara ritukura, ubuso bw’ubururu n’ikiranga mu
+        ibara ry’umukara
+      </div>
+      <div class="option">
+        d) ishusho y’uruziga mw’ibara ritukura, ubuso bwera n’ikiranga mu ibara
+        ry’umukara
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        382. Ibyapa bibuza n’ibitegeka bikurikizwa gusa:
+      </div>
+      <div class="option">a) Mu masangano</div>
+      <div class="option">b) Mu bimenyetso bimurika</div>
+      <div class="option">c) a na b ni ibisubizo by’ukuri</div>
+      <div class="option answer">(d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        383. Ibyapa biburira bibereyeho kumenyesha umugenzi:
+      </div>
+      <div class="option answer">(a) Ko hari icyago</div>
+      <div class="option">b) Icyago kidasobanuye ukundi</div>
+      <div class="option">c) Imiterere y’icyago gitunguranye</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">384. Ibyapa by’inyongera bishobora kumenyesha:</div>
+      <div class="option">a) Ibitegetswe byihariye gusa</div>
+      <div class="option answer">
+        (b) Ubugerure cyangwa amarengamategeko rusange cyangwa ibibujijwe ndetse
+        n’ibitegetswe byihariye
+      </div>
+      <div class="option">c) a na b ni ibisubizo by’ukuri</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        385. Ishusho y’icyapa kivuga “ugukikira” bitegetswe ni:
+      </div>
+      <div class="option">a) Mpandeshatu</div>
+      <div class="option answer">(b) Uruziga</div>
+      <div class="option">c) Urukiramende</div>
+      <div class="option">d) Nta gisubizo cy’ukuri kirimo</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        386. Icyapa kivuga “icyerekezo gitegetswe” kigizwe n’ikirango cy’ibara:
+      </div>
+      <div class="option">a) Umweru</div>
+      <div class="option">b) Umutuku</div>
+      <div class="option answer">(c) Ubururu n’ikirango cy’umweru</div>
+      <div class="option">d) Umukara</div>
+    </div>
+
+    <div class="qa-block">
+      <div class="question">
+        393. Umuhanda wambukiranya inzira ya gariyamoshi:
+      </div>
+      <div class="option">
+        a) Nshobora gukomeza nkambuka umuhanda kubera ko uruzitiro rufunguye
+      </div>
+      <div class="option answer">
+        (b) Ngomba guhagarara munsi y’itara ry’umutuku rimyatsa
+      </div>
+      <div class="option">
+        c) Ntabwo nakomeza urugendo rwanjye. Ngomba gihita mpagarara
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+
+
+     <div class="qa-block">
+      <div class="question">
+       214.Niki wakora mugihe usanze mu bimenyetso bimurika harimo ibara ry’umuhondo.
+
+       <img src="../static/images/questions/photo (1).png">
+      <div class="option">
+       a) Kongera umuvuduko
+      </div>
+      <div class="option answer">
+        (b) Kwitegura guhagarara.
+       
+      </div>
+      <div class="option">
+        c) Kugumana umuvuduko wari uriho.
+      </div>
+      <div class="option">d) Nta gisubizo cy’ukuri</div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,195 @@
+{% extends "layout.html" %} {% block title %}amasomo - Someraho{% endblock %} {%
+block content %}
+<script>
+  function openBook(filePath) {
+    const viewer = document.getElementById("bookViewer");
+    const iframe = document.getElementById("bookFrame");
+
+    iframe.src = filePath; // set the PDF file
+    viewer.style.display = "block"; // show the viewer
+  }
+
+  function closeBook() {
+    const viewer = document.getElementById("bookViewer");
+    const iframe = document.getElementById("bookFrame");
+
+    iframe.src = ""; // clear the file
+    viewer.style.display = "none"; // hide the viewer
+  }
+</script>
+
+<style>
+  /* Background */
+  body {
+    background: url("../static/images/daniil-silantev-9R6NwFop9fs-unsplash.jpg")
+      no-repeat center center/cover;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1.main-title {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+    font-size: 32px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .tab {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .tab:hover {
+    transform: translateY(-5px);
+  }
+
+  .tab h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .tab p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  .tab img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .tab button {
+    padding: 12px 24px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #28a745, #ffffff);
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .tab button:hover {
+    background: linear-gradient(135deg, #218838, #d4ffd4);
+    color: #000;
+  }
+
+  #bookViewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    text-align: center;
+    padding-top: 20px;
+  }
+  #bookViewer iframe {
+    width: 80%;
+    height: 85%;
+    border: none;
+    margin-top: 10px;
+  }
+  #bookViewer button {
+    padding: 8px 14px;
+    margin: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  #bookViewer button:hover {
+    background: #c9302c;
+  }
+
+  .info-paragraph {
+    max-width: 800px;
+    background: linear-gradient(
+      135deg,
+      rgba(40, 167, 69, 0.6),
+      rgba(255, 255, 255, 0.6)
+    );
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #000;
+    text-align: justify;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .tabs {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="main-content">
+  <h1 class="main-title">Amasomo</h1>
+
+  <div class="tabs">
+    <!-- Tab 1 -->
+    <div class="tab">
+      <h2>Ibibazo n'Ibisubizo</h2>
+      <p>
+        Soma ibi Bibazo n'Ibisubizo byose kuko nibyo bikurwamo ibibazo bibazwa.
+        Byige byose ntanakimwe iciyeho bizagufasha gutsinda ikizamini.
+      </p>
+      <img src="../static/icons/icons/questions1.jpg" alt="Ibibazo" />
+      <a href="{{ url_for('ibibazo')}}"><button>Tangira Wige</button></a>
+    </div>
+
+    <!-- Tab 2 -->
+    <div class="tab">
+      <h2>Ibyapa by’Umuhanda</h2>
+      <p>
+        Menya neza ibi byapa byose bizagufasha gutsinda ikizamini cy’uruhushya
+        rw’agateganyo neza kandi kongera ubumenyi ku mategeko y’umuhanda.
+      </p>
+      <img src="../static/images/traffic.jpg" alt="Ibyapa" />
+      <button onclick="openBook('../static/assets/IBYAPA new.pdf')">
+        Soma Ibyapa
+      </button>
+    </div>
+  </div>
+
+  <div class="info-paragraph">
+    Nyuma yo gusoma ugasobanukirwa ibibazo n'ibisubizo, ushobora gukora icyiciro
+    gikurikira cyo
+    <a href="{{ url_for('index')}}">"GUKORA IKIZAMINI"</a>.<br />
+    Reba niba ushobora gutsindira Provizwari ugendeye ku manota uri kubona kuri
+    20.
+  </div>
+</div>
+
+<!-- Book Viewer -->
+<div id="bookViewer">
+  <button onclick="closeBook()">✖ Funga</button>
+  <iframe id="bookFrame" src=""></iframe>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block title %}Amanota{% endblock %} {% block
+content %}
+<h2 style="margin-bottom: 20px; color: #004080">Amanota Yanjye</h2>
+
+<div class="table-container">
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Score</th>
+        <th>Total</th>
+        <th>Igihe cyo gukora</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in marks %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ m.score }}</td>
+        <td>{{ m.total }}</td>
+        <td>{{ m.date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+  .marks-table th,
+  .marks-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  .marks-table th {
+    background-color: #004080;
+    color: white;
+    font-weight: bold;
+  }
+
+  .marks-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .marks-table tr:hover {
+    background-color: #e0f0ff;
+  }
+
+  .marks-table td {
+    color: #222;
+  }
+
+  @media (max-width: 600px) {
+    .marks-table th,
+    .marks-table td {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+  }
+</style>
+{% endblock %}

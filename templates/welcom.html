@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="rw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murakaza neza - Someraho</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f7fbff;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      .welcome-box {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #0b72ff;
+        text-align: center;
+      }
+
+      h2 {
+        color: #0b72ff;
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 10px 0;
+        text-align: justify;
+      }
+
+      .btn {
+        display: block;
+        margin: 30px auto 0;
+        padding: 10px 20px;
+        background: #0b72ff;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        background: #084ec2;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-box">
+      <h1>Murakaza neza kuri <span style="color: #007bff">Someraho</span></h1>
+
+      <h2>Icyo dukora</h2>
+      <p>
+        Someraho ni urubuga rugufasha kwiga no kumenya amategeko y’umuhanda mu
+        buryo bworoshye kandi busobanutse. Twifuza gufasha abatwara
+        ibinyabiziga, abanyeshuri bitegura ibizamini, ndetse n’umuntu wese
+        ushaka kumenya uburyo bwo kugendera mu muhanda mu mutekano.
+      </p>
+
+      <h2>Impamvu yo kwiga amategeko y’umuhanda</h2>
+      <p>
+        Ubumenyi bw’amategeko y’umuhanda si ugutsinda ikizamini gusa, ahubwo ni
+        uguharanira ubuzima bwawe n’ubw’abandi. Iyo uzi amategeko, uba
+        umushoferi w’umwizerwa, uharanira umutekano n’amahoro mu muhanda.
+      </p>
+
+      <h2>Ibyo urubuga rugufasha</h2>
+      <p>
+        Ku rubuga rwa Someraho, uzasangamo ibisobanuro birambuye ku byapa
+        by’umuhanda, ibibazo bikoreshwa mu bizamini, hamwe n’inama
+        z’ingirakamaro zo kugufasha kugendera mu muhanda utuje kandi wiyizeye.
+      </p>
+
+      <h2>Ubutumire ku basura urubuga</h2>
+      <p>
+        Turagutumiye kwiga, gusobanukirwa, no gusangiza abandi ubumenyi ku
+        mategeko y’umuhanda. Dutangiye urugendo rwo kubaka abashoferi n'abagenzi
+        bo ubwabo bibungabungira umutekano mumuhanda.
+      </p>
+
+      <button class="btn" onclick="enterSite()">Subira ahabanza</button>
+    </div>
+
+    <script>
+      function enterSite() {
+        window.location.href = "{{ url_for('publicpage') }}";
+      }
+    </script>
+  </body>
+</html>
