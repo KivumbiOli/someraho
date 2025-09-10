@@ -4,16 +4,23 @@ import sqlite3, os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
 
+# ----------------- CONFIG -----------------
 app = Flask(__name__)
-app.secret_key = "yoursecretkey"
+app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env variable in production
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
+
+# ----------------- ENVIRONMENT VARIABLES -----------------
+EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
+EMAIL_APP_PASSWORD = os.environ.get("EMAIL_APP_PASSWORD")
+
+if not EMAIL_ADDRESS or not EMAIL_APP_PASSWORD:
+    raise RuntimeError("EMAIL_ADDRESS and EMAIL_APP_PASSWORD must be set as environment variables!")
 
 # ----------------- DATABASE -----------------
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
-        # Users table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -24,7 +31,6 @@ def init_db():
                 otp_code TEXT
             )
         """)
-        # Marks table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS marks (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,10 +45,12 @@ def init_db():
 
 init_db()
 
-# ----------------- EMAIL -----------------
-EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
-EMAIL_APP_PASSWORD =os.inviron.get("EMAIL_APP_PASSWORD")
+def get_db_connection():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
 
+# ----------------- EMAIL -----------------
 def send_otp_email(email, otp):
     msg = MIMEText(f"Kode yo kwemeza konti yawe ni: {otp}")
     msg["Subject"] = "Kwemeza Konti yawe"
@@ -61,7 +69,7 @@ def send_otp_email(email, otp):
 def login_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        if "user" not in session:
+        if "user_id" not in session:
             flash("Banza winjire mbere yo kubona iyi paji.", "warning")
             return redirect(url_for("auth"))
         return f(*args, **kwargs)
@@ -70,7 +78,7 @@ def login_required(f):
 # ----------------- ROUTES -----------------
 @app.route("/")
 def root():
-    if "user" in session:
+    if "user_id" in session:
         return redirect(url_for("home"))
     return redirect(url_for("publicpage"))
 
@@ -88,7 +96,7 @@ def auth():
             hashed_pw = generate_password_hash(password)
             otp = str(random.randint(100000, 999999))
             try:
-                with sqlite3.connect(DB_PATH) as conn:
+                with get_db_connection() as conn:
                     cursor = conn.cursor()
                     cursor.execute(
                         "INSERT INTO users (name, email, password, otp_code) VALUES (?, ?, ?, ?)",
@@ -105,8 +113,7 @@ def auth():
 
         # LOGIN
         elif form_type == "login":
-            with sqlite3.connect(DB_PATH) as conn:
-                conn.row_factory = sqlite3.Row
+            with get_db_connection() as conn:
                 cursor = conn.cursor()
                 cursor.execute("SELECT * FROM users WHERE email=?", (email,))
                 user = cursor.fetchone()
@@ -120,7 +127,8 @@ def auth():
                 session["pending_email"] = email
                 return redirect(url_for("verify"))
 
-            session["user"] = user["name"]
+            session["user_id"] = user["id"]
+            session["user_name"] = user["name"]
             return redirect(url_for("home"))
 
     return render_template("auth.html")
@@ -135,11 +143,11 @@ def verify():
             flash("Nta konti iri kwemezwa!", "error")
             return redirect(url_for("auth"))
 
-        with sqlite3.connect(DB_PATH) as conn:
+        with get_db_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT otp_code FROM users WHERE email=?", (email,))
             record = cursor.fetchone()
-            if record and record[0] == otp:
+            if record and record["otp_code"] == otp:
                 cursor.execute("UPDATE users SET is_verified=1, otp_code=NULL WHERE email=?", (email,))
                 conn.commit()
                 session.pop("pending_email", None)
@@ -153,7 +161,8 @@ def verify():
 # ----------------- LOGOUT -----------------
 @app.route("/logout")
 def logout():
-    session.pop("user", None)
+    session.pop("user_id", None)
+    session.pop("user_name", None)
     flash("Wasohotse neza!", "success")
     return redirect(url_for("publicpage"))
 
@@ -161,32 +170,32 @@ def logout():
 @app.route("/home")
 @login_required
 def home():
-    return render_template("home.html", name=session["user"])
+    return render_template("home.html", name=session["user_name"])
 
 @app.route("/index")
 @login_required
 def index():
-    return render_template("index.html", name=session["user"])
+    return render_template("index.html", name=session["user_name"])
 
 @app.route("/exam")
 @login_required
 def exam():
-    return render_template("exam.html", name=session["user"])
+    return render_template("exam.html", name=session["user_name"])
 
 @app.route("/ibibazo")
 @login_required
 def ibibazo():
-    return render_template("ibibazo.html", name=session["user"])
+    return render_template("ibibazo.html", name=session["user_name"])
 
 @app.route("/ibyigwa")
 @login_required
 def ibyigwa():
-    return render_template("ibyigwa.html", name=session["user"])
+    return render_template("ibyigwa.html", name=session["user_name"])
 
 @app.route("/welcom2")
 @login_required
 def welcom2():
-    return render_template("welcom2.html", name=session["user"])
+    return render_template("welcom2.html", name=session["user_name"])
 
 # ----------------- PUBLIC PAGES -----------------
 @app.route("/publicpage")
@@ -215,15 +224,14 @@ def save_score():
     if score is None or total is None:
         return {"status": "error", "message": "Invalid data"}, 400
 
-    with sqlite3.connect(DB_PATH) as conn:
+    with get_db_connection() as conn:
         cursor = conn.cursor()
-        cursor.execute("SELECT id FROM users WHERE name=?", (session["user"],))
+        cursor.execute("SELECT id FROM users WHERE id=?", (session["user_id"],))
         user = cursor.fetchone()
         if user:
-            user_id = user[0]
             cursor.execute(
                 "INSERT INTO marks (user_id, score, total) VALUES (?, ?, ?)",
-                (user_id, score, total)
+                (session["user_id"], score, total)
             )
             conn.commit()
             return {"status": "success"}
@@ -232,19 +240,13 @@ def save_score():
 @app.route("/amanota")
 @login_required
 def amanota():
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.row_factory = sqlite3.Row
+    with get_db_connection() as conn:
         cursor = conn.cursor()
-        cursor.execute("SELECT id FROM users WHERE name=?", (session["user"],))
-        user = cursor.fetchone()
-        marks = []
-        if user:
-            user_id = user["id"]
-            cursor.execute(
-                "SELECT score, total, timestamp FROM marks WHERE user_id=? ORDER BY timestamp DESC",
-                (user_id,)
-            )
-            marks = cursor.fetchall()
+        cursor.execute(
+            "SELECT score, total, timestamp FROM marks WHERE user_id=? ORDER BY timestamp DESC",
+            (session["user_id"],)
+        )
+        marks = cursor.fetchall()
     return render_template("amanota.html", marks=marks)
 
 # ----------------- RUN -----------------
@@ -252,4 +254,4 @@ if __name__ == "__main__":
     print("Registered endpoints:")
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
