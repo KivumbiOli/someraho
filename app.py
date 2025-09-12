@@ -20,11 +20,12 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # ----------------- DATABASE -----------------
 uri = os.environ.get("DATABASE_URL")
 if uri and uri.startswith("postgres://"):
-    # psycopg3 requires 'postgresql+psycopg://'
-    uri = uri.replace("postgres://", "postgresql+psycopg://", 1)
+    uri = uri.replace("postgres://", "postgresql+psycopg://", 1)  # <- use psycopg
+else:
+    uri = uri.replace("postgresql://", "postgresql+psycopg://", 1)  # ensure dialect
 
 app.config["SQLALCHEMY_DATABASE_URI"] = uri
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 db = SQLAlchemy(app)
 
 # ----------------- MODELS -----------------
@@ -251,3 +252,4 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=DEBUG)
+
