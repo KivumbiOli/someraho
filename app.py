@@ -19,13 +19,12 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # ----------------- DATABASE -----------------
 uri = os.environ.get("DATABASE_URL")
-if uri:
-    # psycopg3 explicit for SQLAlchemy
-    uri = uri.replace("postgres://", "postgresql+psycopg://", 1)
+if uri and uri.startswith("postgres://"):  
+    uri = uri.replace("postgres://", "postgresql://", 1)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-db = SQLAlchemy(app)
 
 # ----------------- MODELS -----------------
 class User(db.Model):
@@ -251,3 +250,4 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=DEBUG)
+
