@@ -18,14 +18,16 @@ app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # ----------------- DATABASE -----------------
-uri = os.environ.get("DATABASE_URL")
-if uri and uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql+psycopg://", 1)  # <- use psycopg
-else:
-    uri = uri.replace("postgresql://", "postgresql+psycopg://", 1)  # ensure dialect
+db_url = os.environ.get("DATABASE_URL")
+if db_url:
+    # psycopg3 requires 'postgresql+psycopg://' prefix
+    if db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql+psycopg://", 1)
+    elif db_url.startswith("postgresql://"):
+        db_url = db_url.replace("postgresql://", "postgresql+psycopg://", 1)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = uri
-
+app.config["SQLALCHEMY_DATABASE_URI"] = db_url
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 # ----------------- MODELS -----------------
@@ -38,9 +40,6 @@ class User(db.Model):
     is_verified = db.Column(db.Boolean, default=False)
     otp_code = db.Column(db.String(10))
 
-    def __repr__(self):
-        return f"<User {self.email}>"
-
 class Mark(db.Model):
     __tablename__ = "marks"
     id = db.Column(db.Integer, primary_key=True)
@@ -50,9 +49,7 @@ class Mark(db.Model):
     timestamp = db.Column(db.DateTime, server_default=db.func.now())
     user = db.relationship("User", backref=db.backref("marks", lazy=True))
 
-    def __repr__(self):
-        return f"<Mark {self.score}/{self.total}>"
-
+# Create tables if they don't exist
 with app.app_context():
     db.create_all()
 
@@ -252,4 +249,3 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=DEBUG)
-
