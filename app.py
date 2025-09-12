@@ -1,41 +1,44 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
-import sqlite3, os, random, smtplib
+import os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
+# ----------------- APP CONFIG -----------------
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env secret key in production
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
+DB_URL = os.environ.get("DATABASE_URL")  # Render provides this in env
 
-# ----------------- DATABASE -----------------
+def get_db():
+    return psycopg2.connect(DB_URL, cursor_factory=RealDictCursor)
+
+# ----------------- DATABASE INIT -----------------
 def init_db():
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        # Users table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                email TEXT UNIQUE NOT NULL,
-                password TEXT NOT NULL,
-                is_verified INTEGER DEFAULT 0,
-                otp_code TEXT
-            )
-        """)
-        # Marks table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS marks (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTEGER,
-                score INTEGER,
-                total INTEGER,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY(user_id) REFERENCES users(id)
-            )
-        """)
-        conn.commit()
+    with get_db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id SERIAL PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    password TEXT NOT NULL,
+                    is_verified INTEGER DEFAULT 0,
+                    otp_code TEXT
+                )
+            """)
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS marks (
+                    id SERIAL PRIMARY KEY,
+                    user_id INTEGER REFERENCES users(id),
+                    score INTEGER,
+                    total INTEGER,
+                    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.commit()
 
 init_db()
 
@@ -93,28 +96,27 @@ def auth():
             hashed_pw = generate_password_hash(password)
             otp = str(random.randint(100000, 999999))
             try:
-                with sqlite3.connect(DB_PATH) as conn:
-                    cursor = conn.cursor()
-                    cursor.execute(
-                        "INSERT INTO users (name, email, password, otp_code) VALUES (?, ?, ?, ?)",
-                        (name, email, hashed_pw, otp)
-                    )
-                    conn.commit()
+                with get_db() as conn:
+                    with conn.cursor() as cursor:
+                        cursor.execute(
+                            "INSERT INTO users (name, email, password, otp_code) VALUES (%s, %s, %s, %s)",
+                            (name, email, hashed_pw, otp)
+                        )
+                        conn.commit()
                 send_otp_email(email, otp)
                 session["pending_email"] = email
                 flash("Reba email yawe kugira ngo wemeze konti.", "success")
                 return redirect(url_for("verify"))
-            except sqlite3.IntegrityError:
+            except psycopg2.Error:
                 flash("Imeri isanzwe ibaho!", "error")
             return redirect(url_for("auth"))
 
         # LOGIN
         elif form_type == "login":
-            with sqlite3.connect(DB_PATH) as conn:
-                conn.row_factory = sqlite3.Row
-                cursor = conn.cursor()
-                cursor.execute("SELECT * FROM users WHERE email=?", (email,))
-                user = cursor.fetchone()
+            with get_db() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute("SELECT * FROM users WHERE email=%s", (email,))
+                    user = cursor.fetchone()
 
             if not user or not check_password_hash(user["password"], password):
                 flash("Imeri cyangwa ijambo ry’ibanga ntabwo ari byo!", "error")
@@ -140,18 +142,18 @@ def verify():
             flash("Nta konti iri kwemezwa!", "error")
             return redirect(url_for("auth"))
 
-        with sqlite3.connect(DB_PATH) as conn:
-            cursor = conn.cursor()
-            cursor.execute("SELECT otp_code FROM users WHERE email=?", (email,))
-            record = cursor.fetchone()
-            if record and record[0] == otp:
-                cursor.execute("UPDATE users SET is_verified=1, otp_code=NULL WHERE email=?", (email,))
-                conn.commit()
-                session.pop("pending_email", None)
-                flash("Konti yawe yemejwe! Injira.", "success")
-                return redirect(url_for("auth"))
-            else:
-                flash("Kode ntabwo ari yo!", "error")
+        with get_db() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("SELECT otp_code FROM users WHERE email=%s", (email,))
+                record = cursor.fetchone()
+                if record and record["otp_code"] == otp:
+                    cursor.execute("UPDATE users SET is_verified=1, otp_code=NULL WHERE email=%s", (email,))
+                    conn.commit()
+                    session.pop("pending_email", None)
+                    flash("Konti yawe yemejwe! Injira.", "success")
+                    return redirect(url_for("auth"))
+                else:
+                    flash("Kode ntabwo ari yo!", "error")
 
     return render_template("verify.html")
 
@@ -220,36 +222,35 @@ def save_score():
     if score is None or total is None:
         return {"status": "error", "message": "Invalid data"}, 400
 
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute("SELECT id FROM users WHERE name=?", (session["user"],))
-        user = cursor.fetchone()
-        if user:
-            user_id = user[0]
-            cursor.execute(
-                "INSERT INTO marks (user_id, score, total) VALUES (?, ?, ?)",
-                (user_id, score, total)
-            )
-            conn.commit()
-            return {"status": "success"}
+    with get_db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT id FROM users WHERE name=%s", (session["user"],))
+            user = cursor.fetchone()
+            if user:
+                user_id = user["id"]
+                cursor.execute(
+                    "INSERT INTO marks (user_id, score, total) VALUES (%s, %s, %s)",
+                    (user_id, score, total)
+                )
+                conn.commit()
+                return {"status": "success"}
     return {"status": "error", "message": "User not found"}, 404
 
 @app.route("/amanota")
 @login_required
 def amanota():
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.row_factory = sqlite3.Row
-        cursor = conn.cursor()
-        cursor.execute("SELECT id FROM users WHERE name=?", (session["user"],))
-        user = cursor.fetchone()
-        marks = []
-        if user:
-            user_id = user["id"]
-            cursor.execute(
-                "SELECT score, total, timestamp FROM marks WHERE user_id=? ORDER BY timestamp DESC",
-                (user_id,)
-            )
-            marks = cursor.fetchall()
+    with get_db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT id FROM users WHERE name=%s", (session["user"],))
+            user = cursor.fetchone()
+            marks = []
+            if user:
+                user_id = user["id"]
+                cursor.execute(
+                    "SELECT score, total, timestamp FROM marks WHERE user_id=%s ORDER BY timestamp DESC",
+                    (user_id,)
+                )
+                marks = cursor.fetchall()
     return render_template("amanota.html", marks=marks)
 
 # ----------------- RUN -----------------
