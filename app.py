@@ -1,17 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
 import os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
-# ----------------- APP CONFIG -----------------
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")
 
-# Database config (Render provides DATABASE_URL)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+# ----------------- DATABASE -----------------
+uri = os.environ.get("DATABASE_URL")
+if uri and uri.startswith("postgres://"):  # fix old URI format
+    uri = uri.replace("postgres://", "postgresql://", 1)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
@@ -20,9 +22,9 @@ db = SQLAlchemy(app)
 class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(150), nullable=False)
-    email = db.Column(db.String(150), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
     is_verified = db.Column(db.Boolean, default=False)
     otp_code = db.Column(db.String(10))
 
@@ -32,11 +34,9 @@ class Mark(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     score = db.Column(db.Integer)
     total = db.Column(db.Integer)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-
+    timestamp = db.Column(db.DateTime, server_default=db.func.now())
     user = db.relationship("User", backref=db.backref("marks", lazy=True))
 
-# Create tables on startup (if not exist)
 with app.app_context():
     db.create_all()
 
@@ -93,26 +93,22 @@ def auth():
             name = request.form["name"].strip()
             hashed_pw = generate_password_hash(password)
             otp = str(random.randint(100000, 999999))
-
-            # check if email exists
-            existing = User.query.filter_by(email=email).first()
-            if existing:
+            try:
+                new_user = User(name=name, email=email, password=hashed_pw, otp_code=otp)
+                db.session.add(new_user)
+                db.session.commit()
+                send_otp_email(email, otp)
+                session["pending_email"] = email
+                flash("Reba email yawe kugira ngo wemeze konti.", "success")
+                return redirect(url_for("verify"))
+            except Exception:
+                db.session.rollback()
                 flash("Imeri isanzwe ibaho!", "error")
-                return redirect(url_for("auth"))
-
-            new_user = User(name=name, email=email, password=hashed_pw, otp_code=otp)
-            db.session.add(new_user)
-            db.session.commit()
-
-            send_otp_email(email, otp)
-            session["pending_email"] = email
-            flash("Reba email yawe kugira ngo wemeze konti.", "success")
-            return redirect(url_for("verify"))
+            return redirect(url_for("auth"))
 
         # LOGIN
         elif form_type == "login":
             user = User.query.filter_by(email=email).first()
-
             if not user or not check_password_hash(user.password, password):
                 flash("Imeri cyangwa ijambo ry’ibanga ntabwo ari byo!", "error")
                 return redirect(url_for("auth"))
@@ -216,14 +212,13 @@ def save_score():
         return {"status": "error", "message": "Invalid data"}, 400
 
     user = User.query.filter_by(name=session["user"]).first()
-    if not user:
-        return {"status": "error", "message": "User not found"}, 404
+    if user:
+        new_mark = Mark(user_id=user.id, score=score, total=total)
+        db.session.add(new_mark)
+        db.session.commit()
+        return {"status": "success"}
 
-    new_mark = Mark(user_id=user.id, score=score, total=total)
-    db.session.add(new_mark)
-    db.session.commit()
-
-    return {"status": "success"}
+    return {"status": "error", "message": "User not found"}, 404
 
 @app.route("/amanota")
 @login_required
@@ -240,4 +235,3 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
-
