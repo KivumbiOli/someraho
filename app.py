@@ -3,44 +3,42 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
-import psycopg2
-from psycopg2.extras import RealDictCursor
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 # ----------------- APP CONFIG -----------------
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env secret key in production
+app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")
 
-DB_URL = os.environ.get("DATABASE_URL")  # Render provides this in env
+# Database config (Render provides DATABASE_URL)
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-def get_db():
-    return psycopg2.connect(DB_URL, cursor_factory=RealDictCursor)
+db = SQLAlchemy(app)
 
-# ----------------- DATABASE INIT -----------------
-def init_db():
-    with get_db() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS users (
-                    id SERIAL PRIMARY KEY,
-                    name TEXT NOT NULL,
-                    email TEXT UNIQUE NOT NULL,
-                    password TEXT NOT NULL,
-                    is_verified INTEGER DEFAULT 0,
-                    otp_code TEXT
-                )
-            """)
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS marks (
-                    id SERIAL PRIMARY KEY,
-                    user_id INTEGER REFERENCES users(id),
-                    score INTEGER,
-                    total INTEGER,
-                    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                )
-            """)
-            conn.commit()
+# ----------------- MODELS -----------------
+class User(db.Model):
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    is_verified = db.Column(db.Boolean, default=False)
+    otp_code = db.Column(db.String(10))
 
-init_db()
+class Mark(db.Model):
+    __tablename__ = "marks"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    score = db.Column(db.Integer)
+    total = db.Column(db.Integer)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user = db.relationship("User", backref=db.backref("marks", lazy=True))
+
+# Create tables on startup (if not exist)
+with app.app_context():
+    db.create_all()
 
 # ----------------- EMAIL -----------------
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
@@ -95,39 +93,36 @@ def auth():
             name = request.form["name"].strip()
             hashed_pw = generate_password_hash(password)
             otp = str(random.randint(100000, 999999))
-            try:
-                with get_db() as conn:
-                    with conn.cursor() as cursor:
-                        cursor.execute(
-                            "INSERT INTO users (name, email, password, otp_code) VALUES (%s, %s, %s, %s)",
-                            (name, email, hashed_pw, otp)
-                        )
-                        conn.commit()
-                send_otp_email(email, otp)
-                session["pending_email"] = email
-                flash("Reba email yawe kugira ngo wemeze konti.", "success")
-                return redirect(url_for("verify"))
-            except psycopg2.Error:
+
+            # check if email exists
+            existing = User.query.filter_by(email=email).first()
+            if existing:
                 flash("Imeri isanzwe ibaho!", "error")
-            return redirect(url_for("auth"))
+                return redirect(url_for("auth"))
+
+            new_user = User(name=name, email=email, password=hashed_pw, otp_code=otp)
+            db.session.add(new_user)
+            db.session.commit()
+
+            send_otp_email(email, otp)
+            session["pending_email"] = email
+            flash("Reba email yawe kugira ngo wemeze konti.", "success")
+            return redirect(url_for("verify"))
 
         # LOGIN
         elif form_type == "login":
-            with get_db() as conn:
-                with conn.cursor() as cursor:
-                    cursor.execute("SELECT * FROM users WHERE email=%s", (email,))
-                    user = cursor.fetchone()
+            user = User.query.filter_by(email=email).first()
 
-            if not user or not check_password_hash(user["password"], password):
+            if not user or not check_password_hash(user.password, password):
                 flash("Imeri cyangwa ijambo ry’ibanga ntabwo ari byo!", "error")
                 return redirect(url_for("auth"))
 
-            if user["is_verified"] == 0:
+            if not user.is_verified:
                 flash("Banza wemeze konti yawe ukoresheje kode yo kuri email.", "warning")
                 session["pending_email"] = email
                 return redirect(url_for("verify"))
 
-            session["user"] = user["name"]
+            session["user"] = user.name
             return redirect(url_for("home"))
 
     return render_template("auth.html")
@@ -142,18 +137,16 @@ def verify():
             flash("Nta konti iri kwemezwa!", "error")
             return redirect(url_for("auth"))
 
-        with get_db() as conn:
-            with conn.cursor() as cursor:
-                cursor.execute("SELECT otp_code FROM users WHERE email=%s", (email,))
-                record = cursor.fetchone()
-                if record and record["otp_code"] == otp:
-                    cursor.execute("UPDATE users SET is_verified=1, otp_code=NULL WHERE email=%s", (email,))
-                    conn.commit()
-                    session.pop("pending_email", None)
-                    flash("Konti yawe yemejwe! Injira.", "success")
-                    return redirect(url_for("auth"))
-                else:
-                    flash("Kode ntabwo ari yo!", "error")
+        user = User.query.filter_by(email=email).first()
+        if user and user.otp_code == otp:
+            user.is_verified = True
+            user.otp_code = None
+            db.session.commit()
+            session.pop("pending_email", None)
+            flash("Konti yawe yemejwe! Injira.", "success")
+            return redirect(url_for("auth"))
+        else:
+            flash("Kode ntabwo ari yo!", "error")
 
     return render_template("verify.html")
 
@@ -222,35 +215,23 @@ def save_score():
     if score is None or total is None:
         return {"status": "error", "message": "Invalid data"}, 400
 
-    with get_db() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT id FROM users WHERE name=%s", (session["user"],))
-            user = cursor.fetchone()
-            if user:
-                user_id = user["id"]
-                cursor.execute(
-                    "INSERT INTO marks (user_id, score, total) VALUES (%s, %s, %s)",
-                    (user_id, score, total)
-                )
-                conn.commit()
-                return {"status": "success"}
-    return {"status": "error", "message": "User not found"}, 404
+    user = User.query.filter_by(name=session["user"]).first()
+    if not user:
+        return {"status": "error", "message": "User not found"}, 404
+
+    new_mark = Mark(user_id=user.id, score=score, total=total)
+    db.session.add(new_mark)
+    db.session.commit()
+
+    return {"status": "success"}
 
 @app.route("/amanota")
 @login_required
 def amanota():
-    with get_db() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT id FROM users WHERE name=%s", (session["user"],))
-            user = cursor.fetchone()
-            marks = []
-            if user:
-                user_id = user["id"]
-                cursor.execute(
-                    "SELECT score, total, timestamp FROM marks WHERE user_id=%s ORDER BY timestamp DESC",
-                    (user_id,)
-                )
-                marks = cursor.fetchall()
+    user = User.query.filter_by(name=session["user"]).first()
+    marks = []
+    if user:
+        marks = Mark.query.filter_by(user_id=user.id).order_by(Mark.timestamp.desc()).all()
     return render_template("amanota.html", marks=marks)
 
 # ----------------- RUN -----------------
