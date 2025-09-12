@@ -5,14 +5,23 @@ import os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
 
+# ----------------- APP SETUP -----------------
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")
 
+# Session cookie security
+app.config["SESSION_COOKIE_SECURE"] = True
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+
+# Debug mode from environment
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+
 # ----------------- DATABASE -----------------
 uri = os.environ.get("DATABASE_URL")
-if uri and uri.startswith("postgres://"):  # fix old URI format
-    uri = uri.replace("postgres://", "postgresql://", 1)
-
+if uri:
+    # psycopg3 explicit for SQLAlchemy
+    uri = uri.replace("postgres://", "postgresql+psycopg://", 1)
 app.config["SQLALCHEMY_DATABASE_URI"] = uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -28,6 +37,9 @@ class User(db.Model):
     is_verified = db.Column(db.Boolean, default=False)
     otp_code = db.Column(db.String(10))
 
+    def __repr__(self):
+        return f"<User {self.email}>"
+
 class Mark(db.Model):
     __tablename__ = "marks"
     id = db.Column(db.Integer, primary_key=True)
@@ -36,6 +48,9 @@ class Mark(db.Model):
     total = db.Column(db.Integer)
     timestamp = db.Column(db.DateTime, server_default=db.func.now())
     user = db.relationship("User", backref=db.backref("marks", lazy=True))
+
+    def __repr__(self):
+        return f"<Mark {self.score}/{self.total}>"
 
 with app.app_context():
     db.create_all()
@@ -101,8 +116,9 @@ def auth():
                 session["pending_email"] = email
                 flash("Reba email yawe kugira ngo wemeze konti.", "success")
                 return redirect(url_for("verify"))
-            except Exception:
+            except Exception as e:
                 db.session.rollback()
+                print("Signup error:", e)
                 flash("Imeri isanzwe ibaho!", "error")
             return redirect(url_for("auth"))
 
@@ -234,4 +250,4 @@ if __name__ == "__main__":
     print("Registered endpoints:")
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
-    app.run(debug=True)
+    app.run(debug=DEBUG)
