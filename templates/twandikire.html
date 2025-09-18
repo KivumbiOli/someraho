@@ -99,4 +99,20 @@
 <div id="footer-container"></div>
 <link rel="stylesheet" href="static/footer.css" />
 <script src="static/footer.js" defer></script>
+
+<script>
+  // Automatically hide flash messages after 5 seconds
+  document.addEventListener("DOMContentLoaded", () => {
+    const alerts = document.querySelectorAll(".flash-messages .alert");
+    alerts.forEach(alert => {
+      setTimeout(() => {
+        alert.style.transition = "opacity 0.5s";
+        alert.style.opacity = 0;
+        setTimeout(() => alert.remove(), 500);
+      }, 5000); // 5000ms = 5 seconds
+    });
+  });
+</script>
+
 {% endblock %}
+
