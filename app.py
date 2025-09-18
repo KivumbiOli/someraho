@@ -1,57 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_sqlalchemy import SQLAlchemy
 import os, random, smtplib
 from email.mime.text import MIMEText
 from functools import wraps
+from datetime import datetime
+from pymongo import MongoClient
 
-# ----------------- APP SETUP -----------------
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")
+app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env secret key in production
 
-# Session cookie security
-app.config["SESSION_COOKIE_SECURE"] = True
-app.config["SESSION_COOKIE_HTTPONLY"] = True
-app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
-
-# Debug mode from environment
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-
-# ----------------- DATABASE -----------------
-db_url = os.environ.get("DATABASE_URL")
-if db_url:
-    # psycopg3 requires 'postgresql+psycopg://' prefix
-    if db_url.startswith("postgres://"):
-        db_url = db_url.replace("postgres://", "postgresql+psycopg://", 1)
-    elif db_url.startswith("postgresql://"):
-        db_url = db_url.replace("postgresql://", "postgresql+psycopg://", 1)
-
-app.config["SQLALCHEMY_DATABASE_URI"] = db_url
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
-
-# ----------------- MODELS -----------------
-class User(db.Model):
-    __tablename__ = "users"
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)
-    is_verified = db.Column(db.Boolean, default=False)
-    otp_code = db.Column(db.String(10))
-
-class Mark(db.Model):
-    __tablename__ = "marks"
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    score = db.Column(db.Integer)
-    total = db.Column(db.Integer)
-    timestamp = db.Column(db.DateTime, server_default=db.func.now())
-    user = db.relationship("User", backref=db.backref("marks", lazy=True))
-
-# Create tables if they don't exist
-with app.app_context():
-    db.create_all()
+# ----------------- MONGODB CONNECTION -----------------
+MONGO_URI = os.environ.get("MONGO_URI")
+client = MongoClient(MONGO_URI)
+db = client["myDatabase"]   # choose your db name
+users_col = db["users"]
+marks_col = db["marks"]
 
 # ----------------- EMAIL -----------------
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
@@ -106,33 +69,36 @@ def auth():
             name = request.form["name"].strip()
             hashed_pw = generate_password_hash(password)
             otp = str(random.randint(100000, 999999))
-            try:
-                new_user = User(name=name, email=email, password=hashed_pw, otp_code=otp)
-                db.session.add(new_user)
-                db.session.commit()
-                send_otp_email(email, otp)
-                session["pending_email"] = email
-                flash("Reba email yawe kugira ngo wemeze konti.", "success")
-                return redirect(url_for("verify"))
-            except Exception as e:
-                db.session.rollback()
-                print("Signup error:", e)
+
+            if users_col.find_one({"email": email}):
                 flash("Imeri isanzwe ibaho!", "error")
-            return redirect(url_for("auth"))
+                return redirect(url_for("auth"))
+
+            users_col.insert_one({
+                "name": name,
+                "email": email,
+                "password": hashed_pw,
+                "is_verified": 0,
+                "otp_code": otp
+            })
+            send_otp_email(email, otp)
+            session["pending_email"] = email
+            flash("Reba email yawe kugira ngo wemeze konti.", "success")
+            return redirect(url_for("verify"))
 
         # LOGIN
         elif form_type == "login":
-            user = User.query.filter_by(email=email).first()
-            if not user or not check_password_hash(user.password, password):
+            user = users_col.find_one({"email": email})
+            if not user or not check_password_hash(user["password"], password):
                 flash("Imeri cyangwa ijambo ry’ibanga ntabwo ari byo!", "error")
                 return redirect(url_for("auth"))
 
-            if not user.is_verified:
+            if user.get("is_verified", 0) == 0:
                 flash("Banza wemeze konti yawe ukoresheje kode yo kuri email.", "warning")
                 session["pending_email"] = email
                 return redirect(url_for("verify"))
 
-            session["user"] = user.name
+            session["user"] = user["name"]
             return redirect(url_for("home"))
 
     return render_template("auth.html")
@@ -147,11 +113,9 @@ def verify():
             flash("Nta konti iri kwemezwa!", "error")
             return redirect(url_for("auth"))
 
-        user = User.query.filter_by(email=email).first()
-        if user and user.otp_code == otp:
-            user.is_verified = True
-            user.otp_code = None
-            db.session.commit()
+        user = users_col.find_one({"email": email})
+        if user and user.get("otp_code") == otp:
+            users_col.update_one({"email": email}, {"$set": {"is_verified": 1}, "$unset": {"otp_code": ""}})
             session.pop("pending_email", None)
             flash("Konti yawe yemejwe! Injira.", "success")
             return redirect(url_for("auth"))
@@ -225,22 +189,24 @@ def save_score():
     if score is None or total is None:
         return {"status": "error", "message": "Invalid data"}, 400
 
-    user = User.query.filter_by(name=session["user"]).first()
+    user = users_col.find_one({"name": session["user"]})
     if user:
-        new_mark = Mark(user_id=user.id, score=score, total=total)
-        db.session.add(new_mark)
-        db.session.commit()
+        marks_col.insert_one({
+            "user_id": user["_id"],
+            "score": score,
+            "total": total,
+            "timestamp": datetime.utcnow()
+        })
         return {"status": "success"}
-
     return {"status": "error", "message": "User not found"}, 404
 
 @app.route("/amanota")
 @login_required
 def amanota():
-    user = User.query.filter_by(name=session["user"]).first()
+    user = users_col.find_one({"name": session["user"]})
     marks = []
     if user:
-        marks = Mark.query.filter_by(user_id=user.id).order_by(Mark.timestamp.desc()).all()
+        marks = list(marks_col.find({"user_id": user["_id"]}).sort("timestamp", -1))
     return render_template("amanota.html", marks=marks)
 
 # ----------------- RUN -----------------
@@ -248,4 +214,4 @@ if __name__ == "__main__":
     print("Registered endpoints:")
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
-    app.run(debug=DEBUG)
+    app.run(debug=True)
