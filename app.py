@@ -211,6 +211,7 @@ def amanota():
     return render_template("amanota.html", marks=marks)
 
 # ----------------- CONTACT FORM -----------------
+from datetime import datetime
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form.get("name", "").strip()
@@ -244,6 +245,7 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
 
 
 
