@@ -1,5 +1,6 @@
-{% extends "layout_public.html" %} {% block title %}twandikire{% endblock %} {%
-block content %}
+{% extends "layout_public.html" %}
+{% block title %}twandikire{% endblock %}
+{% block content %}
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="../static/images/Favicon.jpeg" type="image/png" />
@@ -68,12 +69,8 @@ block content %}
   button:hover {
     background: #218838;
   }
-  .contact-info {
-    background: none;
-    color: currentColor;
-  }
 </style>
-<!-- Contact Section -->
+
 <div class="contact-container">
   <h1>Twandikire</h1>
 
@@ -92,27 +89,22 @@ block content %}
     </p>
   </div>
 
-  <form
-    name="contact"
-    method="POST"
-    netlify-honeypot="bot-field"
-    data-netlify="true"
-  >
-    <input type="hidden" name="form-name" value="contact" />
-    <label
-      >Izina ryawe:
-      <input type="text" name="names" required />
+  <!-- Contact Form -->
+  <form method="POST" action="{{ url_for('contact') }}">
+    <label>
+      Izina ryawe:
+      <input type="text" name="name" required />
     </label>
-    <label
-      >Email yawe:
+    <label>
+      Email yawe:
       <input type="email" name="email" required />
     </label>
-    <label
-      >Numero ya telefone:
-      <input type="tel" name="phone" required />
+    <label>
+      Numero ya telefone:
+      <input type="tel" name="phone" />
     </label>
-    <label
-      >Ubutumwa:
+    <label>
+      Ubutumwa:
       <textarea name="message" required></textarea>
     </label>
     <button type="submit">Ohereza Ubutumwa</button>
@@ -120,7 +112,6 @@ block content %}
 </div>
 
 <div id="footer-container"></div>
-
 <link rel="stylesheet" href="static/footer.css" />
 <script src="static/footer.js" defer></script>
 {% endblock %}
