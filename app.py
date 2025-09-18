@@ -129,7 +129,6 @@ def verify():
 @app.route("/logout")
 def logout():
     session.pop("user", None)
-    flash("Wasohotse neza!", "success")
     return redirect(url_for("publicpage"))
 
 # ----------------- PROTECTED PAGES -----------------
@@ -245,3 +244,4 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
