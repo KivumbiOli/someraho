@@ -109,9 +109,38 @@
         color: #007bff;
         font-weight: bold;
       }
+      .return-public-top-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999; /* ensures it’s above everything */
+}
+
+.return-public-top-left a {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #17a2b8; /* professional cyan */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.return-public-top-left a:hover {
+  background-color: #117a8b;
+}
+
     </style>
   </head>
   <body>
+    <!-- Return to Public Page Button -->
+<div class="return-public-top-left">
+  <a href="{{ url_for('publicpage') }}">←subira inyuma</a>
+</div>
+
+    
     <div class="card-container">
       <div class="card" id="auth-card">
         <!-- LOGIN -->
@@ -207,3 +236,4 @@
     </script>
   </body>
 </html>
+
