@@ -209,11 +209,40 @@ def amanota():
         marks = list(marks_col.find({"user_id": user["_id"]}).sort("timestamp", -1))
     return render_template("amanota.html", marks=marks)
 
+# ----------------- CONTACT FORM -----------------
+@app.route("/contact", methods=["POST"])
+def contact():
+    name = request.form.get("name", "").strip()
+    email = request.form.get("email", "").strip()
+    phone = request.form.get("phone", "").strip()
+    message = request.form.get("message", "").strip()
+
+    if not name or not email or not message:
+        flash("Nyamuneka wuzuze izina, email, n'ubutumwa.", "error")
+        return redirect(url_for("twandikire"))
+
+    try:
+        contacts_col.insert_one({
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "message": message,
+            "timestamp": datetime.utcnow()
+        })
+        flash("Ubutumwa bwawe bwoherejwe neza!", "success")
+    except Exception as e:
+        print("Contact form save failed:", e)
+        flash("Habaye ikibazo mu kohereza ubutumwa!", "error")
+
+    return redirect(url_for("twandikire"))
+
+
 # ----------------- RUN -----------------
 if __name__ == "__main__":
     print("Registered endpoints:")
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
 
 
