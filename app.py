@@ -15,6 +15,7 @@ client = MongoClient(MONGO_URI)
 db = client["myDatabase"]   # Choose your database name
 users_col = db["users"]
 marks_col = db["marks"]
+contacts_col = db["contacts"]
 
 # ----------------- EMAIL -----------------
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
@@ -243,6 +244,7 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
 
 
 
