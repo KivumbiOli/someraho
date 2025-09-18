@@ -12,7 +12,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "yoursecretkey")  # Use env secret
 # ----------------- MONGODB CONNECTION -----------------
 MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
-db = client["myDatabase"]   # choose your db name
+db = client["myDatabase"]   # Choose your database name
 users_col = db["users"]
 marks_col = db["marks"]
 
