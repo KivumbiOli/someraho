@@ -66,25 +66,36 @@ def auth():
 
         # SIGNUP
         if form_type == "signup":
-            name = request.form["name"].strip()
-            hashed_pw = generate_password_hash(password)
-            otp = str(random.randint(100000, 999999))
+    try:
+        name = request.form["name"].strip()
+        hashed_pw = generate_password_hash(password)
+        otp = str(random.randint(100000, 999999))
 
-            if users_col.find_one({"email": email}):
-                flash("Imeri isanzwe ibaho!", "error")
-                return redirect(url_for("auth"))
+        # Check if email already exists
+        if users_col.find_one({"email": email}):
+            flash("Imeri isanzwe ibaho!", "error")
+            return redirect(url_for("auth"))
 
-            users_col.insert_one({
-                "name": name,
-                "email": email,
-                "password": hashed_pw,
-                "is_verified": 0,
-                "otp_code": otp
-            })
-            send_otp_email(email, otp)
-            session["pending_email"] = email
-            flash("Reba email yawe kugira ngo wemeze konti.", "success")
-            return redirect(url_for("verify"))
+        # Insert user into MongoDB
+        users_col.insert_one({
+            "name": name,
+            "email": email,
+            "password": hashed_pw,
+            "is_verified": 0,
+            "otp_code": otp
+        })
+
+        # Send OTP email
+        send_otp_email(email, otp)
+        session["pending_email"] = email
+        flash("Reba email yawe kugira ngo wemeze konti.", "success")
+        return redirect(url_for("verify"))
+
+    except Exception as e:
+        # Print error to logs and show flash message
+        print("Signup failed:", e)
+        flash(f"Habaye ikibazo mu kwiyandikisha: {e}", "error")
+        return redirect(url_for("auth"))
 
         # LOGIN
         elif form_type == "login":
@@ -215,3 +226,4 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
