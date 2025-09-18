@@ -209,13 +209,14 @@ def amanota():
     if user:
         marks = list(marks_col.find({"user_id": user["_id"]}).sort("timestamp", -1))
     return render_template("amanota.html", marks=marks)
-
+    
 # ----------------- CONTACT FORM -----------------
 from datetime import datetime
+
 @app.route("/contact", methods=["POST"])
 def contact():
-    print("Contact form submitted:", request.form
-          
+    print("Contact form submitted:", request.form)  
+
     name = request.form.get("name", "").strip()
     email = request.form.get("email", "").strip()
     phone = request.form.get("phone", "").strip()
@@ -247,6 +248,7 @@ if __name__ == "__main__":
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
+
 
 
 
