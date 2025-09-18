@@ -15,7 +15,7 @@ client = MongoClient(MONGO_URI)
 db = client["myDatabase"]   # Choose your database name
 users_col = db["users"]
 marks_col = db["marks"]
-contacts_col = db["contacts"]
+contacts_col = db["contacts"]  # Make sure this collection exists in MongoDB
 
 # ----------------- EMAIL -----------------
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
@@ -209,10 +209,8 @@ def amanota():
     if user:
         marks = list(marks_col.find({"user_id": user["_id"]}).sort("timestamp", -1))
     return render_template("amanota.html", marks=marks)
-    
-# ----------------- CONTACT FORM -----------------
-from datetime import datetime
 
+# ----------------- CONTACT FORM -----------------
 @app.route("/contact", methods=["POST"])
 def contact():
     print("Contact form submitted:", request.form)  
@@ -241,17 +239,9 @@ def contact():
 
     return redirect(url_for("twandikire"))
 
-
 # ----------------- RUN -----------------
 if __name__ == "__main__":
     print("Registered endpoints:")
     for endpoint in sorted(app.view_functions.keys()):
         print(" -", endpoint)
     app.run(debug=True)
-
-
-
-
-
-
-
